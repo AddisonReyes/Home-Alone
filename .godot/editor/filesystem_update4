@@ -1,0 +1,6 @@
+res://Source/tiles.tscn
+res://Source/tilesSet.meshlib
+res://Scenes/level.tscn
+res://Scenes/player.tscn
+res://Scenes/player.gd
+res://Scripts/player.gd
