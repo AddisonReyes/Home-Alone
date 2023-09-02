@@ -1,5 +1,5 @@
 cffcf7cc5eb03ca20a5c49cce30ef619
-::res://::1693623181
+::res://::1693654310
 icon.svg::CompressedTexture2D::6555333939665792369::1693603235::1693603242::1::::<><>::
 README.md::TextFile::-1::1693604202::0::1::::<><>::
 README.ru.md::TextFile::-1::1693604202::0::1::::<><>::
@@ -23,12 +23,13 @@ _importer_base.gd::GDScript::-1::1693604202::0::1::::<>EditorImportPlugin<>::
 ::res://Audio/::1693603768
 ::res://Data/::1693603928
 ::res://Fonts/::1693603790
-::res://Scenes/::1693623626
-level.tscn::PackedScene::518343458275882622::1693617646::0::1::::<><>::uid://botp7xmexpxib::::res://Source/tilesSet.meshlib
-player.tscn::PackedScene::2414798418124882270::1693623672::0::1::::<><>::res://Scenes/player.gd
-player.gd::GDScript::-1::1693623626::0::1::::<>CharacterBody3D<>::
-::res://Scripts/::1693603752
+::res://Scenes/::1693654437
+level.tscn::PackedScene::518343458275882622::1693654437::0::1::::<><>::uid://botp7xmexpxib::::res://Source/tilesSet.meshlib<>uid://dx4av4r25u7m4::::res://Scenes/player.tscn
+player.tscn::PackedScene::8833511462000283605::1693654437::0::1::::<><>::res://Scripts/player.gd
+monster.tscn::PackedScene::5879725562344227898::1693654695::0::1::::<><>::
+::res://Scripts/::1693628215
+player.gd::GDScript::-1::1693628215::0::1::::<>CharacterBody3D<>::
 ::res://Source/::1693617563
-tilesSet.meshlib::MeshLibrary::3409256799036943957::1693617563::0::1::::<><>::
 tiles.tscn::PackedScene::1934283371310020575::1693615897::0::1::::<><>::
+tilesSet.meshlib::MeshLibrary::3409256799036943957::1693617563::0::1::::<><>::
 ::res://Sprites/::1693603779

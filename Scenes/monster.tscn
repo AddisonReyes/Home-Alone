@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp1ghrpem673k"]
+
+[ext_resource type="Script" path="res://Scripts/monster.gd" id="1_q837o"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cnhs0"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cqbhg"]
+
+[node name="Monster" type="CharacterBody3D" groups=["Enemy"]]
+script = ExtResource("1_q837o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03822, 0)
+shape = SubResource("CapsuleShape3D_cnhs0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03822, 0)
+mesh = SubResource("CapsuleMesh_cqbhg")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 2.0
+path_height_offset = 0.1
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]

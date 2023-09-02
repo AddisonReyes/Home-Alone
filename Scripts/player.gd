@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 const GRAVITY = -24.8
-const MAX_SPEED = 7
+const MAX_SPEED = 5
 const ACCEL = 3.5
 
 var dir = Vector3()
@@ -55,7 +55,7 @@ func process_movement(delta):
 	dir.y = 0
 	dir = dir.normalized()
 	
-	velocity.y += delta * GRAVITY
+	#velocity.y += delta * GRAVITY
 	
 	var hvel = velocity
 	hvel.y = 0

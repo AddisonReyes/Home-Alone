@@ -1,7 +1,11 @@
+MeshInstance3D
+NavigationAgent3D
+NavigationRegion3D
 GridMap
-Camera3D
-Node3D
+NavigationLink3D
+NavigationObstacle3D
 CollisionShape3D
 CharacterBody3D
-MeshInstance3D
+Camera3D
+Node3D
 Node
