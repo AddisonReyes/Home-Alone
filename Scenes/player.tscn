@@ -1,8 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx4av4r25u7m4"]
+[gd_scene load_steps=6 format=3 uid="uid://dx4av4r25u7m4"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_15rcm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d1ab0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfobr"]
+albedo_color = Color(0.137255, 0.0235294, 0.129412, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yoypm"]
+material = SubResource("StandardMaterial3D_vfobr")
+
+[sub_resource type="SphereMesh" id="SphereMesh_8ccl3"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_15rcm")
@@ -14,6 +22,32 @@ shape = SubResource("CapsuleShape3D_d1ab0")
 [node name="CameraPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59087, 0)
 
+[node name="FlashLight" type="Node3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0965263)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CameraPivot/FlashLight"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0.3542, -0.314008, -0.525628)
+light_energy = 16.0
+light_volumetric_fog_energy = 3.809
+light_size = 0.275
+shadow_blur = 1.687
+spot_range = 34.3161
+spot_angle = 37.2124
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraPivot/FlashLight"]
+transform = Transform3D(0.11, 0, 0, 0, -4.80825e-09, -0.11, 0, 0.11, -4.80825e-09, 0.3542, -0.314008, -0.418791)
+mesh = SubResource("CylinderMesh_yoypm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CameraPivot/FlashLight"]
+transform = Transform3D(0.11, 0, 0, 0, -4.80825e-09, -0.11, 0, 0.11, -4.80825e-09, 0.3542, -0.314008, -0.525628)
+mesh = SubResource("SphereMesh_8ccl3")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="CooldownTimer" type="Timer" parent="CameraPivot/FlashLight"]
+wait_time = 0.6
+
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 current = true
 fov = 66.0
+
+[connection signal="timeout" from="CameraPivot/FlashLight/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

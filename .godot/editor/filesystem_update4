@@ -1,9 +1,5 @@
-res://Scenes/level.tscn
 res://Scenes/player.tscn
-res://Source/tilesSet.meshlib
+res://Scenes/level.tscn
 res://Scenes/monster.tscn
 res://Scenes/tiles.tscn
-res://Source/tilesSet2.meshlib
 res://Scripts/player.gd
-res://Scripts/monster.gd
-res://Scripts/level.gd

@@ -15,6 +15,8 @@ var rotation_helper
 
 var MOUSE_SENSITIVITY = 0.05
 
+var flashLightCooldown = true
+
 
 func _ready():
 	camera = $CameraPivot/Camera3D
@@ -26,6 +28,11 @@ func _ready():
 func _physics_process(delta):
 	process_input(delta)
 	process_movement(delta)
+	
+	if Input.is_action_pressed("flashlight") and flashLightCooldown:
+		$CameraPivot/FlashLight/SpotLight3D.visible = !$CameraPivot/FlashLight/SpotLight3D.visible
+		$CameraPivot/FlashLight/CooldownTimer.start()
+		flashLightCooldown = false
 
 
 func process_input(delta):
@@ -90,3 +97,7 @@ func _input(event):
 		var camera_rot = rotation_helper.rotation_degrees
 		camera_rot.x = clamp(camera_rot.x, -70, 70)
 		rotation_helper.rotation_degrees = camera_rot
+
+
+func _on_cooldown_timer_timeout():
+	flashLightCooldown = true
