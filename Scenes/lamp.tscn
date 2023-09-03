@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccvdfkxkbcjfg"]
+
+[ext_resource type="Script" path="res://Scripts/Lamp.gd" id="1_vjpcd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oi3p"]
+albedo_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bdfo8"]
+material = SubResource("StandardMaterial3D_2oi3p")
+top_radius = 0.02
+bottom_radius = 0.02
+height = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrcfo"]
+albedo_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t46j8"]
+material = SubResource("StandardMaterial3D_xrcfo")
+top_radius = 0.01
+bottom_radius = 0.26
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxj60"]
+roughness = 0.75
+rim_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_337iy"]
+material = SubResource("StandardMaterial3D_wxj60")
+radius = 0.2
+height = 0.1
+
+[node name="Lamp" type="Node3D"]
+script = ExtResource("1_vjpcd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.934373, 0)
+mesh = SubResource("CylinderMesh_bdfo8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.401747, 0)
+mesh = SubResource("CylinderMesh_t46j8")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.308039, 0)
+mesh = SubResource("SphereMesh_337iy")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.458275, 0)
+light_color = Color(1, 1, 0.494118, 1)
+light_energy = 6.0
+distance_fade_enabled = true
+spot_range = 14.5216
+spot_angle = 64.5421
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.6
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

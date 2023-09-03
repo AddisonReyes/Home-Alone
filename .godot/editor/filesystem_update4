@@ -1,5 +1,16 @@
-res://Scenes/player.tscn
 res://Scenes/level.tscn
+res://Source/tilesSet.meshlib
+res://Scripts/door.gd
+res://Scenes/door.tscn
+res://Scenes/player.tscn
 res://Scenes/monster.tscn
 res://Scenes/tiles.tscn
 res://Scripts/player.gd
+res://Scripts/monster.gd
+res://Scripts/level.gd
+res://Scenes/frontDoor.tscn
+res://Scripts/Lamp.gd
+res://Scenes/lamp.tscn
+res://Scenes/switch.tscn
+res://Scripts/switch.gd
+res://Scripts/buttom.gd

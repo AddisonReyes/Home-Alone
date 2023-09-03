@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://bsxbajnb7gxmq"]
+
+[ext_resource type="Script" path="res://Scripts/switch.gd" id="1_nv0xn"]
+[ext_resource type="Script" path="res://Scripts/buttom.gd" id="2_njrse"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tl7k3"]
+albedo_color = Color(0.537255, 0.537255, 0.537255, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5ndr6"]
+material = SubResource("StandardMaterial3D_tl7k3")
+size = Vector3(0.06, 0.3, 0.06)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpqkh"]
+albedo_color = Color(0.286275, 0.286275, 0.286275, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b65yx"]
+material = SubResource("StandardMaterial3D_dpqkh")
+size = Vector3(0.3, 0.5, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wcmf"]
+albedo_color = Color(0.45098, 0.45098, 0.45098, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i07hd"]
+material = SubResource("StandardMaterial3D_6wcmf")
+size = Vector3(0.2, 0.4, 0.04)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21tos"]
+albedo_color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_hogdc"]
+material = SubResource("StandardMaterial3D_21tos")
+radius = 0.016
+height = 0.016
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ed2d5"]
+size = Vector3(0.299, 0.496, 0.1)
+
+[node name="Switch" type="Node3D" groups=["interactable"]]
+script = ExtResource("1_nv0xn")
+
+[node name="Buttom" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.784776, -0.619779, 0, 0.619779, 0.784776, 0, 0, -0.011)
+mesh = SubResource("BoxMesh_5ndr6")
+
+[node name="Buttom2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, -5.41828e-08, -6.86073e-08, 0, 0.784776, -0.619779, 8.74228e-08, -0.619779, -0.784776, 0, 0, -0.011)
+visible = false
+mesh = SubResource("BoxMesh_5ndr6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0161432)
+mesh = SubResource("BoxMesh_b65yx")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00250527)
+mesh = SubResource("BoxMesh_i07hd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.158583, 0.0195645)
+mesh = SubResource("SphereMesh_hogdc")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.167897, 0.0195645)
+mesh = SubResource("SphereMesh_hogdc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
+script = ExtResource("2_njrse")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00222746, 0)
+shape = SubResource("BoxShape3D_ed2d5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

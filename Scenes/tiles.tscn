@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://y2c63awahoa5" path="res://Sprites/ceiling.aseprite" id="3_0s0il"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqpo6"]
-albedo_color = Color(0.258824, 0.172549, 0.137255, 1)
+albedo_color = Color(0.152941, 0.0941176, 0.0705882, 1)
 albedo_texture = ExtResource("1_y1vlj")
 
 [sub_resource type="BoxMesh" id="BoxMesh_l3f7e"]
@@ -70,7 +70,7 @@ mesh = SubResource("BoxMesh_l3f7e")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4nrhw")
 
-[node name="Floor" type="MeshInstance3D" parent="."]
+[node name="Floor" type="MeshInstance3D" parent="." groups=["Floor"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99929, 0.00749445, -3.19564)
 mesh = SubResource("PlaneMesh_enc7y")
 
@@ -91,7 +91,7 @@ mesh = SubResource("BoxMesh_kpgh0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_783q5")
 
-[node name="Grass" type="MeshInstance3D" parent="."]
+[node name="Grass" type="MeshInstance3D" parent="." groups=["Floor"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.992925, 1.19209e-07, 0.932326)
 mesh = SubResource("PlaneMesh_hyhlw")
 

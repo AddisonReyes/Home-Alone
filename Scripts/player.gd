@@ -29,10 +29,18 @@ func _physics_process(delta):
 	process_input(delta)
 	process_movement(delta)
 	
-	if Input.is_action_pressed("flashlight") and flashLightCooldown:
+	if Input.is_action_just_pressed("flashlight") and flashLightCooldown:
 		$CameraPivot/FlashLight/SpotLight3D.visible = !$CameraPivot/FlashLight/SpotLight3D.visible
 		$CameraPivot/FlashLight/CooldownTimer.start()
 		flashLightCooldown = false
+	
+	if Input.is_action_pressed("interact") and $CameraPivot/RayCast3D.is_colliding():
+		var collider = $CameraPivot/RayCast3D.get_collider()
+		if collider != null:
+			if collider.is_in_group("interactable"):
+				collider.interact()
+			
+			print(collider)
 
 
 func process_input(delta):
