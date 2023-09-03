@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 const GRAVITY = -24.8
-const MAX_SPEED = 5
+var MAX_SPEED = 4.7
 const ACCEL = 3.5
 
 var dir = Vector3()
@@ -38,6 +38,11 @@ func process_input(delta):
 	if Input.is_action_pressed("movement_backward"): input_movement_vector.y -= 1
 	if Input.is_action_pressed("movement_left"): input_movement_vector.x -= 1
 	if Input.is_action_pressed("movement_right"): input_movement_vector.x += 1
+	
+	if Input.is_action_pressed("walking"): 
+		MAX_SPEED = 4.7 / 3
+	else:
+		MAX_SPEED = 4.7
 	
 	input_movement_vector = input_movement_vector.normalized()
 	
