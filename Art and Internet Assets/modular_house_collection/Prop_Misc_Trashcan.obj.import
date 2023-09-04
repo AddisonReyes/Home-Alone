@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://y4ekx3e4um0v"
+path="res://.godot/imported/Prop_Misc_Trashcan.obj-4a3d188206f5e0e3401a63d14273ae73.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Misc_Trashcan.obj-4a3d188206f5e0e3401a63d14273ae73.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Trashcan.obj"
+dest_files=["res://.godot/imported/Prop_Misc_Trashcan.obj-4a3d188206f5e0e3401a63d14273ae73.mesh", "res://.godot/imported/Prop_Misc_Trashcan.obj-4a3d188206f5e0e3401a63d14273ae73.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

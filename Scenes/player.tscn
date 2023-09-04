@@ -26,12 +26,11 @@ shape = SubResource("CapsuleShape3D_d1ab0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29618, 0)
 
 [node name="FlashLight" type="Node3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0965263)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0750554, -0.000242092)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CameraPivot/FlashLight"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0.3542, -0.314008, -0.450161)
-visible = false
-light_energy = 16.0
+transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0.3542, -0.314008, -0.446272)
+light_energy = 10.0
 light_volumetric_fog_energy = 3.809
 light_size = 1.0
 shadow_blur = 1.687

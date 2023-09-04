@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dums40g26fe44"
+path="res://.godot/imported/Prop_Bathroom_Shower_Curtain.obj-7c096abd467ac94aac3d3e69cf43e0fd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Bathroom_Shower_Curtain.obj-7c096abd467ac94aac3d3e69cf43e0fd.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Prop_Bathroom_Shower_Curtain.obj"
+dest_files=["res://.godot/imported/Prop_Bathroom_Shower_Curtain.obj-7c096abd467ac94aac3d3e69cf43e0fd.mesh", "res://.godot/imported/Prop_Bathroom_Shower_Curtain.obj-7c096abd467ac94aac3d3e69cf43e0fd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

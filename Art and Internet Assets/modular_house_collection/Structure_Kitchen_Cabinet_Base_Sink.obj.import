@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://biwm08rqekyd1"
+path="res://.godot/imported/Structure_Kitchen_Cabinet_Base_Sink.obj-716dfee9e32e8df00b46197b34420793.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Structure_Kitchen_Cabinet_Base_Sink.obj-716dfee9e32e8df00b46197b34420793.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Base_Sink.obj"
+dest_files=["res://.godot/imported/Structure_Kitchen_Cabinet_Base_Sink.obj-716dfee9e32e8df00b46197b34420793.mesh", "res://.godot/imported/Structure_Kitchen_Cabinet_Base_Sink.obj-716dfee9e32e8df00b46197b34420793.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

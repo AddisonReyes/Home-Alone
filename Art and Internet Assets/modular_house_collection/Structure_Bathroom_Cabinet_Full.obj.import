@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drav3vfb0lre5"
+path="res://.godot/imported/Structure_Bathroom_Cabinet_Full.obj-3406b62942d56e63c5011b3f1ab89618.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Structure_Bathroom_Cabinet_Full.obj-3406b62942d56e63c5011b3f1ab89618.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Structure_Bathroom_Cabinet_Full.obj"
+dest_files=["res://.godot/imported/Structure_Bathroom_Cabinet_Full.obj-3406b62942d56e63c5011b3f1ab89618.mesh", "res://.godot/imported/Structure_Bathroom_Cabinet_Full.obj-3406b62942d56e63c5011b3f1ab89618.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

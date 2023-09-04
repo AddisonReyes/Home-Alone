@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bp3x2fpv2d546"
+path="res://.godot/imported/Structure_Ceiling_Beam_Straight.obj-6923287d016f6eca287126de505a6ec2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Structure_Ceiling_Beam_Straight.obj-6923287d016f6eca287126de505a6ec2.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Structure_Ceiling_Beam_Straight.obj"
+dest_files=["res://.godot/imported/Structure_Ceiling_Beam_Straight.obj-6923287d016f6eca287126de505a6ec2.mesh", "res://.godot/imported/Structure_Ceiling_Beam_Straight.obj-6923287d016f6eca287126de505a6ec2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

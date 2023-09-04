@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dd0djfq48ykte"
+path="res://.godot/imported/Structure_Balcony_3_Edges.obj-55ca4b98cc30b2246322babf6ca69c97.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Structure_Balcony_3_Edges.obj-55ca4b98cc30b2246322babf6ca69c97.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Structure_Balcony_3_Edges.obj"
+dest_files=["res://.godot/imported/Structure_Balcony_3_Edges.obj-55ca4b98cc30b2246322babf6ca69c97.mesh", "res://.godot/imported/Structure_Balcony_3_Edges.obj-55ca4b98cc30b2246322babf6ca69c97.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

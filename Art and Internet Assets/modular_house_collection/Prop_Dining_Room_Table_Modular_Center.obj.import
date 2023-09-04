@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ltaebh5ymb04"
+path="res://.godot/imported/Prop_Dining_Room_Table_Modular_Center.obj-3ff63e362c85b4ccb8b1176497a8779d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Dining_Room_Table_Modular_Center.obj-3ff63e362c85b4ccb8b1176497a8779d.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Prop_Dining_Room_Table_Modular_Center.obj"
+dest_files=["res://.godot/imported/Prop_Dining_Room_Table_Modular_Center.obj-3ff63e362c85b4ccb8b1176497a8779d.mesh", "res://.godot/imported/Prop_Dining_Room_Table_Modular_Center.obj-3ff63e362c85b4ccb8b1176497a8779d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

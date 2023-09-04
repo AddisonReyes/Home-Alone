@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cq7jpinevdbpu"
+path="res://.godot/imported/Prop_Dining_Room_Table_Modular_Side.obj-c3a0b850c6cb1074e0c87dbf6e43af91.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Dining_Room_Table_Modular_Side.obj-c3a0b850c6cb1074e0c87dbf6e43af91.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Prop_Dining_Room_Table_Modular_Side.obj"
+dest_files=["res://.godot/imported/Prop_Dining_Room_Table_Modular_Side.obj-c3a0b850c6cb1074e0c87dbf6e43af91.mesh", "res://.godot/imported/Prop_Dining_Room_Table_Modular_Side.obj-c3a0b850c6cb1074e0c87dbf6e43af91.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

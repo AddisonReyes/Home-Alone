@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cetre30jeut8v"
+path="res://.godot/imported/Prop_Curtains_Single.obj-451b3dbc7653dba08da4544e158a2aab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Curtains_Single.obj-451b3dbc7653dba08da4544e158a2aab.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Prop_Curtains_Single.obj"
+dest_files=["res://.godot/imported/Prop_Curtains_Single.obj-451b3dbc7653dba08da4544e158a2aab.mesh", "res://.godot/imported/Prop_Curtains_Single.obj-451b3dbc7653dba08da4544e158a2aab.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

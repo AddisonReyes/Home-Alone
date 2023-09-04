@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://djfs607dhem"
+path="res://.godot/imported/Prop_Bathroom_Shower.obj-133efd4e54b567576ad469167c6937d6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Bathroom_Shower.obj-133efd4e54b567576ad469167c6937d6.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Prop_Bathroom_Shower.obj"
+dest_files=["res://.godot/imported/Prop_Bathroom_Shower.obj-133efd4e54b567576ad469167c6937d6.mesh", "res://.godot/imported/Prop_Bathroom_Shower.obj-133efd4e54b567576ad469167c6937d6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

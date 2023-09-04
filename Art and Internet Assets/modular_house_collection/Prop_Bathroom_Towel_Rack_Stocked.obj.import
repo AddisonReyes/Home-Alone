@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bpydjkge57gso"
+path="res://.godot/imported/Prop_Bathroom_Towel_Rack_Stocked.obj-692c2908ec88fcfe0ef6ae6e200485e1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Bathroom_Towel_Rack_Stocked.obj-692c2908ec88fcfe0ef6ae6e200485e1.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Prop_Bathroom_Towel_Rack_Stocked.obj"
+dest_files=["res://.godot/imported/Prop_Bathroom_Towel_Rack_Stocked.obj-692c2908ec88fcfe0ef6ae6e200485e1.mesh", "res://.godot/imported/Prop_Bathroom_Towel_Rack_Stocked.obj-692c2908ec88fcfe0ef6ae6e200485e1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

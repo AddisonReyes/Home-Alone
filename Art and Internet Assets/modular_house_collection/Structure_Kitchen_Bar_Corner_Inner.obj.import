@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dxiv0u6j6i0ti"
+path="res://.godot/imported/Structure_Kitchen_Bar_Corner_Inner.obj-51b545ab596076f99e7a64d418e05efb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Structure_Kitchen_Bar_Corner_Inner.obj-51b545ab596076f99e7a64d418e05efb.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Bar_Corner_Inner.obj"
+dest_files=["res://.godot/imported/Structure_Kitchen_Bar_Corner_Inner.obj-51b545ab596076f99e7a64d418e05efb.mesh", "res://.godot/imported/Structure_Kitchen_Bar_Corner_Inner.obj-51b545ab596076f99e7a64d418e05efb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

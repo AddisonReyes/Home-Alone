@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctrgaftc4emk4"
+path="res://.godot/imported/Structure_Kitchen_Cabinet_Base_Corner.obj-f1a27f3ce516cd3bcba4308f9129c75f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Structure_Kitchen_Cabinet_Base_Corner.obj-f1a27f3ce516cd3bcba4308f9129c75f.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Base_Corner.obj"
+dest_files=["res://.godot/imported/Structure_Kitchen_Cabinet_Base_Corner.obj-f1a27f3ce516cd3bcba4308f9129c75f.mesh", "res://.godot/imported/Structure_Kitchen_Cabinet_Base_Corner.obj-f1a27f3ce516cd3bcba4308f9129c75f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

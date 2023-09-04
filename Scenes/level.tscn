@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://hndbnorxsnms"]
+[gd_scene load_steps=30 format=3 uid="uid://hndbnorxsnms"]
 
 [ext_resource type="MeshLibrary" uid="uid://botp7xmexpxib" path="res://Source/tilesSet.meshlib" id="1_0o1s5"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_h3loj"]
 [ext_resource type="PackedScene" uid="uid://cp1ghrpem673k" path="res://Scenes/monster.tscn" id="2_2cokb"]
 [ext_resource type="PackedScene" uid="uid://dx4av4r25u7m4" path="res://Scenes/player.tscn" id="2_sbb0v"]
+[ext_resource type="ArrayMesh" uid="uid://bffgn71vvga2u" path="res://Art and Internet Assets/modular_house_collection/Prop_Bedroom_Bed_Bunk.obj" id="3_73x6l"]
 [ext_resource type="PackedScene" uid="uid://cih8wgehdsot8" path="res://Scenes/door.tscn" id="5_8umnb"]
 [ext_resource type="PackedScene" uid="uid://bps4vwvcpajwt" path="res://Scenes/frontDoor.tscn" id="6_ui7s7"]
 [ext_resource type="PackedScene" uid="uid://ccvdfkxkbcjfg" path="res://Scenes/lamp.tscn" id="7_6wo6b"]
@@ -65,6 +66,10 @@ metadata/_editor_floor_ = Vector3(0, 3, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_cc86v")
+
+[node name="PropBedroomBedBunk" type="MeshInstance3D" parent="WorldEnvironment"]
+mesh = ExtResource("3_73x6l")
+skeleton = NodePath("../..")
 
 [node name="Monster" parent="." instance=ExtResource("2_2cokb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2451, -1.49518, 6.5572)

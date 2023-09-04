@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dc476c405eile"
+path="res://.godot/imported/Prop_Misc_Rug_Square.obj-2628ce0586b62286feb3f62d84763a0b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Misc_Rug_Square.obj-2628ce0586b62286feb3f62d84763a0b.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Rug_Square.obj"
+dest_files=["res://.godot/imported/Prop_Misc_Rug_Square.obj-2628ce0586b62286feb3f62d84763a0b.mesh", "res://.godot/imported/Prop_Misc_Rug_Square.obj-2628ce0586b62286feb3f62d84763a0b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

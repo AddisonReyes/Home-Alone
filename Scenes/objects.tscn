@@ -1,0 +1,771 @@
+[gd_scene load_steps=104 format=3 uid="uid://bkif5flgu84vk"]
+
+[ext_resource type="ArrayMesh" uid="uid://djfs607dhem" path="res://Art and Internet Assets/modular_house_collection/Prop_Bathroom_Shower.obj" id="1_w2r5v"]
+[ext_resource type="PackedScene" uid="uid://dx4av4r25u7m4" path="res://Scenes/player.tscn" id="2_0ufyr"]
+[ext_resource type="ArrayMesh" uid="uid://fnl0nnfp8l3s" path="res://Art and Internet Assets/modular_house_collection/Prop_Bathroom_Toilet_Paper_Dispenser.obj" id="2_kc717"]
+[ext_resource type="ArrayMesh" uid="uid://d0bow18pm6gmo" path="res://Art and Internet Assets/modular_house_collection/Prop_Bathroom_Towel_Rack.obj" id="3_d67cp"]
+[ext_resource type="ArrayMesh" uid="uid://bpydjkge57gso" path="res://Art and Internet Assets/modular_house_collection/Prop_Bathroom_Towel_Rack_Stocked.obj" id="4_nm6vq"]
+[ext_resource type="ArrayMesh" uid="uid://bffgn71vvga2u" path="res://Art and Internet Assets/modular_house_collection/Prop_Bedroom_Bed_Bunk.obj" id="5_w7rs4"]
+[ext_resource type="ArrayMesh" uid="uid://dkfwnkuulwgxa" path="res://Art and Internet Assets/modular_house_collection/Prop_Bedroom_Bed_Queen.obj" id="6_wfmyi"]
+[ext_resource type="ArrayMesh" uid="uid://cojdj7pscfbbb" path="res://Art and Internet Assets/modular_house_collection/Prop_Bedroom_Bed_Single.obj" id="7_ecobv"]
+[ext_resource type="ArrayMesh" uid="uid://bv6hje6ot0omb" path="res://Art and Internet Assets/modular_house_collection/Prop_Bedroom_Dresser_Double.obj" id="8_6p8pw"]
+[ext_resource type="ArrayMesh" uid="uid://b84j36l2mm1ds" path="res://Art and Internet Assets/modular_house_collection/Prop_Bedroom_Dresser_Single.obj" id="10_niiiw"]
+[ext_resource type="ArrayMesh" uid="uid://ceo10se52e8mk" path="res://Art and Internet Assets/modular_house_collection/Prop_Bedroom_Dresser_Single_Tall.obj" id="11_1vit4"]
+[ext_resource type="ArrayMesh" uid="uid://ccnah8tfqq4oj" path="res://Art and Internet Assets/modular_house_collection/Prop_Dining_Room_Chair.obj" id="14_3wh6f"]
+[ext_resource type="ArrayMesh" uid="uid://dygstvt3t618j" path="res://Art and Internet Assets/modular_house_collection/Prop_Dining_Room_Table_Rectangle.obj" id="18_vckh4"]
+[ext_resource type="ArrayMesh" uid="uid://c5h074rvuod0b" path="res://Art and Internet Assets/modular_house_collection/Prop_Dining_Room_Table_Square.obj" id="19_k7jno"]
+[ext_resource type="ArrayMesh" uid="uid://bhyebxrjemb8t" path="res://Art and Internet Assets/modular_house_collection/Prop_Fireplace.obj" id="20_db024"]
+[ext_resource type="ArrayMesh" uid="uid://d3bqtxuijpls2" path="res://Art and Internet Assets/modular_house_collection/Prop_Fireplace_Mid.obj" id="21_xhs1b"]
+[ext_resource type="ArrayMesh" uid="uid://bg8of3igqm6n0" path="res://Art and Internet Assets/modular_house_collection/Prop_Kitchen_Bar_Stool.obj" id="22_qhs4a"]
+[ext_resource type="ArrayMesh" uid="uid://bm084qdvgyplp" path="res://Art and Internet Assets/modular_house_collection/Prop_Kitchen_Microwave.obj" id="23_vl1he"]
+[ext_resource type="ArrayMesh" uid="uid://2uf2ykbm0fnw" path="res://Art and Internet Assets/modular_house_collection/Prop_Kitchen_Oven.obj" id="24_5hx7n"]
+[ext_resource type="ArrayMesh" uid="uid://bq536q6g3ahs7" path="res://Art and Internet Assets/modular_house_collection/Prop_Kitchen_Refrigerator.obj" id="25_3wl8r"]
+[ext_resource type="ArrayMesh" uid="uid://ban8griwmg32f" path="res://Art and Internet Assets/modular_house_collection/Prop_Kitchen_Trashcan.obj" id="26_uj3x8"]
+[ext_resource type="ArrayMesh" uid="uid://dfgft78ng2htd" path="res://Art and Internet Assets/modular_house_collection/Prop_Living_Room_Coffee_Table.obj" id="27_sbwlv"]
+[ext_resource type="ArrayMesh" uid="uid://b8x1x0y7inpnb" path="res://Art and Internet Assets/modular_house_collection/Prop_Living_Room_Modular_Couch_Center.obj" id="28_ne0v6"]
+[ext_resource type="ArrayMesh" uid="uid://dr0d25wrf01w5" path="res://Art and Internet Assets/modular_house_collection/Prop_Living_Room_Modular_Couch_Corner.obj" id="29_ijq6s"]
+[ext_resource type="ArrayMesh" uid="uid://dvxxfdx58xfu1" path="res://Art and Internet Assets/modular_house_collection/Prop_Living_Room_Modular_Couch_End.obj" id="30_yvx0w"]
+[ext_resource type="ArrayMesh" uid="uid://cgx1k2k6p87su" path="res://Art and Internet Assets/modular_house_collection/Prop_Living_Room_Modular_Couch_Leg_Rest.obj" id="31_4qkex"]
+[ext_resource type="ArrayMesh" uid="uid://nmvj8hperbo" path="res://Art and Internet Assets/modular_house_collection/Prop_Living_Room_Side_Table.obj" id="32_8jcjo"]
+[ext_resource type="ArrayMesh" uid="uid://dxflprkngkmdg" path="res://Art and Internet Assets/modular_house_collection/Prop_Living_Room_TV.obj" id="33_jr18l"]
+[ext_resource type="ArrayMesh" uid="uid://dug012d15ku85" path="res://Art and Internet Assets/modular_house_collection/Prop_Living_Room_TV_Stand.obj" id="34_pygao"]
+[ext_resource type="ArrayMesh" uid="uid://brpvnn2msks0b" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Lamp.obj" id="39_3e4mp"]
+[ext_resource type="Script" path="res://Scripts/PropMiscLamp.gd" id="39_ke2wi"]
+[ext_resource type="ArrayMesh" uid="uid://bdcrr8ca81j1h" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Picture_Landscape.obj" id="40_hdtsj"]
+[ext_resource type="ArrayMesh" uid="uid://cknq5eo31fku0" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Picture_Portrait.obj" id="41_1cx1b"]
+[ext_resource type="ArrayMesh" uid="uid://bdwg0rx0wo4et" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Picture_Square_Large.obj" id="42_a83hu"]
+[ext_resource type="ArrayMesh" uid="uid://cq35p7qk1k86p" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Picture_Square_Small.obj" id="43_wpysq"]
+[ext_resource type="ArrayMesh" uid="uid://7lrayb4cydly" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Rug_Circle.obj" id="44_rkx13"]
+[ext_resource type="ArrayMesh" uid="uid://drp8su5yogtxp" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Rug_Rectangle.obj" id="45_48nkt"]
+[ext_resource type="ArrayMesh" uid="uid://7d3skp0d3qa4" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Rug_Rounded_Ends.obj" id="46_4na44"]
+[ext_resource type="ArrayMesh" uid="uid://dc476c405eile" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Rug_Square.obj" id="47_otb4a"]
+[ext_resource type="ArrayMesh" uid="uid://y4ekx3e4um0v" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Trashcan.obj" id="48_qwgnx"]
+[ext_resource type="ArrayMesh" uid="uid://53rk74qb6b6g" path="res://Art and Internet Assets/modular_house_collection/Structure_Bathroom_Cabinet_End.obj" id="54_sid83"]
+[ext_resource type="ArrayMesh" uid="uid://drav3vfb0lre5" path="res://Art and Internet Assets/modular_house_collection/Structure_Bathroom_Cabinet_Full.obj" id="55_u2cnb"]
+[ext_resource type="ArrayMesh" uid="uid://6alkgylu36nm" path="res://Art and Internet Assets/modular_house_collection/Structure_Bathroom_Cabinet_Half.obj" id="56_adnur"]
+[ext_resource type="ArrayMesh" uid="uid://b2hcjxsm315o7" path="res://Art and Internet Assets/modular_house_collection/Structure_Bathroom_Cabinet_Sink.obj" id="57_x0ut4"]
+[ext_resource type="ArrayMesh" uid="uid://ctrgaftc4emk4" path="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Base_Corner.obj" id="68_hkath"]
+[ext_resource type="ArrayMesh" uid="uid://ceoc1u4ammnlw" path="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Base_Full.obj" id="70_b2kot"]
+[ext_resource type="ArrayMesh" uid="uid://0nfui0878wdb" path="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Base_Half.obj" id="71_of7ps"]
+[ext_resource type="ArrayMesh" uid="uid://biwm08rqekyd1" path="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Base_Sink.obj" id="72_ofhs3"]
+[ext_resource type="ArrayMesh" uid="uid://dbtrcxfs7hf8d" path="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Side_Shelves.obj" id="73_rdgol"]
+[ext_resource type="ArrayMesh" uid="uid://dbsuavyyapfjt" path="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Wall_Corner.obj" id="74_vydq5"]
+[ext_resource type="ArrayMesh" uid="uid://uupwua4hgd4k" path="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Wall_Full.obj" id="75_anhug"]
+[ext_resource type="ArrayMesh" uid="uid://cmh8r6x8b5wbf" path="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Wall_Half.obj" id="76_an1eu"]
+[ext_resource type="ArrayMesh" uid="uid://br4dvya5bahp6" path="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Wall_Open.obj" id="77_8gfub"]
+[ext_resource type="ArrayMesh" uid="uid://cog46ajvav5tl" path="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Wall_Short.obj" id="78_fr1st"]
+[ext_resource type="ArrayMesh" uid="uid://f0ub0son73ff" path="res://Art and Internet Assets/modular_house_collection/Prop_Bathroom_Toilet.obj" id="79_rv25r"]
+[ext_resource type="ArrayMesh" uid="uid://dums40g26fe44" path="res://Art and Internet Assets/modular_house_collection/Prop_Bathroom_Shower_Curtain.obj" id="80_q88xo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5blb"]
+size = Vector3(0.233876, 0.126508, 0.144299)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4tq0l"]
+size = Vector3(0.695878, 0.125023, 0.108918)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bvsvt"]
+size = Vector3(0.695878, 0.546374, 0.108918)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g55mw"]
+size = Vector3(1.41147, 2.05288, 2.2047)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gvjaj"]
+size = Vector3(0.442971, 1.62653, 0.258655)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o4lre"]
+size = Vector3(2.1616, 1, 2.5848)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1nkr4"]
+size = Vector3(2.15935, 0.525797, 0.100788)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aabeg"]
+size = Vector3(1.97184, 0.954493, 0.890428)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0j6od"]
+size = Vector3(1, 0.946912, 0.883269)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ad0h2"]
+size = Vector3(1, 1.58584, 0.920177)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2laf8"]
+size = Vector3(0.58067, 1.14366, 0.584507)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yv41d"]
+size = Vector3(2.97119, 0.95591, 1.97405)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ujad"]
+size = Vector3(1.98267, 0.958793, 1.96261)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ou1gx"]
+size = Vector3(1.64962, 2.1076, 1.55676)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwmpt"]
+size = Vector3(0.860259, 1, 0.832553)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmtdw"]
+size = Vector3(0.429907, 0.893039, 0.444538)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ul13o"]
+size = Vector3(0.593405, 0.380438, 0.524512)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4hend"]
+size = Vector3(0.792367, 1, 0.835505)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ok50m"]
+size = Vector3(0.712627, 1.06476, 0.605987)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxfpd"]
+size = Vector3(0.899327, 2.01418, 0.813854)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rjsfk"]
+size = Vector3(0.49167, 0.711955, 0.367765)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xebh"]
+size = Vector3(1.76729, 0.394556, 0.770371)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_usp61"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uurs6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s08w8"]
+size = Vector3(0.180874, 0.756661, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mpp1i"]
+size = Vector3(1, 0.489671, 1.04872)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yrphh"]
+size = Vector3(0.694738, 0.696961, 0.797737)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lkmq3"]
+size = Vector3(1, 0.675917, 0.831502)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qd4ae"]
+size = Vector3(0.420931, 0.785877, 0.372389)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_67blj"]
+size = Vector3(0.319067, 0.368739, 0.329948)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8j5mj"]
+size = Vector3(0.428169, 1.00863, 0.760202)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pts7d"]
+size = Vector3(1, 1, 0.753824)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrv3p"]
+size = Vector3(0.535928, 1.02388, 0.760479)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0oq24"]
+size = Vector3(1, 1, 0.809572)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tsg2c"]
+size = Vector3(1, 1.00122, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yexuq"]
+size = Vector3(1, 0.988587, 0.876083)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_21phl"]
+size = Vector3(0.583295, 0.991399, 0.832371)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o6a4p"]
+size = Vector3(1, 1.01302, 0.891379)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qwr0s"]
+size = Vector3(0.414437, 0.749735, 0.380724)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cnqqk"]
+size = Vector3(1, 1.14714, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_anm6q"]
+size = Vector3(1, 1.12527, 0.550654)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v58s0"]
+size = Vector3(0.505548, 1.11212, 0.541155)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o4i2c"]
+size = Vector3(1, 1.12703, 0.538323)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h6yp4"]
+size = Vector3(1, 0.49552, 0.528583)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_etvqw"]
+size = Vector3(0.596459, 1, 0.851627)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xalrb"]
+size = Vector3(1, 1.91823, 0.0751376)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fq775"]
+size = Vector3(1, 1, 2.01713)
+
+[node name="Objects" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("2_0ufyr")]
+transform = Transform3D(0.0839909, 0, 0.996467, 0, 1, 0, -0.996467, 0, 0.0839909, -13.6174, -0.89727, 0.720125)
+
+[node name="PropBathroomToiletPaperDispenser" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.49162, 1.19209e-07, 0.571923)
+
+[node name="PropBathroomToiletPaperDispenser" type="MeshInstance3D" parent="PropBathroomToiletPaperDispenser"]
+mesh = ExtResource("2_kc717")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBathroomToiletPaperDispenser"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.803329, -0.0170605)
+shape = SubResource("BoxShape3D_o5blb")
+
+[node name="PropBathroomTowelRack" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8442, -1.19209e-07, -1.09112)
+
+[node name="PropBathroomTowelRack" type="MeshInstance3D" parent="PropBathroomTowelRack"]
+mesh = ExtResource("3_d67cp")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBathroomTowelRack"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58907, -0.390824)
+shape = SubResource("BoxShape3D_4tq0l")
+
+[node name="PropBathroomTowelRackStocked" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.689, 0, -2.48777)
+
+[node name="PropBathroomTowelRackStocked" type="MeshInstance3D" parent="PropBathroomTowelRackStocked"]
+mesh = ExtResource("4_nm6vq")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBathroomTowelRackStocked"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.362719, -0.39481)
+shape = SubResource("BoxShape3D_bvsvt")
+
+[node name="PropBedroomBedBunk" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54105, 4.76837e-07, 5.22492)
+
+[node name="PropBedroomBedBunk" type="MeshInstance3D" parent="PropBedroomBedBunk"]
+mesh = ExtResource("5_w7rs4")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomBedBunk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00542736, 1.07937, 0.000925511)
+shape = SubResource("BoxShape3D_g55mw")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PropBedroomBedBunk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.269426, 0.833241, 1.41958)
+shape = SubResource("BoxShape3D_gvjaj")
+
+[node name="PropBedroomBedQueen" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13093, 4.76837e-07, 5.80083)
+
+[node name="PropBedroomBedQueen" type="MeshInstance3D" parent="PropBedroomBedQueen"]
+mesh = ExtResource("6_wfmyi")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomBedQueen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506525, 0)
+shape = SubResource("BoxShape3D_o4lre")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PropBedroomBedQueen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30698, -1.24979)
+shape = SubResource("BoxShape3D_1nkr4")
+
+[node name="PropBedroomBedSingle" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8248, -4.76837e-07, 5.58286)
+
+[node name="PropBedroomBedSingle" type="MeshInstance3D" parent="PropBedroomBedSingle"]
+mesh = ExtResource("7_ecobv")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomBedSingle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506525, 0)
+shape = SubResource("BoxShape3D_o4lre")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PropBedroomBedSingle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30698, -1.24979)
+shape = SubResource("BoxShape3D_1nkr4")
+
+[node name="PropBedroomDresserDouble" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6099, -4.76837e-07, 4.83027)
+
+[node name="PropBedroomDresserDouble" type="MeshInstance3D" parent="PropBedroomDresserDouble"]
+mesh = ExtResource("8_6p8pw")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomDresserDouble"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499789, 0.47988, 0)
+shape = SubResource("BoxShape3D_aabeg")
+
+[node name="PropBedroomDresserSingle" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3147, 2.38419e-07, 6.71881)
+
+[node name="PropBedroomDresserSingle" type="MeshInstance3D" parent="PropBedroomDresserSingle"]
+mesh = ExtResource("10_niiiw")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomDresserSingle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.465953, 0)
+shape = SubResource("BoxShape3D_0j6od")
+
+[node name="PropBedroomDresserSingleTall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9517, 1.90735e-06, 4.39448)
+
+[node name="PropBedroomDresserSingleTall" type="MeshInstance3D" parent="PropBedroomDresserSingleTall"]
+mesh = ExtResource("11_1vit4")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomDresserSingleTall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.824026, 0)
+shape = SubResource("BoxShape3D_ad0h2")
+
+[node name="PropDiningRoomChair" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63937, -4.76837e-07, -2.60883)
+
+[node name="PropDiningRoomChair" type="MeshInstance3D" parent="PropDiningRoomChair"]
+mesh = ExtResource("14_3wh6f")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropDiningRoomChair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.571114, 0)
+shape = SubResource("BoxShape3D_2laf8")
+
+[node name="PropDiningRoomTableRectangle" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.05939, 0, -13.405)
+
+[node name="PropDiningRoomTableRectangle" type="MeshInstance3D" parent="PropDiningRoomTableRectangle"]
+mesh = ExtResource("18_vckh4")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropDiningRoomTableRectangle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.473034, 0)
+shape = SubResource("BoxShape3D_yv41d")
+
+[node name="PropDiningRoomTableSquare" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70529, 0, -11.6513)
+
+[node name="PropDiningRoomTableSquare" type="MeshInstance3D" parent="PropDiningRoomTableSquare"]
+mesh = ExtResource("19_k7jno")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropDiningRoomTableSquare"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.479804, 0)
+shape = SubResource("BoxShape3D_5ujad")
+
+[node name="PropFireplace" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05824, 2.38419e-07, -4.41456)
+
+[node name="PropFireplace" type="MeshInstance3D" parent="PropFireplace"]
+mesh = ExtResource("20_db024")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropFireplace"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93944, -0.396979)
+shape = SubResource("BoxShape3D_ou1gx")
+
+[node name="PropFireplaceMid" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.73602, 0, -7.14545)
+
+[node name="PropFireplaceMid" type="MeshInstance3D" parent="PropFireplaceMid"]
+mesh = ExtResource("21_xhs1b")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropFireplaceMid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501528, -0.495181)
+shape = SubResource("BoxShape3D_hwmpt")
+
+[node name="PropKitchenBarStool" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.472, 0, -5.77347)
+
+[node name="PropKitchenBarStool" type="MeshInstance3D" parent="PropKitchenBarStool"]
+mesh = ExtResource("22_qhs4a")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenBarStool"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.453817, 0)
+shape = SubResource("BoxShape3D_gmtdw")
+
+[node name="PropKitchenMicrowave" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3796, 0, -7.85534)
+
+[node name="PropKitchenMicrowave" type="MeshInstance3D" parent="PropKitchenMicrowave"]
+mesh = ExtResource("23_vl1he")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenMicrowave"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.199506, -0.133468)
+shape = SubResource("BoxShape3D_ul13o")
+
+[node name="PropKitchenOven" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.791145, 0, -9.00882)
+
+[node name="PropKitchenOven" type="MeshInstance3D" parent="PropKitchenOven"]
+mesh = ExtResource("24_5hx7n")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenOven"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.500373, 0)
+shape = SubResource("BoxShape3D_4hend")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PropKitchenOven"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43253, 0)
+shape = SubResource("BoxShape3D_ok50m")
+
+[node name="PropKitchenRefrigerator" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398081, 0, -6.12568)
+
+[node name="PropKitchenRefrigerator" type="MeshInstance3D" parent="PropKitchenRefrigerator"]
+mesh = ExtResource("25_3wl8r")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenRefrigerator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03952, 0)
+shape = SubResource("BoxShape3D_gxfpd")
+
+[node name="PropKitchenTrashcan" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8284, 2.38419e-07, -3.43421)
+
+[node name="PropKitchenTrashcan" type="MeshInstance3D" parent="PropKitchenTrashcan"]
+mesh = ExtResource("26_uj3x8")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenTrashcan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.359224, 0)
+shape = SubResource("BoxShape3D_rjsfk")
+
+[node name="PropLivingRoomCoffeeTable" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.45034, 0, -5.37719)
+
+[node name="PropLivingRoomCoffeeTable" type="MeshInstance3D" parent="PropLivingRoomCoffeeTable"]
+mesh = ExtResource("27_sbwlv")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomCoffeeTable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.213926, 0)
+shape = SubResource("BoxShape3D_6xebh")
+
+[node name="PropLivingRoomModularCouchCenter" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45969, 2.38419e-07, -3.76662)
+
+[node name="PropLivingRoomModularCouchCenter" type="MeshInstance3D" parent="PropLivingRoomModularCouchCenter"]
+mesh = ExtResource("28_ne0v6")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomModularCouchCenter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.480608, 0)
+shape = SubResource("BoxShape3D_usp61")
+
+[node name="PropLivingRoomModularCouchCorner" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.40506, 0, -5.53306)
+
+[node name="PropLivingRoomModularCouchCorner" type="MeshInstance3D" parent="PropLivingRoomModularCouchCorner"]
+mesh = ExtResource("29_ijq6s")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomModularCouchCorner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.485358, 0)
+shape = SubResource("BoxShape3D_uurs6")
+
+[node name="PropLivingRoomModularCouchEnd" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.07634, 0, -6.32916)
+
+[node name="PropLivingRoomModularCouchEnd" type="MeshInstance3D" parent="PropLivingRoomModularCouchEnd"]
+mesh = ExtResource("30_yvx0w")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomModularCouchEnd"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.427239, 0.381758, 0)
+shape = SubResource("BoxShape3D_s08w8")
+
+[node name="PropLivingRoomModularCouchLegRest" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4264, 0, -7.82929)
+
+[node name="PropLivingRoomModularCouchLegRest" type="MeshInstance3D" parent="PropLivingRoomModularCouchLegRest"]
+mesh = ExtResource("31_4qkex")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomModularCouchLegRest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.241392, -0.034538)
+shape = SubResource("BoxShape3D_mpp1i")
+
+[node name="PropLivingRoomSideTable" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1877, 0, -7.34224)
+
+[node name="PropLivingRoomSideTable" type="MeshInstance3D" parent="PropLivingRoomSideTable"]
+mesh = ExtResource("32_8jcjo")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomSideTable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.356428, 0.00884151)
+shape = SubResource("BoxShape3D_yrphh")
+
+[node name="PropLivingRoomTv2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3871, 0, -5.58342)
+mesh = ExtResource("33_jr18l")
+
+[node name="PropLivingRoomTvStand" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9637, 0, -4.39923)
+
+[node name="PropLivingRoomTvStand" type="MeshInstance3D" parent="PropLivingRoomTvStand"]
+mesh = ExtResource("34_pygao")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomTvStand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.370505, 0.0269265)
+shape = SubResource("BoxShape3D_lkmq3")
+
+[node name="PropLivingRoomTv" type="MeshInstance3D" parent="PropLivingRoomTvStand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68716, -0.0291829)
+mesh = ExtResource("33_jr18l")
+skeleton = NodePath("../..")
+
+[node name="PropMiscLamp" type="StaticBody3D" parent="." groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1412, 0, -2.32924)
+script = ExtResource("39_ke2wi")
+
+[node name="PropMiscLamp" type="MeshInstance3D" parent="PropMiscLamp"]
+mesh = ExtResource("39_3e4mp")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropMiscLamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412114, 0)
+shape = SubResource("BoxShape3D_qd4ae")
+
+[node name="Timer" type="Timer" parent="PropMiscLamp"]
+wait_time = 0.6
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PropMiscLamp"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.00205231, 1.50451, 1.19209e-07)
+visible = false
+light_energy = 6.0
+light_volumetric_fog_energy = 6.714
+light_size = 0.74
+distance_fade_enabled = true
+spot_range = 3.67709
+spot_attenuation = 0.0603707
+spot_angle = 33.7616
+
+[node name="PropMiscPictureLandscape" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6798, 0, -7.327)
+mesh = ExtResource("40_hdtsj")
+
+[node name="PropMiscPicturePortrait" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1881, 0, -8.08525)
+mesh = ExtResource("41_1cx1b")
+
+[node name="PropMiscPictureSquareLarge" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2777, 0, -9.28502)
+mesh = ExtResource("42_a83hu")
+
+[node name="PropMiscPictureSquareSmall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8809, 0, -9.69725)
+mesh = ExtResource("43_wpysq")
+
+[node name="PropMiscRugCircle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64655, 0, -12.9376)
+mesh = ExtResource("44_rkx13")
+
+[node name="PropMiscRugRectangle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.73817, 0, -11.0101)
+mesh = ExtResource("45_48nkt")
+
+[node name="PropMiscRugRoundedEnds" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21105, 0, -15.1395)
+mesh = ExtResource("46_4na44")
+
+[node name="PropMiscRugSquare" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12045, 0, -9.93906)
+mesh = ExtResource("47_otb4a")
+
+[node name="PropMiscTrashcan" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.81861, 0, -8.6239)
+
+[node name="PropMiscTrashcan" type="MeshInstance3D" parent="PropMiscTrashcan"]
+mesh = ExtResource("48_qwgnx")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropMiscTrashcan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.177278, 0)
+shape = SubResource("BoxShape3D_67blj")
+
+[node name="StructureBathroomCabinetEnd" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4271, 0, -9.8577)
+
+[node name="StructureBathroomCabinetEnd" type="MeshInstance3D" parent="StructureBathroomCabinetEnd"]
+mesh = ExtResource("54_sid83")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureBathroomCabinetEnd"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.293291, 0.507548, -0.0247025)
+shape = SubResource("BoxShape3D_8j5mj")
+
+[node name="StructureBathroomCabinetFull" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85175, 0, -18.946)
+
+[node name="StructureBathroomCabinetFull" type="MeshInstance3D" parent="StructureBathroomCabinetFull"]
+mesh = ExtResource("55_u2cnb")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureBathroomCabinetFull"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.517115, -0.0228693)
+shape = SubResource("BoxShape3D_pts7d")
+
+[node name="StructureBathroomCabinetHalf" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6504, 0, -10.0578)
+
+[node name="StructureBathroomCabinetHalf" type="MeshInstance3D" parent="StructureBathroomCabinetHalf"]
+mesh = ExtResource("56_adnur")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureBathroomCabinetHalf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.242487, 0.523644, -0.0265048)
+shape = SubResource("BoxShape3D_hrv3p")
+
+[node name="StructureBathroomCabinetSink" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6313, 0, -10.7136)
+
+[node name="StructureBathroomCabinetSink" type="MeshInstance3D" parent="StructureBathroomCabinetSink"]
+mesh = ExtResource("57_x0ut4")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureBathroomCabinetSink"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.509428, 0)
+shape = SubResource("BoxShape3D_0oq24")
+
+[node name="StructureKitchenCabinetBaseCorner" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.46896, 4.76837e-07, -13.6883)
+
+[node name="StructureKitchenCabinetBaseCorner" type="MeshInstance3D" parent="StructureKitchenCabinetBaseCorner"]
+mesh = ExtResource("68_hkath")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetBaseCorner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.507249, 0)
+shape = SubResource("BoxShape3D_tsg2c")
+
+[node name="StructureKitchenCabinetBaseFull" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11942, 0, -12.6539)
+
+[node name="StructureKitchenCabinetBaseFull" type="MeshInstance3D" parent="StructureKitchenCabinetBaseFull"]
+mesh = ExtResource("70_b2kot")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetBaseFull"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.523454, -0.0694923)
+shape = SubResource("BoxShape3D_yexuq")
+
+[node name="StructureKitchenCabinetBaseHalf" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9758, 0, -11.6613)
+
+[node name="StructureKitchenCabinetBaseHalf" type="MeshInstance3D" parent="StructureKitchenCabinetBaseHalf"]
+mesh = ExtResource("71_of7ps")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetBaseHalf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236172, 0.510238, -0.0797892)
+shape = SubResource("BoxShape3D_21phl")
+
+[node name="StructureKitchenCabinetBaseSink" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0134, 0, -13.2572)
+
+[node name="StructureKitchenCabinetBaseSink" type="MeshInstance3D" parent="StructureKitchenCabinetBaseSink"]
+mesh = ExtResource("72_ofhs3")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetBaseSink"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.503913, -0.0603504)
+shape = SubResource("BoxShape3D_o6a4p")
+
+[node name="StructureKitchenCabinetSideShelves2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0326, 0, -12.2985)
+
+[node name="StructureKitchenCabinetSideShelves" type="MeshInstance3D" parent="StructureKitchenCabinetSideShelves2"]
+mesh = ExtResource("73_rdgol")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetSideShelves2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.315813, 1.91663, -0.265979)
+shape = SubResource("BoxShape3D_qwr0s")
+
+[node name="StructureKitchenCabinetWallCorner" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5744, 0, -12.4468)
+
+[node name="StructureKitchenCabinetWallCorner" type="MeshInstance3D" parent="StructureKitchenCabinetWallCorner"]
+mesh = ExtResource("74_vydq5")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallCorner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11887, 0)
+shape = SubResource("BoxShape3D_cnqqk")
+
+[node name="StructureKitchenCabinetWallFull" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3916, -4.76837e-07, -14.3474)
+
+[node name="StructureKitchenCabinetWallFull" type="MeshInstance3D" parent="StructureKitchenCabinetWallFull"]
+mesh = ExtResource("75_anhug")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallFull"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.10751, -0.230513)
+shape = SubResource("BoxShape3D_anm6q")
+
+[node name="StructureKitchenCabinetWallHalf" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3873, 4.76837e-07, -11.6082)
+
+[node name="StructureKitchenCabinetWallHalf" type="MeshInstance3D" parent="StructureKitchenCabinetWallHalf"]
+mesh = ExtResource("76_an1eu")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallHalf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254057, 2.09732, -0.237171)
+shape = SubResource("BoxShape3D_v58s0")
+
+[node name="StructureKitchenCabinetWallOpen" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2971, 0, -15.1279)
+
+[node name="StructureKitchenCabinetWallOpen" type="MeshInstance3D" parent="StructureKitchenCabinetWallOpen"]
+mesh = ExtResource("77_8gfub")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallOpen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07753, -0.236796)
+shape = SubResource("BoxShape3D_o4i2c")
+
+[node name="KitchenCabineWallShort" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3159, 4.76837e-07, -13.5213)
+
+[node name="StructureKitchenCabinetWallShort" type="MeshInstance3D" parent="KitchenCabineWallShort"]
+mesh = ExtResource("78_fr1st")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KitchenCabineWallShort"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.40529, -0.23852)
+shape = SubResource("BoxShape3D_h6yp4")
+
+[node name="Toilet" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7545, 0, -14.516)
+
+[node name="PropBathroomToilet" type="MeshInstance3D" parent="Toilet"]
+mesh = ExtResource("79_rv25r")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Toilet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53391, -0.00689697)
+shape = SubResource("BoxShape3D_etvqw")
+
+[node name="ShowerCurtain" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7254, 0, -16.2535)
+
+[node name="PropBathroomShowerCurtain" type="MeshInstance3D" parent="ShowerCurtain"]
+mesh = ExtResource("80_q88xo")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShowerCurtain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10804, 1.0397, -0.416224)
+shape = SubResource("BoxShape3D_xalrb")
+
+[node name="Shower" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9631, 0, -15.9159)
+
+[node name="PropBathroomShower" type="MeshInstance3D" parent="Shower"]
+mesh = ExtResource("1_w2r5v")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.494926, 0.495693)
+shape = SubResource("BoxShape3D_fq775")
+
+[connection signal="timeout" from="PropMiscLamp/Timer" to="PropMiscLamp" method="_on_timer_timeout"]

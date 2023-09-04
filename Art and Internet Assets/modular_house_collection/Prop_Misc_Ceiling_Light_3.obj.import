@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cgmlby2lcpfl8"
+path="res://.godot/imported/Prop_Misc_Ceiling_Light_3.obj-ff1b3f627d374b2cf7dbf4ba4c59aeab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Misc_Ceiling_Light_3.obj-ff1b3f627d374b2cf7dbf4ba4c59aeab.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Ceiling_Light_3.obj"
+dest_files=["res://.godot/imported/Prop_Misc_Ceiling_Light_3.obj-ff1b3f627d374b2cf7dbf4ba4c59aeab.mesh", "res://.godot/imported/Prop_Misc_Ceiling_Light_3.obj-ff1b3f627d374b2cf7dbf4ba4c59aeab.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

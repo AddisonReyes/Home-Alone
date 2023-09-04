@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cmh8r6x8b5wbf"
+path="res://.godot/imported/Structure_Kitchen_Cabinet_Wall_Half.obj-22adf51ae056657272f49ddcf5431354.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Structure_Kitchen_Cabinet_Wall_Half.obj-22adf51ae056657272f49ddcf5431354.mesh"]
+
+source_file="res://Art and Internet Assets/modular_house_collection/Structure_Kitchen_Cabinet_Wall_Half.obj"
+dest_files=["res://.godot/imported/Structure_Kitchen_Cabinet_Wall_Half.obj-22adf51ae056657272f49ddcf5431354.mesh", "res://.godot/imported/Structure_Kitchen_Cabinet_Wall_Half.obj-22adf51ae056657272f49ddcf5431354.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
