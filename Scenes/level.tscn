@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://hndbnorxsnms"]
+[gd_scene load_steps=29 format=3 uid="uid://hndbnorxsnms"]
 
 [ext_resource type="MeshLibrary" uid="uid://botp7xmexpxib" path="res://Source/tilesSet.meshlib" id="1_0o1s5"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_h3loj"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" path="res://Scripts/MiniAisleSwitch.gd" id="21_4lhxf"]
 [ext_resource type="Script" path="res://Scripts/Room4Switch.gd" id="22_5f8nl"]
 [ext_resource type="Script" path="res://Scripts/ServiceRoomSwitch.gd" id="23_8m17t"]
+[ext_resource type="PackedScene" uid="uid://dhdm6m1ymi7fa" path="res://Scenes/floorLamp.tscn" id="24_aakcc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0qmab"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -40,7 +41,6 @@ tonemap_mode = 2
 sdfgi_read_sky_light = false
 glow_normalized = true
 glow_blend_mode = 0
-fog_enabled = true
 fog_light_color = Color(0, 0.00392157, 0, 1)
 fog_light_energy = 0.0
 fog_density = 0.222
@@ -55,6 +55,7 @@ agent_max_climb = 0.0
 script = ExtResource("1_h3loj")
 
 [node name="Ceiling" type="GridMap" parent="."]
+visible = false
 mesh_library = ExtResource("1_0o1s5")
 cell_size = Vector3(1, 1, 1)
 data = {
@@ -372,3 +373,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.023
 
 [node name="Switch20" parent="Objects/Lamps/ServiceRoom" instance=ExtResource("8_3j6wv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.0108, 0.42915, 25.9865)
+
+[node name="FloorLamps" type="Node3D" parent="Objects/Lamps"]
+
+[node name="Lamp" parent="Objects/Lamps/FloorLamps" instance=ExtResource("24_aakcc")]
+transform = Transform3D(0.622159, -6.84425e-08, -0.782891, 0, -1, 8.74228e-08, -0.782891, -5.43909e-08, -0.622159, 4.42554, -0.000112414, 62.5359)

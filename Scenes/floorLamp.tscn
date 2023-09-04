@@ -1,0 +1,108 @@
+[gd_scene load_steps=15 format=3 uid="uid://dhdm6m1ymi7fa"]
+
+[ext_resource type="Script" path="res://Scripts/Lamp.gd" id="1_4hgbc"]
+[ext_resource type="Script" path="res://Scripts/buttom.gd" id="2_6ovot"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oi3p"]
+albedo_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bdfo8"]
+material = SubResource("StandardMaterial3D_2oi3p")
+top_radius = 0.02
+bottom_radius = 0.02
+height = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tvra"]
+albedo_color = Color(0.158472, 0.158472, 0.158472, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_smwcd"]
+material = SubResource("StandardMaterial3D_2tvra")
+size = Vector3(0.03, 0.06, 0.03)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrcfo"]
+albedo_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t46j8"]
+material = SubResource("StandardMaterial3D_xrcfo")
+top_radius = 0.01
+bottom_radius = 0.26
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxj60"]
+roughness = 0.75
+rim_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_337iy"]
+material = SubResource("StandardMaterial3D_wxj60")
+radius = 0.2
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6s2yl"]
+albedo_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o56l8"]
+material = SubResource("StandardMaterial3D_6s2yl")
+size = Vector3(0.3, 0.1, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5rcpq"]
+size = Vector3(0.2, 2.58564, 0.2)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kwh6u"]
+material = SubResource("StandardMaterial3D_2oi3p")
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.35
+
+[node name="Lamp" type="Node3D" groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 1.45421, 0)
+script = ExtResource("1_4hgbc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0229634, 7.9678e-08)
+mesh = SubResource("CylinderMesh_bdfo8")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0187323, -0.247, 0)
+mesh = SubResource("BoxMesh_smwcd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.293874, -1.1428, 1.35029e-07)
+mesh = SubResource("CylinderMesh_t46j8")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.293874, -1.04698, 1.18459e-07)
+mesh = SubResource("SphereMesh_337iy")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.293874, -1.18631, 1.43774e-07)
+visible = false
+light_color = Color(1, 1, 0.494118, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 6.714
+distance_fade_enabled = true
+spot_range = 11.0477
+spot_angle = 61.1795
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48431, -1.29763e-07)
+mesh = SubResource("BoxMesh_o56l8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
+script = ExtResource("2_6ovot")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0782632, -6.84196e-09)
+shape = SubResource("BoxShape3D_5rcpq")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.142733, -1.4478, 1.26571e-07)
+mesh = SubResource("CylinderMesh_kwh6u")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.287915, -1.30155, 1.13785e-07)
+mesh = SubResource("CylinderMesh_kwh6u")
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
