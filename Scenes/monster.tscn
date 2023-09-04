@@ -9,7 +9,7 @@ height = 2.8
 height = 2.8
 
 [node name="Monster" type="CharacterBody3D" groups=["Enemy"]]
-collision_layer = 9
+collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_q837o")
 
@@ -25,4 +25,14 @@ mesh = SubResource("CapsuleMesh_cqbhg")
 target_desired_distance = 2.0
 path_height_offset = 0.1
 
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20366, 0)
+target_position = Vector3(0, 0, -3)
+collision_mask = 9
+debug_shape_custom_color = Color(0.580392, 0.0588235, 0.588235, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

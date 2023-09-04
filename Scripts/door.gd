@@ -2,7 +2,10 @@ extends Node3D
 class_name Door
 
 @onready var pivot = get_parent().get_parent().get_node("Pivot")
+@onready var Area = $Area3D
+
 var interactionCooldown = true
+var checkBodies = false
 var open = false
 
 

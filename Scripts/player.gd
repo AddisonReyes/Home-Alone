@@ -40,7 +40,7 @@ func _physics_process(delta):
 			if collider.is_in_group("interactable"):
 				collider.interact()
 			
-			print(collider)
+			#print(collider)
 
 
 func process_input(delta):

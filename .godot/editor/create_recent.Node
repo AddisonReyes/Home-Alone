@@ -1,11 +1,12 @@
-Node3D
 Timer
 CollisionShape3D
 StaticBody3D
+Node3D
 MeshInstance3D
+RayCast3D
+Area3D
 SpotLight3D
 DirectionalLight3D
-RayCast3D
 HingeJoint3D
 RigidBody3D
 GraphNode
