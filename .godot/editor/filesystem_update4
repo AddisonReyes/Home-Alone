@@ -1,10 +1,7 @@
-res://Scenes/level.tscn
-res://Scenes/player.tscn
-res://Scenes/lamp.tscn
-res://Scenes/monster.tscn
-res://Scenes/floorLamp.tscn
-res://erase.tscn
-res://Art and Internet Assets/modular_house_scenes/shower.tscn
-res://Scenes/objects.tscn
 res://Scenes/tiles.tscn
-res://Scripts/PropMiscLamp.gd
+res://Source/tilesSet.meshlib
+res://Scenes/level.tscn
+res://Scenes/objects.tscn
+res://Scenes/floorLamp.tscn
+res://Scenes/player.tscn
+res://Scenes/worldEnviroment.tscn

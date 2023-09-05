@@ -77,11 +77,11 @@ mesh = SubResource("SphereMesh_337iy")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.293874, -1.18631, 1.43774e-07)
 visible = false
 light_color = Color(1, 1, 0.494118, 1)
-light_energy = 16.0
+light_energy = 6.0
 light_volumetric_fog_energy = 6.714
 distance_fade_enabled = true
 spot_range = 11.0477
-spot_angle = 61.1795
+spot_angle = 63.2575
 
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 0.6

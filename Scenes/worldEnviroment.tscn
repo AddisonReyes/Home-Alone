@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4cglusg6xedr"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uu1ri"]
+
+[sub_resource type="Sky" id="Sky_hdhuc"]
+sky_material = SubResource("PanoramaSkyMaterial_uu1ri")
+
+[sub_resource type="Environment" id="Environment_u4a1e"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_hdhuc")
+ambient_light_color = Color(0.996078, 0.909804, 0.521569, 1)
+ambient_light_energy = 0.02
+tonemap_mode = 2
+tonemap_exposure = 1.06
+ssao_radius = 16.0
+ssao_intensity = 16.0
+ssil_enabled = true
+ssil_radius = 16.0
+ssil_intensity = 16.0
+fog_enabled = true
+fog_light_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
+fog_density = 0.26
+fog_sky_affect = 0.86
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_u4a1e")

@@ -9,6 +9,7 @@ func _physics_process(delta):
 		$Lamp8.interact()
 		$Lamp6.interact()
 		$Lamp7.interact()
+		$Lamp9.interact()
 		
 		switch1.interaction = false
 		switch2.interaction = false

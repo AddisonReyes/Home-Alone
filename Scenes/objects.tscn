@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://bkif5flgu84vk"]
+[gd_scene load_steps=101 format=3 uid="uid://bkif5flgu84vk"]
 
 [ext_resource type="ArrayMesh" uid="uid://djfs607dhem" path="res://Art and Internet Assets/modular_house_collection/Prop_Bathroom_Shower.obj" id="1_w2r5v"]
 [ext_resource type="PackedScene" uid="uid://dx4av4r25u7m4" path="res://Scenes/player.tscn" id="2_0ufyr"]
@@ -67,16 +67,10 @@ size = Vector3(0.695878, 0.125023, 0.108918)
 size = Vector3(0.695878, 0.546374, 0.108918)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g55mw"]
-size = Vector3(1.41147, 2.05288, 2.2047)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gvjaj"]
-size = Vector3(0.442971, 1.62653, 0.258655)
+size = Vector3(1.41147, 2.05288, 2.45669)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o4lre"]
 size = Vector3(2.1616, 1, 2.5848)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1nkr4"]
-size = Vector3(2.15935, 0.525797, 0.100788)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aabeg"]
 size = Vector3(1.97184, 0.954493, 0.890428)
@@ -110,9 +104,6 @@ size = Vector3(0.593405, 0.380438, 0.524512)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4hend"]
 size = Vector3(0.792367, 1, 0.835505)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ok50m"]
-size = Vector3(0.712627, 1.06476, 0.605987)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxfpd"]
 size = Vector3(0.899327, 2.01418, 0.813854)
@@ -198,297 +189,303 @@ size = Vector3(1, 1, 2.01713)
 
 [node name="Objects" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("2_0ufyr")]
-transform = Transform3D(0.0839909, 0, 0.996467, 0, 1, 0, -0.996467, 0, 0.0839909, -13.6174, -0.89727, 0.720125)
-
-[node name="PropBathroomToiletPaperDispenser" type="StaticBody3D" parent="."]
+[node name="PropBathroomToiletPaperDispenser2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.49162, 1.19209e-07, 0.571923)
-
-[node name="PropBathroomToiletPaperDispenser" type="MeshInstance3D" parent="PropBathroomToiletPaperDispenser"]
 mesh = ExtResource("2_kc717")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBathroomToiletPaperDispenser"]
+[node name="PropBathroomToiletPaperDispenser" type="StaticBody3D" parent="PropBathroomToiletPaperDispenser2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBathroomToiletPaperDispenser2/PropBathroomToiletPaperDispenser"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.803329, -0.0170605)
 shape = SubResource("BoxShape3D_o5blb")
 
-[node name="PropBathroomTowelRack" type="StaticBody3D" parent="."]
+[node name="PropBathroomTowelRack2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8442, -1.19209e-07, -1.09112)
-
-[node name="PropBathroomTowelRack" type="MeshInstance3D" parent="PropBathroomTowelRack"]
 mesh = ExtResource("3_d67cp")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBathroomTowelRack"]
+[node name="PropBathroomTowelRack" type="StaticBody3D" parent="PropBathroomTowelRack2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBathroomTowelRack2/PropBathroomTowelRack"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58907, -0.390824)
 shape = SubResource("BoxShape3D_4tq0l")
 
-[node name="PropBathroomTowelRackStocked" type="StaticBody3D" parent="."]
+[node name="PropBathroomTowelRackStocked2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.689, 0, -2.48777)
-
-[node name="PropBathroomTowelRackStocked" type="MeshInstance3D" parent="PropBathroomTowelRackStocked"]
 mesh = ExtResource("4_nm6vq")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBathroomTowelRackStocked"]
+[node name="PropBathroomTowelRackStocked" type="StaticBody3D" parent="PropBathroomTowelRackStocked2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBathroomTowelRackStocked2/PropBathroomTowelRackStocked"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.362719, -0.39481)
 shape = SubResource("BoxShape3D_bvsvt")
 
-[node name="PropBedroomBedBunk" type="StaticBody3D" parent="."]
+[node name="PropBedroomBedBunk2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54105, 4.76837e-07, 5.22492)
-
-[node name="PropBedroomBedBunk" type="MeshInstance3D" parent="PropBedroomBedBunk"]
 mesh = ExtResource("5_w7rs4")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomBedBunk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00542736, 1.07937, 0.000925511)
+[node name="PropBedroomBedBunk" type="StaticBody3D" parent="PropBedroomBedBunk2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomBedBunk2/PropBedroomBedBunk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00542736, 1.07937, 0.109805)
 shape = SubResource("BoxShape3D_g55mw")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="PropBedroomBedBunk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.269426, 0.833241, 1.41958)
-shape = SubResource("BoxShape3D_gvjaj")
-
-[node name="PropBedroomBedQueen" type="StaticBody3D" parent="."]
+[node name="PropBedroomBedQueen2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.13093, 4.76837e-07, 5.80083)
-
-[node name="PropBedroomBedQueen" type="MeshInstance3D" parent="PropBedroomBedQueen"]
 mesh = ExtResource("6_wfmyi")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomBedQueen"]
+[node name="PropBedroomBedQueen" type="StaticBody3D" parent="PropBedroomBedQueen2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomBedQueen2/PropBedroomBedQueen"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506525, 0)
 shape = SubResource("BoxShape3D_o4lre")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="PropBedroomBedQueen"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30698, -1.24979)
-shape = SubResource("BoxShape3D_1nkr4")
-
-[node name="PropBedroomBedSingle" type="StaticBody3D" parent="."]
+[node name="PropBedroomBedSingle2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8248, -4.76837e-07, 5.58286)
-
-[node name="PropBedroomBedSingle" type="MeshInstance3D" parent="PropBedroomBedSingle"]
 mesh = ExtResource("7_ecobv")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomBedSingle"]
+[node name="PropBedroomBedSingle" type="StaticBody3D" parent="PropBedroomBedSingle2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomBedSingle2/PropBedroomBedSingle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506525, 0)
 shape = SubResource("BoxShape3D_o4lre")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="PropBedroomBedSingle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30698, -1.24979)
-shape = SubResource("BoxShape3D_1nkr4")
-
-[node name="PropBedroomDresserDouble" type="StaticBody3D" parent="."]
+[node name="PropBedroomDresserDouble2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6099, -4.76837e-07, 4.83027)
-
-[node name="PropBedroomDresserDouble" type="MeshInstance3D" parent="PropBedroomDresserDouble"]
 mesh = ExtResource("8_6p8pw")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomDresserDouble"]
+[node name="PropBedroomDresserDouble" type="StaticBody3D" parent="PropBedroomDresserDouble2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomDresserDouble2/PropBedroomDresserDouble"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499789, 0.47988, 0)
 shape = SubResource("BoxShape3D_aabeg")
 
-[node name="PropBedroomDresserSingle" type="StaticBody3D" parent="."]
+[node name="PropBedroomDresserSingle2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3147, 2.38419e-07, 6.71881)
-
-[node name="PropBedroomDresserSingle" type="MeshInstance3D" parent="PropBedroomDresserSingle"]
 mesh = ExtResource("10_niiiw")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomDresserSingle"]
+[node name="PropBedroomDresserSingle" type="StaticBody3D" parent="PropBedroomDresserSingle2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomDresserSingle2/PropBedroomDresserSingle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.465953, 0)
 shape = SubResource("BoxShape3D_0j6od")
 
-[node name="PropBedroomDresserSingleTall" type="StaticBody3D" parent="."]
+[node name="PropBedroomDresserSingleTall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9517, 1.90735e-06, 4.39448)
-
-[node name="PropBedroomDresserSingleTall" type="MeshInstance3D" parent="PropBedroomDresserSingleTall"]
 mesh = ExtResource("11_1vit4")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomDresserSingleTall"]
+[node name="PropBedroomDresserSingleTall" type="StaticBody3D" parent="PropBedroomDresserSingleTall2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBedroomDresserSingleTall2/PropBedroomDresserSingleTall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.824026, 0)
 shape = SubResource("BoxShape3D_ad0h2")
 
-[node name="PropDiningRoomChair" type="StaticBody3D" parent="."]
+[node name="PropDiningRoomChair2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63937, -4.76837e-07, -2.60883)
-
-[node name="PropDiningRoomChair" type="MeshInstance3D" parent="PropDiningRoomChair"]
 mesh = ExtResource("14_3wh6f")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropDiningRoomChair"]
+[node name="PropDiningRoomChair" type="StaticBody3D" parent="PropDiningRoomChair2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropDiningRoomChair2/PropDiningRoomChair"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.571114, 0)
 shape = SubResource("BoxShape3D_2laf8")
 
-[node name="PropDiningRoomTableRectangle" type="StaticBody3D" parent="."]
+[node name="PropDiningRoomTableRectangle2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.05939, 0, -13.405)
-
-[node name="PropDiningRoomTableRectangle" type="MeshInstance3D" parent="PropDiningRoomTableRectangle"]
 mesh = ExtResource("18_vckh4")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropDiningRoomTableRectangle"]
+[node name="PropDiningRoomTableRectangle" type="StaticBody3D" parent="PropDiningRoomTableRectangle2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropDiningRoomTableRectangle2/PropDiningRoomTableRectangle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.473034, 0)
 shape = SubResource("BoxShape3D_yv41d")
 
-[node name="PropDiningRoomTableSquare" type="StaticBody3D" parent="."]
+[node name="PropDiningRoomTableSquare2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70529, 0, -11.6513)
-
-[node name="PropDiningRoomTableSquare" type="MeshInstance3D" parent="PropDiningRoomTableSquare"]
 mesh = ExtResource("19_k7jno")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropDiningRoomTableSquare"]
+[node name="PropDiningRoomTableSquare" type="StaticBody3D" parent="PropDiningRoomTableSquare2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropDiningRoomTableSquare2/PropDiningRoomTableSquare"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.479804, 0)
 shape = SubResource("BoxShape3D_5ujad")
 
-[node name="PropFireplace" type="StaticBody3D" parent="."]
+[node name="PropFireplace2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05824, 2.38419e-07, -4.41456)
-
-[node name="PropFireplace" type="MeshInstance3D" parent="PropFireplace"]
 mesh = ExtResource("20_db024")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropFireplace"]
+[node name="PropFireplace" type="StaticBody3D" parent="PropFireplace2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropFireplace2/PropFireplace"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93944, -0.396979)
 shape = SubResource("BoxShape3D_ou1gx")
 
-[node name="PropFireplaceMid" type="StaticBody3D" parent="."]
+[node name="PropFireplaceMid2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.73602, 0, -7.14545)
-
-[node name="PropFireplaceMid" type="MeshInstance3D" parent="PropFireplaceMid"]
 mesh = ExtResource("21_xhs1b")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropFireplaceMid"]
+[node name="PropFireplaceMid" type="StaticBody3D" parent="PropFireplaceMid2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropFireplaceMid2/PropFireplaceMid"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501528, -0.495181)
 shape = SubResource("BoxShape3D_hwmpt")
 
-[node name="PropKitchenBarStool" type="StaticBody3D" parent="."]
+[node name="PropKitchenBarStool2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.472, 0, -5.77347)
-
-[node name="PropKitchenBarStool" type="MeshInstance3D" parent="PropKitchenBarStool"]
 mesh = ExtResource("22_qhs4a")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenBarStool"]
+[node name="PropKitchenBarStool" type="StaticBody3D" parent="PropKitchenBarStool2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenBarStool2/PropKitchenBarStool"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.453817, 0)
 shape = SubResource("BoxShape3D_gmtdw")
 
-[node name="PropKitchenMicrowave" type="StaticBody3D" parent="."]
+[node name="PropKitchenMicrowave2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3796, 0, -7.85534)
-
-[node name="PropKitchenMicrowave" type="MeshInstance3D" parent="PropKitchenMicrowave"]
 mesh = ExtResource("23_vl1he")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenMicrowave"]
+[node name="PropKitchenMicrowave" type="StaticBody3D" parent="PropKitchenMicrowave2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenMicrowave2/PropKitchenMicrowave"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.199506, -0.133468)
 shape = SubResource("BoxShape3D_ul13o")
 
-[node name="PropKitchenOven" type="StaticBody3D" parent="."]
+[node name="PropKitchenOven2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.791145, 0, -9.00882)
-
-[node name="PropKitchenOven" type="MeshInstance3D" parent="PropKitchenOven"]
 mesh = ExtResource("24_5hx7n")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenOven"]
+[node name="PropKitchenOven" type="StaticBody3D" parent="PropKitchenOven2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenOven2/PropKitchenOven"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.500373, 0)
 shape = SubResource("BoxShape3D_4hend")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="PropKitchenOven"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43253, 0)
-shape = SubResource("BoxShape3D_ok50m")
-
-[node name="PropKitchenRefrigerator" type="StaticBody3D" parent="."]
+[node name="PropKitchenRefrigerator2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398081, 0, -6.12568)
-
-[node name="PropKitchenRefrigerator" type="MeshInstance3D" parent="PropKitchenRefrigerator"]
 mesh = ExtResource("25_3wl8r")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenRefrigerator"]
+[node name="PropKitchenRefrigerator" type="StaticBody3D" parent="PropKitchenRefrigerator2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenRefrigerator2/PropKitchenRefrigerator"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03952, 0)
 shape = SubResource("BoxShape3D_gxfpd")
 
-[node name="PropKitchenTrashcan" type="StaticBody3D" parent="."]
+[node name="PropKitchenTrashcan2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8284, 2.38419e-07, -3.43421)
-
-[node name="PropKitchenTrashcan" type="MeshInstance3D" parent="PropKitchenTrashcan"]
 mesh = ExtResource("26_uj3x8")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenTrashcan"]
+[node name="PropKitchenTrashcan" type="StaticBody3D" parent="PropKitchenTrashcan2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropKitchenTrashcan2/PropKitchenTrashcan"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.359224, 0)
 shape = SubResource("BoxShape3D_rjsfk")
 
-[node name="PropLivingRoomCoffeeTable" type="StaticBody3D" parent="."]
+[node name="PropLivingRoomCoffeeTable2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.45034, 0, -5.37719)
-
-[node name="PropLivingRoomCoffeeTable" type="MeshInstance3D" parent="PropLivingRoomCoffeeTable"]
 mesh = ExtResource("27_sbwlv")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomCoffeeTable"]
+[node name="PropLivingRoomCoffeeTable" type="StaticBody3D" parent="PropLivingRoomCoffeeTable2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomCoffeeTable2/PropLivingRoomCoffeeTable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.213926, 0)
 shape = SubResource("BoxShape3D_6xebh")
 
-[node name="PropLivingRoomModularCouchCenter" type="StaticBody3D" parent="."]
+[node name="PropLivingRoomModularCouchCenter2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45969, 2.38419e-07, -3.76662)
-
-[node name="PropLivingRoomModularCouchCenter" type="MeshInstance3D" parent="PropLivingRoomModularCouchCenter"]
 mesh = ExtResource("28_ne0v6")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomModularCouchCenter"]
+[node name="PropLivingRoomModularCouchCenter" type="StaticBody3D" parent="PropLivingRoomModularCouchCenter2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomModularCouchCenter2/PropLivingRoomModularCouchCenter"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.480608, 0)
 shape = SubResource("BoxShape3D_usp61")
 
-[node name="PropLivingRoomModularCouchCorner" type="StaticBody3D" parent="."]
+[node name="PropLivingRoomModularCouchCorner2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.40506, 0, -5.53306)
-
-[node name="PropLivingRoomModularCouchCorner" type="MeshInstance3D" parent="PropLivingRoomModularCouchCorner"]
 mesh = ExtResource("29_ijq6s")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomModularCouchCorner"]
+[node name="PropLivingRoomModularCouchCorner" type="StaticBody3D" parent="PropLivingRoomModularCouchCorner2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomModularCouchCorner2/PropLivingRoomModularCouchCorner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.485358, 0)
 shape = SubResource("BoxShape3D_uurs6")
 
-[node name="PropLivingRoomModularCouchEnd" type="StaticBody3D" parent="."]
+[node name="PropLivingRoomModularCouchEnd2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.07634, 0, -6.32916)
-
-[node name="PropLivingRoomModularCouchEnd" type="MeshInstance3D" parent="PropLivingRoomModularCouchEnd"]
 mesh = ExtResource("30_yvx0w")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomModularCouchEnd"]
+[node name="PropLivingRoomModularCouchEnd" type="StaticBody3D" parent="PropLivingRoomModularCouchEnd2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomModularCouchEnd2/PropLivingRoomModularCouchEnd"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.427239, 0.381758, 0)
 shape = SubResource("BoxShape3D_s08w8")
 
-[node name="PropLivingRoomModularCouchLegRest" type="StaticBody3D" parent="."]
+[node name="PropLivingRoomModularCouchLegRest2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4264, 0, -7.82929)
-
-[node name="PropLivingRoomModularCouchLegRest" type="MeshInstance3D" parent="PropLivingRoomModularCouchLegRest"]
 mesh = ExtResource("31_4qkex")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomModularCouchLegRest"]
+[node name="PropLivingRoomModularCouchLegRest" type="StaticBody3D" parent="PropLivingRoomModularCouchLegRest2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomModularCouchLegRest2/PropLivingRoomModularCouchLegRest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.241392, -0.034538)
 shape = SubResource("BoxShape3D_mpp1i")
 
-[node name="PropLivingRoomSideTable" type="StaticBody3D" parent="."]
+[node name="PropLivingRoomSideTable2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1877, 0, -7.34224)
-
-[node name="PropLivingRoomSideTable" type="MeshInstance3D" parent="PropLivingRoomSideTable"]
 mesh = ExtResource("32_8jcjo")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomSideTable"]
+[node name="PropLivingRoomSideTable" type="StaticBody3D" parent="PropLivingRoomSideTable2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomSideTable2/PropLivingRoomSideTable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.356428, 0.00884151)
 shape = SubResource("BoxShape3D_yrphh")
 
@@ -496,38 +493,40 @@ shape = SubResource("BoxShape3D_yrphh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3871, 0, -5.58342)
 mesh = ExtResource("33_jr18l")
 
-[node name="PropLivingRoomTvStand" type="StaticBody3D" parent="."]
+[node name="PropLivingRoomTvStand2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9637, 0, -4.39923)
-
-[node name="PropLivingRoomTvStand" type="MeshInstance3D" parent="PropLivingRoomTvStand"]
 mesh = ExtResource("34_pygao")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomTvStand"]
+[node name="PropLivingRoomTvStand" type="StaticBody3D" parent="PropLivingRoomTvStand2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropLivingRoomTvStand2/PropLivingRoomTvStand"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.370505, 0.0269265)
 shape = SubResource("BoxShape3D_lkmq3")
 
-[node name="PropLivingRoomTv" type="MeshInstance3D" parent="PropLivingRoomTvStand"]
+[node name="PropLivingRoomTv" type="MeshInstance3D" parent="PropLivingRoomTvStand2/PropLivingRoomTvStand"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68716, -0.0291829)
 mesh = ExtResource("33_jr18l")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="PropMiscLamp" type="StaticBody3D" parent="." groups=["interactable"]]
+[node name="PropMiscLamp2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1412, 0, -2.32924)
+mesh = ExtResource("39_3e4mp")
+
+[node name="PropMiscLamp" type="StaticBody3D" parent="PropMiscLamp2" groups=["interactable"]]
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("39_ke2wi")
 
-[node name="PropMiscLamp" type="MeshInstance3D" parent="PropMiscLamp"]
-mesh = ExtResource("39_3e4mp")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropMiscLamp"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropMiscLamp2/PropMiscLamp"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412114, 0)
 shape = SubResource("BoxShape3D_qd4ae")
 
-[node name="Timer" type="Timer" parent="PropMiscLamp"]
+[node name="Timer" type="Timer" parent="PropMiscLamp2/PropMiscLamp"]
 wait_time = 0.6
 
-[node name="SpotLight3D" type="SpotLight3D" parent="PropMiscLamp"]
+[node name="SpotLight3D" type="SpotLight3D" parent="PropMiscLamp2/PropMiscLamp"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.00205231, 1.50451, 1.19209e-07)
 visible = false
 light_energy = 6.0
@@ -570,202 +569,224 @@ mesh = ExtResource("46_4na44")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12045, 0, -9.93906)
 mesh = ExtResource("47_otb4a")
 
-[node name="PropMiscTrashcan" type="StaticBody3D" parent="."]
+[node name="PropMiscTrashcan2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.81861, 0, -8.6239)
-
-[node name="PropMiscTrashcan" type="MeshInstance3D" parent="PropMiscTrashcan"]
 mesh = ExtResource("48_qwgnx")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropMiscTrashcan"]
+[node name="PropMiscTrashcan" type="StaticBody3D" parent="PropMiscTrashcan2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropMiscTrashcan2/PropMiscTrashcan"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.177278, 0)
 shape = SubResource("BoxShape3D_67blj")
 
-[node name="StructureBathroomCabinetEnd" type="StaticBody3D" parent="."]
+[node name="StructureBathroomCabinetEnd2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4271, 0, -9.8577)
-
-[node name="StructureBathroomCabinetEnd" type="MeshInstance3D" parent="StructureBathroomCabinetEnd"]
 mesh = ExtResource("54_sid83")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureBathroomCabinetEnd"]
+[node name="StructureBathroomCabinetEnd" type="StaticBody3D" parent="StructureBathroomCabinetEnd2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureBathroomCabinetEnd2/StructureBathroomCabinetEnd"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.293291, 0.507548, -0.0247025)
 shape = SubResource("BoxShape3D_8j5mj")
 
-[node name="StructureBathroomCabinetFull" type="StaticBody3D" parent="."]
+[node name="StructureBathroomCabinetFull2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85175, 0, -18.946)
-
-[node name="StructureBathroomCabinetFull" type="MeshInstance3D" parent="StructureBathroomCabinetFull"]
 mesh = ExtResource("55_u2cnb")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureBathroomCabinetFull"]
+[node name="StructureBathroomCabinetFull" type="StaticBody3D" parent="StructureBathroomCabinetFull2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureBathroomCabinetFull2/StructureBathroomCabinetFull"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.517115, -0.0228693)
 shape = SubResource("BoxShape3D_pts7d")
 
-[node name="StructureBathroomCabinetHalf" type="StaticBody3D" parent="."]
+[node name="StructureBathroomCabinetHalf2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6504, 0, -10.0578)
-
-[node name="StructureBathroomCabinetHalf" type="MeshInstance3D" parent="StructureBathroomCabinetHalf"]
 mesh = ExtResource("56_adnur")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureBathroomCabinetHalf"]
+[node name="StructureBathroomCabinetHalf" type="StaticBody3D" parent="StructureBathroomCabinetHalf2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureBathroomCabinetHalf2/StructureBathroomCabinetHalf"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.242487, 0.523644, -0.0265048)
 shape = SubResource("BoxShape3D_hrv3p")
 
-[node name="StructureBathroomCabinetSink" type="StaticBody3D" parent="."]
+[node name="StructureBathroomCabinetSink2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6313, 0, -10.7136)
-
-[node name="StructureBathroomCabinetSink" type="MeshInstance3D" parent="StructureBathroomCabinetSink"]
 mesh = ExtResource("57_x0ut4")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureBathroomCabinetSink"]
+[node name="StructureBathroomCabinetSink" type="StaticBody3D" parent="StructureBathroomCabinetSink2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureBathroomCabinetSink2/StructureBathroomCabinetSink"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.509428, 0)
 shape = SubResource("BoxShape3D_0oq24")
 
-[node name="StructureKitchenCabinetBaseCorner" type="StaticBody3D" parent="."]
+[node name="StructureKitchenCabinetBaseCorner2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.46896, 4.76837e-07, -13.6883)
-
-[node name="StructureKitchenCabinetBaseCorner" type="MeshInstance3D" parent="StructureKitchenCabinetBaseCorner"]
 mesh = ExtResource("68_hkath")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetBaseCorner"]
+[node name="StructureKitchenCabinetBaseCorner" type="StaticBody3D" parent="StructureKitchenCabinetBaseCorner2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetBaseCorner2/StructureKitchenCabinetBaseCorner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.507249, 0)
 shape = SubResource("BoxShape3D_tsg2c")
 
-[node name="StructureKitchenCabinetBaseFull" type="StaticBody3D" parent="."]
+[node name="StructureKitchenCabinetBaseFull2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.11942, 0, -12.6539)
-
-[node name="StructureKitchenCabinetBaseFull" type="MeshInstance3D" parent="StructureKitchenCabinetBaseFull"]
 mesh = ExtResource("70_b2kot")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetBaseFull"]
+[node name="StructureKitchenCabinetBaseFull" type="StaticBody3D" parent="StructureKitchenCabinetBaseFull2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetBaseFull2/StructureKitchenCabinetBaseFull"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.523454, -0.0694923)
 shape = SubResource("BoxShape3D_yexuq")
 
-[node name="StructureKitchenCabinetBaseHalf" type="StaticBody3D" parent="."]
+[node name="StructureKitchenCabinetBaseHalf2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9758, 0, -11.6613)
-
-[node name="StructureKitchenCabinetBaseHalf" type="MeshInstance3D" parent="StructureKitchenCabinetBaseHalf"]
 mesh = ExtResource("71_of7ps")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetBaseHalf"]
+[node name="StructureKitchenCabinetBaseHalf" type="StaticBody3D" parent="StructureKitchenCabinetBaseHalf2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetBaseHalf2/StructureKitchenCabinetBaseHalf"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.236172, 0.510238, -0.0797892)
 shape = SubResource("BoxShape3D_21phl")
 
-[node name="StructureKitchenCabinetBaseSink" type="StaticBody3D" parent="."]
+[node name="StructureKitchenCabinetBaseSink2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0134, 0, -13.2572)
-
-[node name="StructureKitchenCabinetBaseSink" type="MeshInstance3D" parent="StructureKitchenCabinetBaseSink"]
 mesh = ExtResource("72_ofhs3")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetBaseSink"]
+[node name="StructureKitchenCabinetBaseSink" type="StaticBody3D" parent="StructureKitchenCabinetBaseSink2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetBaseSink2/StructureKitchenCabinetBaseSink"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.503913, -0.0603504)
 shape = SubResource("BoxShape3D_o6a4p")
 
-[node name="StructureKitchenCabinetSideShelves2" type="StaticBody3D" parent="."]
+[node name="StructureKitchenCabinetSideShelves" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0326, 0, -12.2985)
-
-[node name="StructureKitchenCabinetSideShelves" type="MeshInstance3D" parent="StructureKitchenCabinetSideShelves2"]
 mesh = ExtResource("73_rdgol")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetSideShelves2"]
+[node name="StructureKitchenCabinetSideShelves2" type="StaticBody3D" parent="StructureKitchenCabinetSideShelves"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetSideShelves/StructureKitchenCabinetSideShelves2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.315813, 1.91663, -0.265979)
 shape = SubResource("BoxShape3D_qwr0s")
 
-[node name="StructureKitchenCabinetWallCorner" type="StaticBody3D" parent="."]
+[node name="StructureKitchenCabinetWallCorner2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5744, 0, -12.4468)
-
-[node name="StructureKitchenCabinetWallCorner" type="MeshInstance3D" parent="StructureKitchenCabinetWallCorner"]
 mesh = ExtResource("74_vydq5")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallCorner"]
+[node name="StructureKitchenCabinetWallCorner" type="StaticBody3D" parent="StructureKitchenCabinetWallCorner2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallCorner2/StructureKitchenCabinetWallCorner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11887, 0)
 shape = SubResource("BoxShape3D_cnqqk")
 
-[node name="StructureKitchenCabinetWallFull" type="StaticBody3D" parent="."]
+[node name="StructureKitchenCabinetWallFull2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3916, -4.76837e-07, -14.3474)
-
-[node name="StructureKitchenCabinetWallFull" type="MeshInstance3D" parent="StructureKitchenCabinetWallFull"]
 mesh = ExtResource("75_anhug")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallFull"]
+[node name="StructureKitchenCabinetWallFull" type="StaticBody3D" parent="StructureKitchenCabinetWallFull2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallFull2/StructureKitchenCabinetWallFull"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.10751, -0.230513)
 shape = SubResource("BoxShape3D_anm6q")
 
-[node name="StructureKitchenCabinetWallHalf" type="StaticBody3D" parent="."]
+[node name="StructureKitchenCabinetWallHalf2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3873, 4.76837e-07, -11.6082)
-
-[node name="StructureKitchenCabinetWallHalf" type="MeshInstance3D" parent="StructureKitchenCabinetWallHalf"]
 mesh = ExtResource("76_an1eu")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallHalf"]
+[node name="StructureKitchenCabinetWallHalf" type="StaticBody3D" parent="StructureKitchenCabinetWallHalf2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallHalf2/StructureKitchenCabinetWallHalf"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254057, 2.09732, -0.237171)
 shape = SubResource("BoxShape3D_v58s0")
 
-[node name="StructureKitchenCabinetWallOpen" type="StaticBody3D" parent="."]
+[node name="StructureKitchenCabinetWallOpen2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2971, 0, -15.1279)
-
-[node name="StructureKitchenCabinetWallOpen" type="MeshInstance3D" parent="StructureKitchenCabinetWallOpen"]
 mesh = ExtResource("77_8gfub")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallOpen"]
+[node name="StructureKitchenCabinetWallOpen" type="StaticBody3D" parent="StructureKitchenCabinetWallOpen2"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallOpen2/StructureKitchenCabinetWallOpen"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07753, -0.236796)
 shape = SubResource("BoxShape3D_o4i2c")
 
-[node name="KitchenCabineWallShort" type="StaticBody3D" parent="."]
+[node name="StructureKitchenCabinetWallShort" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3159, 4.76837e-07, -13.5213)
-
-[node name="StructureKitchenCabinetWallShort" type="MeshInstance3D" parent="KitchenCabineWallShort"]
 mesh = ExtResource("78_fr1st")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="KitchenCabineWallShort"]
+[node name="KitchenCabineWallShort" type="StaticBody3D" parent="StructureKitchenCabinetWallShort"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StructureKitchenCabinetWallShort/KitchenCabineWallShort"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.40529, -0.23852)
 shape = SubResource("BoxShape3D_h6yp4")
 
-[node name="Toilet" type="StaticBody3D" parent="."]
+[node name="PropBathroomToilet" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7545, 0, -14.516)
-
-[node name="PropBathroomToilet" type="MeshInstance3D" parent="Toilet"]
 mesh = ExtResource("79_rv25r")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Toilet"]
+[node name="Toilet" type="StaticBody3D" parent="PropBathroomToilet"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBathroomToilet/Toilet"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53391, -0.00689697)
 shape = SubResource("BoxShape3D_etvqw")
 
-[node name="ShowerCurtain" type="StaticBody3D" parent="."]
+[node name="PropBathroomShowerCurtain" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7254, 0, -16.2535)
-
-[node name="PropBathroomShowerCurtain" type="MeshInstance3D" parent="ShowerCurtain"]
 mesh = ExtResource("80_q88xo")
-skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ShowerCurtain"]
+[node name="ShowerCurtain" type="StaticBody3D" parent="PropBathroomShowerCurtain"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBathroomShowerCurtain/ShowerCurtain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10804, 1.0397, -0.416224)
 shape = SubResource("BoxShape3D_xalrb")
 
-[node name="Shower" type="StaticBody3D" parent="."]
+[node name="PropBathroomShower" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9631, 0, -15.9159)
-
-[node name="PropBathroomShower" type="MeshInstance3D" parent="Shower"]
 mesh = ExtResource("1_w2r5v")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Shower"]
+[node name="Shower" type="StaticBody3D" parent="PropBathroomShower"]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropBathroomShower/Shower"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.494926, 0.495693)
 shape = SubResource("BoxShape3D_fq775")
 
-[connection signal="timeout" from="PropMiscLamp/Timer" to="PropMiscLamp" method="_on_timer_timeout"]
+[node name="Player" parent="." instance=ExtResource("2_0ufyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9572, -1.66244, -0.0886166)
+
+[connection signal="timeout" from="PropMiscLamp2/PropMiscLamp/Timer" to="PropMiscLamp2/PropMiscLamp" method="_on_timer_timeout"]

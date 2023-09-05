@@ -1,13 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://2s8mnnhnmovn"]
+[gd_scene load_steps=18 format=3 uid="uid://2s8mnnhnmovn"]
 
-[ext_resource type="Texture2D" uid="uid://3mve7gcks6jf" path="res://Sprites/floor.aseprite" id="1_drv2w"]
-[ext_resource type="Texture2D" uid="uid://7ja0iw2f7e4c" path="res://Sprites/wall.aseprite" id="1_y1vlj"]
-[ext_resource type="Texture2D" uid="uid://cr4embebawjs4" path="res://Sprites/grass.aseprite" id="2_r86ac"]
+[ext_resource type="Texture2D" uid="uid://csl1l0tx45ggn" path="res://Art and Internet Assets/SBS - Tiny Texture Pack - 128x128/128x128/Wood/Wood_03-128x128.png" id="2_sybva"]
 [ext_resource type="Texture2D" uid="uid://y2c63awahoa5" path="res://Sprites/ceiling.aseprite" id="3_0s0il"]
+[ext_resource type="Texture2D" uid="uid://sw0thcmeoosu" path="res://Art and Internet Assets/SBS - Tiny Texture Pack - 128x128/128x128/Grass/Grass_05-128x128.png" id="4_6ose8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqpo6"]
 albedo_color = Color(0.152941, 0.0941176, 0.0705882, 1)
-albedo_texture = ExtResource("1_y1vlj")
 
 [sub_resource type="BoxMesh" id="BoxMesh_l3f7e"]
 material = SubResource("StandardMaterial3D_jqpo6")
@@ -17,8 +15,9 @@ size = Vector3(1, 6, 1)
 data = PackedVector3Array(-0.5, 3, 0.5, 0.5, 3, 0.5, -0.5, -3, 0.5, 0.5, 3, 0.5, 0.5, -3, 0.5, -0.5, -3, 0.5, 0.5, 3, -0.5, -0.5, 3, -0.5, 0.5, -3, -0.5, -0.5, 3, -0.5, -0.5, -3, -0.5, 0.5, -3, -0.5, 0.5, 3, 0.5, 0.5, 3, -0.5, 0.5, -3, 0.5, 0.5, 3, -0.5, 0.5, -3, -0.5, 0.5, -3, 0.5, -0.5, 3, -0.5, -0.5, 3, 0.5, -0.5, -3, -0.5, -0.5, 3, 0.5, -0.5, -3, 0.5, -0.5, -3, -0.5, 0.5, 3, 0.5, -0.5, 3, 0.5, 0.5, 3, -0.5, -0.5, 3, 0.5, -0.5, 3, -0.5, 0.5, 3, -0.5, -0.5, -3, 0.5, 0.5, -3, 0.5, -0.5, -3, -0.5, 0.5, -3, 0.5, 0.5, -3, -0.5, -0.5, -3, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucyuh"]
-albedo_color = Color(0.694118, 0.592157, 0.380392, 1)
-albedo_texture = ExtResource("1_drv2w")
+albedo_color = Color(0.427451, 0.211765, 0.105882, 1)
+albedo_texture = ExtResource("2_sybva")
+metallic_specular = 0.0
 uv1_scale = Vector3(1, 1, 0.5)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_enc7y"]
@@ -35,6 +34,7 @@ data = PackedVector3Array(0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, 0.5,
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dioof"]
 albedo_color = Color(0.458824, 0.388235, 0.223529, 1)
 albedo_texture = ExtResource("3_0s0il")
+metallic_specular = 0.0
 detail_blend_mode = 2
 uv1_world_triplanar = true
 
@@ -45,8 +45,9 @@ material = SubResource("StandardMaterial3D_dioof")
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vv6qr"]
-albedo_color = Color(0, 0.341176, 0.117647, 1)
-albedo_texture = ExtResource("2_r86ac")
+albedo_color = Color(0, 0.752941, 0.298039, 1)
+albedo_texture = ExtResource("4_6ose8")
+metallic_specular = 0.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hyhlw"]
 material = SubResource("StandardMaterial3D_vv6qr")
