@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ulqlrd11t8g6"
+path="res://.godot/imported/Flower_Small_Sky_Blue.obj-002d68734a1b70e89728bcbafd1ec950.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Flower_Small_Sky_Blue.obj-002d68734a1b70e89728bcbafd1ec950.mesh"]
+
+source_file="res://Art and Internet Assets/Nature Release Package/Trees & Plants/Flowers/Small/Flower_Small_Sky_Blue.obj"
+dest_files=["res://.godot/imported/Flower_Small_Sky_Blue.obj-002d68734a1b70e89728bcbafd1ec950.mesh", "res://.godot/imported/Flower_Small_Sky_Blue.obj-002d68734a1b70e89728bcbafd1ec950.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

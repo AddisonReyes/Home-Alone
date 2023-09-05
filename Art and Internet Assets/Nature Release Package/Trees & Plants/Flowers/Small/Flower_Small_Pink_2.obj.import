@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cnn2500d3bij3"
+path="res://.godot/imported/Flower_Small_Pink_2.obj-ed4adc3f1cf1c35155ae5c1a85c7ffdd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Flower_Small_Pink_2.obj-ed4adc3f1cf1c35155ae5c1a85c7ffdd.mesh"]
+
+source_file="res://Art and Internet Assets/Nature Release Package/Trees & Plants/Flowers/Small/Flower_Small_Pink_2.obj"
+dest_files=["res://.godot/imported/Flower_Small_Pink_2.obj-ed4adc3f1cf1c35155ae5c1a85c7ffdd.mesh", "res://.godot/imported/Flower_Small_Pink_2.obj-ed4adc3f1cf1c35155ae5c1a85c7ffdd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

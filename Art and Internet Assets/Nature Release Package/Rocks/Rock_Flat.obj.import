@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://7p55qynwav3s"
+path="res://.godot/imported/Rock_Flat.obj-4db648587124dc7f678180cb5a85e016.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Rock_Flat.obj-4db648587124dc7f678180cb5a85e016.mesh"]
+
+source_file="res://Art and Internet Assets/Nature Release Package/Rocks/Rock_Flat.obj"
+dest_files=["res://.godot/imported/Rock_Flat.obj-4db648587124dc7f678180cb5a85e016.mesh", "res://.godot/imported/Rock_Flat.obj-4db648587124dc7f678180cb5a85e016.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

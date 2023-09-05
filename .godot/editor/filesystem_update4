@@ -5,3 +5,5 @@ res://Scenes/objects.tscn
 res://Scenes/floorLamp.tscn
 res://Scenes/player.tscn
 res://Scenes/worldEnviroment.tscn
+res://Scenes/nature.tscn
+res://Source/natureTilesSet.meshlib

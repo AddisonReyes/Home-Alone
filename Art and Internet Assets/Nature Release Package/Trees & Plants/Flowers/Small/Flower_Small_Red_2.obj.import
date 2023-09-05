@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://l45ywskyancf"
+path="res://.godot/imported/Flower_Small_Red_2.obj-5e1f10bf67a79d3a5bd5178381437e3c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Flower_Small_Red_2.obj-5e1f10bf67a79d3a5bd5178381437e3c.mesh"]
+
+source_file="res://Art and Internet Assets/Nature Release Package/Trees & Plants/Flowers/Small/Flower_Small_Red_2.obj"
+dest_files=["res://.godot/imported/Flower_Small_Red_2.obj-5e1f10bf67a79d3a5bd5178381437e3c.mesh", "res://.godot/imported/Flower_Small_Red_2.obj-5e1f10bf67a79d3a5bd5178381437e3c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

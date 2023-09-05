@@ -1,0 +1,42 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1uwng1dayf2m"]
+
+[ext_resource type="ArrayMesh" uid="uid://b882sewxcaefk" path="res://Art and Internet Assets/Nature Release Package/Trees & Plants/Grass/Grass_1.obj" id="1_1tm0l"]
+[ext_resource type="Texture2D" uid="uid://mhp84x7tgyj" path="res://Art and Internet Assets/Nature Release Package/tree.png" id="1_mg0aq"]
+[ext_resource type="ArrayMesh" uid="uid://nanskecm45x3" path="res://Art and Internet Assets/Nature Release Package/Trees & Plants/Grass/Grass_3.obj" id="2_8yo5k"]
+[ext_resource type="ArrayMesh" uid="uid://2da34w16hw" path="res://Art and Internet Assets/Nature Release Package/Trees & Plants/Trees/Tree_2.obj" id="3_ojrxr"]
+[ext_resource type="Texture2D" uid="uid://drbaxeewqjdw2" path="res://Art and Internet Assets/Nature Release Package/Rocks/Rock.png" id="4_astn1"]
+[ext_resource type="ArrayMesh" uid="uid://b0hf05wwtg0vl" path="res://Art and Internet Assets/Nature Release Package/Rocks/Rock.obj" id="5_1ox0x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbipu"]
+albedo_texture = ExtResource("1_mg0aq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2h2kq"]
+albedo_texture = ExtResource("1_mg0aq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2hy4g"]
+albedo_texture = ExtResource("1_mg0aq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7w4y"]
+albedo_texture = ExtResource("4_astn1")
+
+[node name="Nature" type="Node3D"]
+
+[node name="Grass1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.656398, 0, 23.7306)
+material_override = SubResource("StandardMaterial3D_sbipu")
+mesh = ExtResource("1_1tm0l")
+
+[node name="Grass3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.4126, 0, 15.2494)
+material_override = SubResource("StandardMaterial3D_2h2kq")
+mesh = ExtResource("2_8yo5k")
+
+[node name="Tree2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4232, 0, -1.1537)
+material_override = SubResource("StandardMaterial3D_2hy4g")
+mesh = ExtResource("3_ojrxr")
+
+[node name="Rock" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.182528, 0, 3.3049)
+material_override = SubResource("StandardMaterial3D_e7w4y")
+mesh = ExtResource("5_1ox0x")
