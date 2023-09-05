@@ -73,6 +73,10 @@ wait_time = 0.6
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, -1.6152)
 mesh = SubResource("CapsuleMesh_ueqr3")
 
+[node name="TurnOffTimer" type="Timer" parent="Pivot/PhysicDoor"]
+wait_time = 3.0
+one_shot = true
+
 [node name="DoorFrame" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0116983)
 collision_layer = 8
@@ -87,3 +91,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00415838, 0.0137367)
 shape = SubResource("ConvexPolygonShape3D_k2jq3")
 
 [connection signal="timeout" from="Pivot/PhysicDoor/Timer" to="Pivot/PhysicDoor" method="_on_timer_timeout"]
+[connection signal="timeout" from="Pivot/PhysicDoor/TurnOffTimer" to="Pivot/PhysicDoor" method="_on_turn_off_timer_timeout"]

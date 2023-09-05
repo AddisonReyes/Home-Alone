@@ -1,9 +1,10 @@
 extends Node3D
 
 
-var buttonOn = true
-var interaction = false
+var rng = RandomNumberGenerator.new()
 
+var buttonOn = false
+var interaction = false
 var canInteract = true
 
 
@@ -23,7 +24,16 @@ func interact():
 		
 		$Timer.start()
 		canInteract = false
+	
+	if buttonOn:
+		var time = rng.randi_range(60, 300)
+		$TurnOffTimer.wait_time = time
+		$TurnOffTimer.start()
 
 
 func _on_timer_timeout():
 	canInteract = true
+
+
+func _on_turn_off_timer_timeout():
+	interact()

@@ -20,10 +20,10 @@ ssil_radius = 16.0
 ssil_intensity = 16.0
 fog_enabled = true
 fog_light_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
-fog_density = 0.26
+fog_density = 0.16
 fog_sky_affect = 0.86
 
-[node name="Node3D" type="Node3D"]
+[node name="Enviroment" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_u4a1e")

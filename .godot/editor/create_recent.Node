@@ -1,12 +1,12 @@
+Node3D
+MeshInstance3D
+Timer
 GridMap
 CharacterBody3D
 StaticBody3D
 WorldEnvironment
-Node3D
 DirectionalLight3D
-MeshInstance3D
 CollisionShape3D
-Timer
 SpotLight3D
 Area3D
 RayCast3D

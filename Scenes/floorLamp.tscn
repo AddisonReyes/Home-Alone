@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dhdm6m1ymi7fa"]
 
-[ext_resource type="Script" path="res://Scripts/Lamp.gd" id="1_4hgbc"]
+[ext_resource type="Script" path="res://Scripts/floorLamp.gd" id="1_qvysf"]
 [ext_resource type="Script" path="res://Scripts/buttom.gd" id="2_6ovot"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oi3p"]
@@ -55,7 +55,7 @@ height = 0.35
 
 [node name="Lamp" type="Node3D" groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 1.45421, 0)
-script = ExtResource("1_4hgbc")
+script = ExtResource("1_qvysf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0229634, 7.9678e-08)
@@ -105,4 +105,9 @@ mesh = SubResource("CylinderMesh_kwh6u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.287915, -1.30155, 1.13785e-07)
 mesh = SubResource("CylinderMesh_kwh6u")
 
+[node name="TurnOffTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="TurnOffTimer" to="." method="_on_turn_off_timer_timeout"]

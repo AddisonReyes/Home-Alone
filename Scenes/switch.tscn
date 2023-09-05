@@ -40,11 +40,11 @@ script = ExtResource("1_nv0xn")
 
 [node name="Buttom" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.784776, -0.619779, 0, 0.619779, 0.784776, 0, 0, -0.011)
+visible = false
 mesh = SubResource("BoxMesh_5ndr6")
 
 [node name="Buttom2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, -5.41828e-08, -6.86073e-08, 0, 0.784776, -0.619779, 8.74228e-08, -0.619779, -0.784776, 0, 0, -0.011)
-visible = false
 mesh = SubResource("BoxMesh_5ndr6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -73,4 +73,9 @@ shape = SubResource("BoxShape3D_ed2d5")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
 
+[node name="TurnOffTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TurnOffTimer" to="." method="_on_turn_off_timer_timeout"]
