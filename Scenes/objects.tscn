@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://bkif5flgu84vk"]
+[gd_scene load_steps=98 format=3 uid="uid://bkif5flgu84vk"]
 
 [ext_resource type="ArrayMesh" uid="uid://djfs607dhem" path="res://Art and Internet Assets/modular_house_collection/Prop_Bathroom_Shower.obj" id="1_w2r5v"]
 [ext_resource type="PackedScene" uid="uid://dx4av4r25u7m4" path="res://Scenes/player.tscn" id="2_0ufyr"]
@@ -29,8 +29,6 @@
 [ext_resource type="ArrayMesh" uid="uid://nmvj8hperbo" path="res://Art and Internet Assets/modular_house_collection/Prop_Living_Room_Side_Table.obj" id="32_8jcjo"]
 [ext_resource type="ArrayMesh" uid="uid://dxflprkngkmdg" path="res://Art and Internet Assets/modular_house_collection/Prop_Living_Room_TV.obj" id="33_jr18l"]
 [ext_resource type="ArrayMesh" uid="uid://dug012d15ku85" path="res://Art and Internet Assets/modular_house_collection/Prop_Living_Room_TV_Stand.obj" id="34_pygao"]
-[ext_resource type="ArrayMesh" uid="uid://brpvnn2msks0b" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Lamp.obj" id="39_3e4mp"]
-[ext_resource type="Script" path="res://Scripts/PropMiscLamp.gd" id="39_ke2wi"]
 [ext_resource type="ArrayMesh" uid="uid://bdcrr8ca81j1h" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Picture_Landscape.obj" id="40_hdtsj"]
 [ext_resource type="ArrayMesh" uid="uid://cknq5eo31fku0" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Picture_Portrait.obj" id="41_1cx1b"]
 [ext_resource type="ArrayMesh" uid="uid://bdwg0rx0wo4et" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Picture_Square_Large.obj" id="42_a83hu"]
@@ -129,9 +127,6 @@ size = Vector3(0.694738, 0.696961, 0.797737)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lkmq3"]
 size = Vector3(1, 0.675917, 0.831502)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qd4ae"]
-size = Vector3(0.420931, 0.785877, 0.372389)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_67blj"]
 size = Vector3(0.319067, 0.368739, 0.329948)
@@ -510,33 +505,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68716, -0.0291829)
 mesh = ExtResource("33_jr18l")
 skeleton = NodePath("../../..")
 
-[node name="PropMiscLamp2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1412, 0, -2.32924)
-mesh = ExtResource("39_3e4mp")
-
-[node name="PropMiscLamp" type="StaticBody3D" parent="PropMiscLamp2" groups=["interactable"]]
-collision_layer = 15
-collision_mask = 15
-script = ExtResource("39_ke2wi")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PropMiscLamp2/PropMiscLamp"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412114, 0)
-shape = SubResource("BoxShape3D_qd4ae")
-
-[node name="Timer" type="Timer" parent="PropMiscLamp2/PropMiscLamp"]
-wait_time = 0.6
-
-[node name="SpotLight3D" type="SpotLight3D" parent="PropMiscLamp2/PropMiscLamp"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.00205231, 1.50451, 1.19209e-07)
-visible = false
-light_energy = 6.0
-light_volumetric_fog_energy = 6.714
-light_size = 0.74
-distance_fade_enabled = true
-spot_range = 3.67709
-spot_attenuation = 0.0603707
-spot_angle = 33.7616
-
 [node name="PropMiscPictureLandscape" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6798, 0, -7.327)
 mesh = ExtResource("40_hdtsj")
@@ -788,5 +756,3 @@ shape = SubResource("BoxShape3D_fq775")
 
 [node name="Player" parent="." instance=ExtResource("2_0ufyr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9572, -1.66244, -0.0886166)
-
-[connection signal="timeout" from="PropMiscLamp2/PropMiscLamp/Timer" to="PropMiscLamp2/PropMiscLamp" method="_on_timer_timeout"]

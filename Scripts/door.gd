@@ -2,7 +2,6 @@ extends Node3D
 class_name Door
 
 @onready var pivot = get_parent().get_parent().get_node("Pivot")
-@onready var Area = $Area3D
 
 var rng = RandomNumberGenerator.new()
 
@@ -18,12 +17,18 @@ func interact():
 			pivot.rotation.y = 0
 			$Timer.start()
 			open = false
+			
+			$Close.pitch_scale = rng.randf_range(0.6, 0.9)
+			$Close.play()
 		
 		else:
 			interactionCooldown = false
 			pivot.rotation.y = 89.45
 			$Timer.start()
 			open = true
+			
+			$Open.pitch_scale = rng.randf_range(0.6, 0.9)
+			$Open.play()
 	
 	if open:
 		var time = rng.randi_range(120, 300)

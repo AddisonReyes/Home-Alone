@@ -1,29 +1,36 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4cglusg6xedr"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uu1ri"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s0udc"]
+sky_top_color = Color(0.2, 0.0117647, 0.286275, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+sky_curve = 3.766
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+sun_angle_max = 133.5
+use_debanding = false
 
 [sub_resource type="Sky" id="Sky_hdhuc"]
-sky_material = SubResource("PanoramaSkyMaterial_uu1ri")
+sky_material = SubResource("ProceduralSkyMaterial_s0udc")
 
-[sub_resource type="Environment" id="Environment_u4a1e"]
+[sub_resource type="Environment" id="Environment_22262"]
 background_mode = 2
 background_color = Color(1, 1, 1, 1)
 sky = SubResource("Sky_hdhuc")
-ambient_light_color = Color(0.996078, 0.909804, 0.521569, 1)
+ambient_light_color = Color(0.94902, 0.705882, 0.866667, 1)
 ambient_light_energy = 0.02
 tonemap_mode = 2
 tonemap_exposure = 1.06
-ssao_radius = 16.0
-ssao_intensity = 16.0
-ssil_enabled = true
-ssil_radius = 16.0
-ssil_intensity = 16.0
+glow_normalized = true
+glow_intensity = 0.1
+glow_blend_mode = 0
 fog_enabled = true
 fog_light_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
-fog_density = 0.16
-fog_sky_affect = 0.86
+fog_density = 0.2
+fog_sky_affect = 0.99
+volumetric_fog_density = 0.2
+volumetric_fog_albedo = Color(0.0431373, 0.0431373, 0.0431373, 1)
+volumetric_fog_emission = Color(0.0431373, 0.0431373, 0.0431373, 1)
+volumetric_fog_sky_affect = 0.86
 
-[node name="Enviroment" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_u4a1e")
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_22262")

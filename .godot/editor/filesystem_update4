@@ -1,16 +1,4 @@
-res://Scripts/switch.gd
-res://Scenes/switch.tscn
-res://Source/natureTilesSet.meshlib
 res://Scenes/level.tscn
-res://Scenes/objects.tscn
-res://Scenes/floorLamp.tscn
+res://Source/natureTilesSet.meshlib
 res://Scenes/player.tscn
 res://Scenes/worldEnviroment.tscn
-res://Scenes/nature.tscn
-res://Scripts/door.gd
-res://Scenes/door.tscn
-res://Scenes/tiles.tscn
-res://Source/tilesSet.meshlib
-res://Scenes/winsow.tscn
-res://Scripts/Lamp.gd
-res://Scripts/floorLamp.gd

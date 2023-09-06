@@ -1,6 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cih8wgehdsot8"]
+[gd_scene load_steps=14 format=3 uid="uid://cih8wgehdsot8"]
 
 [ext_resource type="Script" path="res://Scripts/door.gd" id="1_3inyb"]
+[ext_resource type="AudioStream" uid="uid://dg34fd4titkwh" path="res://Audio/openDoor.wav" id="2_xxyk7"]
+[ext_resource type="AudioStream" uid="uid://caup2j28qkuum" path="res://Audio/closeDoor.wav" id="3_vp7oe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfet8"]
 albedo_color = Color(0.258824, 0.172549, 0.141176, 1)
@@ -76,6 +78,14 @@ mesh = SubResource("CapsuleMesh_ueqr3")
 [node name="TurnOffTimer" type="Timer" parent="Pivot/PhysicDoor"]
 wait_time = 3.0
 one_shot = true
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Pivot/PhysicDoor"]
+stream = ExtResource("2_xxyk7")
+volume_db = -26.0
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Pivot/PhysicDoor"]
+stream = ExtResource("3_vp7oe")
+volume_db = -26.0
 
 [node name="DoorFrame" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0116983)

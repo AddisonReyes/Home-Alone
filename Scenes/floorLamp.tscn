@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhdm6m1ymi7fa"]
+[gd_scene load_steps=16 format=3 uid="uid://dhdm6m1ymi7fa"]
 
 [ext_resource type="Script" path="res://Scripts/floorLamp.gd" id="1_qvysf"]
 [ext_resource type="Script" path="res://Scripts/buttom.gd" id="2_6ovot"]
+[ext_resource type="AudioStream" uid="uid://bay4e0y1elqwf" path="res://Audio/Switch.mp3" id="3_xh673"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oi3p"]
 albedo_color = Color(0.101961, 0.101961, 0.101961, 1)
@@ -29,6 +30,8 @@ bottom_radius = 0.26
 height = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxj60"]
+transparency = 1
+blend_mode = 1
 roughness = 0.75
 rim_enabled = true
 
@@ -78,7 +81,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.2938
 visible = false
 light_color = Color(1, 1, 0.494118, 1)
 light_energy = 6.0
-light_volumetric_fog_energy = 6.714
+shadow_enabled = true
 distance_fade_enabled = true
 spot_range = 11.0477
 spot_angle = 63.2575
@@ -108,6 +111,10 @@ mesh = SubResource("CylinderMesh_kwh6u")
 [node name="TurnOffTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_xh673")
+volume_db = -26.0
 
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
 [connection signal="timeout" from="TurnOffTimer" to="." method="_on_turn_off_timer_timeout"]

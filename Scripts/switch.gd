@@ -22,6 +22,9 @@ func interact():
 			$Buttom.visible = true
 			buttonOn = true
 		
+		$AudioStreamPlayer3D.pitch_scale = rng.randf_range(0.6, 1.6)
+		$AudioStreamPlayer3D.play()
+		
 		$Timer.start()
 		canInteract = false
 	

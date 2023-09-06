@@ -1,13 +1,15 @@
 extends CharacterBody3D
 
 
+var rng = RandomNumberGenerator.new()
+
 const GRAVITY = -24.8
 var MAX_SPEED = 4.7
-const ACCEL = 3.5
+const ACCEL = 3
 
 var dir = Vector3()
 
-const DEACCEL= 16
+const DEACCEL= 66
 const MAX_SLOPE_ANGLE = 40
 
 var camera
@@ -28,6 +30,7 @@ func _ready():
 func _physics_process(delta):
 	process_input(delta)
 	process_movement(delta)
+	process_audio()
 	
 	if Input.is_action_just_pressed("flashlight") and flashLightCooldown:
 		$CameraPivot/FlashLight/SpotLight3D.visible = !$CameraPivot/FlashLight/SpotLight3D.visible
@@ -41,6 +44,15 @@ func _physics_process(delta):
 				collider.interact()
 			
 			#print(collider)
+
+
+func process_audio():
+	if velocity.length() != 0: 
+		if $Audio/StepsTimer.time_left <= 0:
+			$Audio/Steps.pitch_scale = rng.randf_range(0.1, 0.6)
+			$Audio/Steps.play()
+			
+			$Audio/StepsTimer.start()
 
 
 func process_input(delta):

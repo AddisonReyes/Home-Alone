@@ -10,6 +10,9 @@ func interact():
 		$SpotLight3D.visible = !$SpotLight3D.visible
 		$CooldownTimer.start()
 		flashLightCooldown = false
+		
+		$AudioStreamPlayer3D.pitch_scale = rng.randf_range(0.6, 1.6)
+		$AudioStreamPlayer3D.play()
 	
 	if $SpotLight3D.visible:
 		var time = rng.randi_range(120, 300)

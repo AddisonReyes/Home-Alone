@@ -21,6 +21,8 @@ bottom_radius = 0.26
 height = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxj60"]
+transparency = 1
+blend_mode = 1
 roughness = 0.75
 rim_enabled = true
 
@@ -49,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.4
 visible = false
 light_color = Color(0.996078, 0.909804, 0.521569, 1)
 light_energy = 6.0
-light_size = 0.694
+shadow_enabled = true
 distance_fade_enabled = true
 spot_range = 11.0477
 spot_angle = 61.1795

@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://btkw3v5agbf8i"]
+
+[ext_resource type="ArrayMesh" uid="uid://brpvnn2msks0b" path="res://Art and Internet Assets/modular_house_collection/Prop_Misc_Lamp.obj" id="1_15cwi"]
+[ext_resource type="Script" path="res://Scripts/PropMiscLamp.gd" id="2_ppd60"]
+[ext_resource type="AudioStream" uid="uid://bay4e0y1elqwf" path="res://Audio/Switch.mp3" id="3_ay2p8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2qrvo"]
+size = Vector3(0.420931, 0.785877, 0.372389)
+
+[node name="Lamp" type="Node3D"]
+
+[node name="PropMiscLamp2" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_15cwi")
+
+[node name="PropMiscLamp" type="StaticBody3D" parent="PropMiscLamp2" groups=["interactable"]]
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("2_ppd60")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PropMiscLamp2/PropMiscLamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412114, 0)
+shape = SubResource("BoxShape3D_2qrvo")
+
+[node name="Timer" type="Timer" parent="PropMiscLamp2/PropMiscLamp"]
+wait_time = 0.6
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PropMiscLamp2/PropMiscLamp"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.62444, 0)
+visible = false
+light_color = Color(0.996078, 0.909804, 0.521569, 1)
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 11.0477
+spot_angle = 48.5407
+
+[node name="TurnOffTimer" type="Timer" parent="PropMiscLamp2/PropMiscLamp"]
+wait_time = 3.0
+one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="PropMiscLamp2/PropMiscLamp"]
+stream = ExtResource("3_ay2p8")
+volume_db = -26.0
+
+[connection signal="timeout" from="PropMiscLamp2/PropMiscLamp/Timer" to="PropMiscLamp2/PropMiscLamp" method="_on_timer_timeout"]
+[connection signal="timeout" from="PropMiscLamp2/PropMiscLamp/TurnOffTimer" to="PropMiscLamp2/PropMiscLamp" method="_on_turn_off_timer_timeout"]

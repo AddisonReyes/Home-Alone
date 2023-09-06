@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsxbajnb7gxmq"]
+[gd_scene load_steps=13 format=3 uid="uid://bsxbajnb7gxmq"]
 
 [ext_resource type="Script" path="res://Scripts/switch.gd" id="1_nv0xn"]
 [ext_resource type="Script" path="res://Scripts/buttom.gd" id="2_njrse"]
+[ext_resource type="AudioStream" uid="uid://bay4e0y1elqwf" path="res://Audio/Switch.mp3" id="3_0vt2q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tl7k3"]
 albedo_color = Color(0.537255, 0.537255, 0.537255, 1)
@@ -76,6 +77,10 @@ wait_time = 0.6
 [node name="TurnOffTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_0vt2q")
+volume_db = -26.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TurnOffTimer" to="." method="_on_turn_off_timer_timeout"]

@@ -1,6 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dx4av4r25u7m4"]
+[gd_scene load_steps=10 format=3 uid="uid://dx4av4r25u7m4"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_15rcm"]
+[ext_resource type="AudioStream" uid="uid://dw1h16lx42r26" path="res://Audio/playerFootSteps.wav" id="2_ns4je"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gxdpm"]
+radius = 0.4
+height = 2.3
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d1ab0"]
 height = 2.6
@@ -36,6 +41,10 @@ collision_layer = 9
 collision_mask = 15
 script = ExtResource("1_15rcm")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32711, 0)
+mesh = SubResource("CapsuleMesh_gxdpm")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31198, 0)
 shape = SubResource("CapsuleShape3D_d1ab0")
@@ -50,9 +59,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107763, 0.0750554, 0.06168
 transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0.3542, -0.314008, -0.519628)
 light_color = Color(1, 0.996078, 0.596078, 1)
 light_energy = 6.0
-light_volumetric_fog_energy = 3.809
-light_size = 1.0
+shadow_enabled = true
 shadow_blur = 1.687
+distance_fade_enabled = true
 spot_range = 33.1893
 spot_angle = 35.437
 
@@ -75,11 +84,21 @@ wait_time = 0.6
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 current = true
-fov = 66.0
+fov = 61.1503
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraPivot"]
 target_position = Vector3(0, 0, -3)
 collision_mask = 9
 debug_shape_custom_color = Color(0.580392, 0.0588235, 0.588235, 1)
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="Steps" type="AudioStreamPlayer3D" parent="Audio"]
+stream = ExtResource("2_ns4je")
+volume_db = -15.0
+
+[node name="StepsTimer" type="Timer" parent="Audio"]
+wait_time = 0.6
+one_shot = true
 
 [connection signal="timeout" from="CameraPivot/FlashLight/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
