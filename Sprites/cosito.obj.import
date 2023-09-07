@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://y3byd4fjm80n"
+path="res://.godot/imported/cosito.obj-0a047a8d6d0c69d817f504de46ccd1cd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cosito.obj-0a047a8d6d0c69d817f504de46ccd1cd.mesh"]
+
+source_file="res://Sprites/cosito.obj"
+dest_files=["res://.godot/imported/cosito.obj-0a047a8d6d0c69d817f504de46ccd1cd.mesh", "res://.godot/imported/cosito.obj-0a047a8d6d0c69d817f504de46ccd1cd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

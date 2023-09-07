@@ -2,6 +2,11 @@ extends Node3D
 
 @onready var switch1 = $Switch8
 
+
+func _ready():
+	switch1.interaction = true
+	
+
 func _physics_process(delta):
 	if switch1.interaction:
 		$Lamp20.interact()

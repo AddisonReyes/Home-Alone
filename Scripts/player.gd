@@ -19,8 +19,20 @@ var MOUSE_SENSITIVITY = 0.10
 
 var flashLightCooldown = true
 
+#///////////////////////////////////
+
+var soundPosition
+var flashlightOn
+var walking
+
+var flashlightPicked = false
+var doingNoise = false
+var printDot = false
+
 
 func _ready():
+	soundPosition = self.global_transform.origin
+	
 	camera = $CameraPivot/Camera3D
 	rotation_helper = $CameraPivot
 	
@@ -31,28 +43,78 @@ func _physics_process(delta):
 	process_input(delta)
 	process_movement(delta)
 	process_audio()
+	process_data()
 	
-	if Input.is_action_just_pressed("flashlight") and flashLightCooldown:
-		$CameraPivot/FlashLight/SpotLight3D.visible = !$CameraPivot/FlashLight/SpotLight3D.visible
-		$CameraPivot/FlashLight/CooldownTimer.start()
-		flashLightCooldown = false
+	if flashlightPicked:
+		if Input.is_action_just_pressed("flashlight") and flashLightCooldown:
+			flashlight()
 	
 	if Input.is_action_pressed("interact") and $CameraPivot/RayCast3D.is_colliding():
 		var collider = $CameraPivot/RayCast3D.get_collider()
 		if collider != null:
 			if collider.is_in_group("interactable"):
 				collider.interact()
-			
-			#print(collider)
+				
+				if collider.is_in_group("door"):
+					soundPosition = self.global_transform.origin
+					doingNoise = true
 
 
 func process_audio():
-	if velocity.length() != 0: 
+	doingNoise = false
+	
+	if velocity.length() != 0 and walking == false: 
 		if $Audio/StepsTimer.time_left <= 0:
 			$Audio/Steps.pitch_scale = rng.randf_range(0.1, 0.6)
 			$Audio/Steps.play()
 			
 			$Audio/StepsTimer.start()
+			
+		soundPosition = self.global_transform.origin
+		doingNoise = true
+
+
+func flashlight():
+	$CameraPivot/FlashLight/SpotLight3D.visible = !$CameraPivot/FlashLight/SpotLight3D.visible
+	$CameraPivot/FlashLight/CooldownTimer.start()
+	flashLightCooldown = false
+		
+	$Audio/FlashLight.play()
+	
+	flashlightOn = $CameraPivot/FlashLight/SpotLight3D.visible
+	soundPosition = self.global_transform.origin
+	
+	if flashlightOn:
+		var time = rng.randi_range(180, 360)
+		$Audio/TurnOffTimer.wait_time = time
+		$Audio/TurnOffTimer.start()
+
+
+func process_data():
+	if flashlightPicked:
+		$CameraPivot/FlashLight.visible = true
+	
+	else:
+		$CameraPivot/FlashLight.visible = false
+		
+	flashlightOn = $CameraPivot/FlashLight/SpotLight3D.visible
+	
+	if flashlightPicked:
+		if $CameraPivot/RayCast3D2.is_colliding() and flashlightOn:
+			var collider = $CameraPivot/RayCast3D2.get_collider()
+			
+			if collider != null:
+				if collider.is_in_group("Enemy"):
+					soundPosition = self.global_transform.origin
+					flashlight()
+	
+	printDot = false
+	if $CameraPivot/RayCast3D.is_colliding():
+		var collider = $CameraPivot/RayCast3D.get_collider()
+		
+		if collider != null:
+			if collider.is_in_group("interactable"):
+				printDot = true
 
 
 func process_input(delta):
@@ -67,9 +129,12 @@ func process_input(delta):
 	if Input.is_action_pressed("movement_right"): input_movement_vector.x += 1
 	
 	if Input.is_action_pressed("walking"): 
-		MAX_SPEED = 4.7 / 3
+		MAX_SPEED = 6 / 2
+		walking = true
+		
 	else:
-		MAX_SPEED = 4.7
+		MAX_SPEED = 6
+		walking = false
 	
 	input_movement_vector = input_movement_vector.normalized()
 	
@@ -121,3 +186,8 @@ func _input(event):
 
 func _on_cooldown_timer_timeout():
 	flashLightCooldown = true
+
+
+func _on_turn_off_timer_timeout():
+	if flashlightOn:
+		flashlight()

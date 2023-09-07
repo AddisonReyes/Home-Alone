@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfyb7684s1q7u"]
+
+[ext_resource type="Script" path="res://Scripts/eyes.gd" id="1_gswpm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_421rp"]
+albedo_color = Color(0.92549, 0.780392, 0.780392, 1)
+emission_enabled = true
+emission = Color(0.92549, 0.780392, 0.780392, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_y6upn"]
+material = SubResource("StandardMaterial3D_421rp")
+
+[node name="Eyes" type="Node3D"]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+script = ExtResource("1_gswpm")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(-4.19629e-09, 0, -0.096, 0, 0.096, 0, 0.096, 0, -4.19629e-09, -0.339716, 1.22059, -0.0200861)
+mesh = SubResource("SphereMesh_y6upn")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(-4.19629e-09, 0, -0.096, 0, 0.096, 0, 0.096, 0, -4.19629e-09, 0.336931, 1.22059, -0.00825585)
+mesh = SubResource("SphereMesh_y6upn")
+skeleton = NodePath("../..")

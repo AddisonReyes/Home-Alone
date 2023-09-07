@@ -41,5 +41,10 @@ one_shot = true
 stream = ExtResource("3_ay2p8")
 volume_db = -26.0
 
+[node name="Timer6" type="Timer" parent="PropMiscLamp2/PropMiscLamp"]
+wait_time = 0.288
+one_shot = true
+
 [connection signal="timeout" from="PropMiscLamp2/PropMiscLamp/Timer" to="PropMiscLamp2/PropMiscLamp" method="_on_timer_timeout"]
 [connection signal="timeout" from="PropMiscLamp2/PropMiscLamp/TurnOffTimer" to="PropMiscLamp2/PropMiscLamp" method="_on_turn_off_timer_timeout"]
+[connection signal="timeout" from="PropMiscLamp2/PropMiscLamp/Timer6" to="PropMiscLamp2/PropMiscLamp" method="on_timer_timeout"]

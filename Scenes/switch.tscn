@@ -82,5 +82,11 @@ one_shot = true
 stream = ExtResource("3_0vt2q")
 volume_db = -26.0
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00788233, 0.0763522)
+light_energy = 0.006
+omni_range = 0.223
+omni_attenuation = 0.953674
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TurnOffTimer" to="." method="_on_turn_off_timer_timeout"]

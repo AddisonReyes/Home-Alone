@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://hpjjhcfn5t23"]
+
+[ext_resource type="Script" path="res://Scripts/flashlightItem.gd" id="1_hpk4i"]
+[ext_resource type="Script" path="res://Scripts/buttom.gd" id="2_x0soy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rb4is"]
+size = Vector3(0.169417, 0.175522, 0.43905)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfobr"]
+albedo_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_njukc"]
+material = SubResource("StandardMaterial3D_vfobr")
+top_radius = 0.4
+bottom_radius = 0.4
+height = 3.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_khv8r"]
+material = SubResource("StandardMaterial3D_vfobr")
+top_radius = 0.057
+bottom_radius = 0.057
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q04iv"]
+albedo_color = Color(0.568627, 0.568627, 0.568627, 1)
+metallic_specular = 1.0
+rim_enabled = true
+rim = 0.06
+
+[sub_resource type="SphereMesh" id="SphereMesh_j533h"]
+material = SubResource("StandardMaterial3D_q04iv")
+radius = 0.4
+height = 0.006
+
+[node name="flashlight" type="Node3D" groups=["interactable"]]
+script = ExtResource("1_hpk4i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
+script = ExtResource("2_x0soy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.038127, 0.0947082)
+shape = SubResource("BoxShape3D_rb4is")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.11, 0, 0, 0, -4.80825e-09, -0.11, 0, 0.11, -4.80825e-09, 0.00492412, 0.0471821, 0.0814152)
+mesh = SubResource("CylinderMesh_njukc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D/MeshInstance3D"]
+transform = Transform3D(9.09091, 0, 0, 0, -9.08942, -0.164687, 0, 0.164687, -9.08942, 0, -1.09194, 0)
+mesh = SubResource("CylinderMesh_khv8r")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.11, 0, 0, 0, -4.80825e-09, -0.11, 0, 0.11, -4.80825e-09, 0.00492412, 0.0471821, -0.0898848)
+mesh = SubResource("SphereMesh_j533h")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0.053718, -0.0127175)
+light_color = Color(1, 0.996078, 0.596078, 1)
+light_energy = 6.0
+shadow_enabled = true
+shadow_blur = 1.687
+distance_fade_enabled = true
+spot_range = 33.1893
+spot_angle = 35.437

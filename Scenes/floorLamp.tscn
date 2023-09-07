@@ -116,5 +116,10 @@ one_shot = true
 stream = ExtResource("3_xh673")
 volume_db = -26.0
 
+[node name="Timer6" type="Timer" parent="."]
+wait_time = 0.288
+one_shot = true
+
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
 [connection signal="timeout" from="TurnOffTimer" to="." method="_on_turn_off_timer_timeout"]
+[connection signal="timeout" from="Timer6" to="." method="on_timer_timeout"]

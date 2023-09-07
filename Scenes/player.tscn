@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dx4av4r25u7m4"]
+[gd_scene load_steps=11 format=3 uid="uid://dx4av4r25u7m4"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_15rcm"]
+[ext_resource type="AudioStream" uid="uid://bay4e0y1elqwf" path="res://Audio/Switch.mp3" id="2_k8cec"]
 [ext_resource type="AudioStream" uid="uid://dw1h16lx42r26" path="res://Audio/playerFootSteps.wav" id="2_ns4je"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gxdpm"]
@@ -10,34 +11,34 @@ height = 2.3
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d1ab0"]
 height = 2.6
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfobr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2y45p"]
 albedo_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_yoypm"]
-material = SubResource("StandardMaterial3D_vfobr")
+material = SubResource("StandardMaterial3D_2y45p")
 top_radius = 0.4
 bottom_radius = 0.4
 height = 2.6
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_18e0p"]
-material = SubResource("StandardMaterial3D_vfobr")
+material = SubResource("StandardMaterial3D_2y45p")
 top_radius = 0.057
 bottom_radius = 0.057
 height = 0.1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q04iv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tl02t"]
 albedo_color = Color(0.568627, 0.568627, 0.568627, 1)
 metallic_specular = 1.0
 rim_enabled = true
 rim = 0.06
 
 [sub_resource type="SphereMesh" id="SphereMesh_8ccl3"]
-material = SubResource("StandardMaterial3D_q04iv")
+material = SubResource("StandardMaterial3D_tl02t")
 radius = 0.4
 height = 0.006
 
-[node name="Player" type="CharacterBody3D"]
-collision_layer = 9
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_layer = 32777
 collision_mask = 15
 script = ExtResource("1_15rcm")
 
@@ -91,14 +92,30 @@ target_position = Vector3(0, 0, -3)
 collision_mask = 9
 debug_shape_custom_color = Color(0.580392, 0.0588235, 0.588235, 1)
 
+[node name="RayCast3D2" type="RayCast3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249436, -0.234419, -0.520699)
+target_position = Vector3(0, 0, -6.66)
+collision_mask = 9
+debug_shape_custom_color = Color(0.478431, 0.32549, 0.113725, 1)
+
 [node name="Audio" type="Node3D" parent="."]
+
+[node name="FlashLight" type="AudioStreamPlayer3D" parent="Audio"]
+stream = ExtResource("2_k8cec")
+volume_db = -16.0
+pitch_scale = 2.96
 
 [node name="Steps" type="AudioStreamPlayer3D" parent="Audio"]
 stream = ExtResource("2_ns4je")
-volume_db = -15.0
+volume_db = -10.0
 
 [node name="StepsTimer" type="Timer" parent="Audio"]
 wait_time = 0.6
 one_shot = true
 
+[node name="TurnOffTimer" type="Timer" parent="Audio"]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="timeout" from="CameraPivot/FlashLight/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="Audio/TurnOffTimer" to="." method="_on_turn_off_timer_timeout"]

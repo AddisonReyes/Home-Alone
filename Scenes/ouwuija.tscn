@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://d14kt64t03jv4"]
+
+[ext_resource type="Script" path="res://Scripts/ouwuija.gd" id="1_gvk2r"]
+[ext_resource type="ArrayMesh" uid="uid://6d25pmqweghj" path="res://Sprites/Ouwuija.obj" id="1_q7qh1"]
+[ext_resource type="Script" path="res://Scripts/buttom.gd" id="3_jl0st"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fujr0"]
+size = Vector3(1.19646, 0.118897, 0.747084)
+
+[node name="Ouija" type="Node3D"]
+script = ExtResource("1_gvk2r")
+
+[node name="Ouwuija" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.116, 0, 0, 0, 0.116, 0, 0, 0, 0.116, 0, 0, 0)
+mesh = ExtResource("1_q7qh1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0580335, 0)
+script = ExtResource("3_jl0st")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118225, 0)
+shape = SubResource("BoxShape3D_fujr0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="TurnOffTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TurnOffTimer" to="." method="_on_turn_off_timer_timeout"]
