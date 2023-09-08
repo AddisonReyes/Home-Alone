@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://byr02v3syjucr"
+path="res://.godot/imported/catDeath.obj-307b68c3aad68cdcdbf1c0a985580c1e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/catDeath.obj-307b68c3aad68cdcdbf1c0a985580c1e.mesh"]
+
+source_file="res://Sprites/catDeath.obj"
+dest_files=["res://.godot/imported/catDeath.obj-307b68c3aad68cdcdbf1c0a985580c1e.mesh", "res://.godot/imported/catDeath.obj-307b68c3aad68cdcdbf1c0a985580c1e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

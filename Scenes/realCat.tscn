@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfcpjybppnwjs"]
+
+[ext_resource type="Script" path="res://Scripts/realCat.gd" id="1_8c4ic"]
+[ext_resource type="Script" path="res://Scripts/buttom.gd" id="2_d2m6m"]
+[ext_resource type="ArrayMesh" uid="uid://dug122nsf55xs" path="res://Sprites/cat.obj" id="3_dx5mo"]
+[ext_resource type="AudioStream" uid="uid://bq7sk46w4khf2" path="res://Audio/meow.wav" id="4_7mox2"]
+[ext_resource type="AudioStream" uid="uid://cgy7081y3c4xu" path="res://Audio/purr.wav" id="5_273e4"]
+[ext_resource type="ArrayMesh" uid="uid://byr02v3syjucr" path="res://Sprites/catDeath.obj" id="6_7s52f"]
+[ext_resource type="AudioStream" uid="uid://cdmjvvl328ana" path="res://Audio/catDeath.wav" id="7_3jer6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dalkc"]
+size = Vector3(0.753805, 0.821767, 1.2611)
+
+[node name="RealCat" type="Node3D" groups=["interactable"]]
+script = ExtResource("1_8c4ic")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 32768
+collision_mask = 32768
+script = ExtResource("2_d2m6m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0197371, 0.68508, 0.112442)
+shape = SubResource("BoxShape3D_dalkc")
+
+[node name="CatDeath" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -0.13946, 0, 0.135043)
+visible = false
+mesh = ExtResource("6_7s52f")
+
+[node name="Cat" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -0.0337296, 0, 0.135043)
+mesh = ExtResource("3_dx5mo")
+
+[node name="Meow" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_7mox2")
+volume_db = -16.0
+
+[node name="Purr" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_273e4")
+volume_db = -36.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.6
+
+[node name="Death" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_3jer6")
+volume_db = -16.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

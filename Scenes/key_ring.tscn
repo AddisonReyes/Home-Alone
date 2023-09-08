@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://diqcbh27ncnnf"]
+
+[ext_resource type="Script" path="res://Scripts/keyRing.gd" id="1_x5qpf"]
+[ext_resource type="ArrayMesh" uid="uid://ddrcysnb0piw4" path="res://Sprites/key.obj" id="2_13wy1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3tp55"]
+albedo_color = Color(0.282353, 0.227451, 0.215686, 1)
+metallic = 0.59
+roughness = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bq1rn"]
+material = SubResource("StandardMaterial3D_3tp55")
+top_radius = 0.06
+bottom_radius = 0.06
+height = 0.6
+
+[node name="keyRing" type="Node3D"]
+script = ExtResource("1_x5qpf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.150418, 0.394981, 1.39048)
+mesh = SubResource("CylinderMesh_bq1rn")
+
+[node name="Key" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.232049, 0.0110256, 0.972642, 0.971972, 0.0361691, -0.232299, -0.0377408, 0.999285, -0.00232358, 0.092354, 0, 0)
+mesh = ExtResource("2_13wy1")
+
+[node name="Key2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.321401, -0.00993685, 0.946891, 0.946191, 0.0364832, 0.321546, -0.0377408, 0.999285, -0.00232358, 0.138169, -0.0355092, -0.134561)
+mesh = ExtResource("2_13wy1")

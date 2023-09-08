@@ -13,13 +13,11 @@ func interact():
 		interaction = true
 		
 		if buttonOn:
-			$OmniLight3D.visible = true
 			$Buttom2.visible = true
 			$Buttom.visible = false
 			buttonOn = false
 		
 		else:
-			$OmniLight3D.visible = false
 			$Buttom2.visible = false
 			$Buttom.visible = true
 			buttonOn = true

@@ -11,5 +11,6 @@ func _physics_process(delta):
 	if switch1.interaction:
 		$Lamp20.interact()
 		$Lamp21.interact()
+		$Lamp22.interact()
 		
 		switch1.interaction = false

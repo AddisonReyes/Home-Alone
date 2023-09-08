@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://6syg3u6dhvh2"]
+
+[ext_resource type="ArrayMesh" uid="uid://dug122nsf55xs" path="res://Sprites/cat.obj" id="1_asfrt"]
+[ext_resource type="Script" path="res://Scripts/fakeCcat.gd" id="1_xw3u7"]
+[ext_resource type="Script" path="res://Scripts/buttom.gd" id="3_aos0q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7iaw"]
+size = Vector3(1.15089, 1.11134, 0.525437)
+
+[sub_resource type="Animation" id="Animation_gd3hb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cat:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.18675, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0mr16"]
+resource_name = "idle"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cat:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4mt7r"]
+resource_name = "walk"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cat:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.18675, -1.5708, 0), Vector3(0.18675, -1.5708, 0), Vector3(-0.18675, -1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyaiq"]
+_data = {
+"RESET": SubResource("Animation_gd3hb"),
+"idle": SubResource("Animation_0mr16"),
+"walk": SubResource("Animation_4mt7r")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v4543"]
+size = Vector3(0.753805, 1, 1.3694)
+
+[node name="FakeCat" type="CharacterBody3D" groups=["Enemy", "interactable"]]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_xw3u7")
+
+[node name="Cat" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.81e-06, 0.0928331, -0.491306, 0, 0.491306, 0.0928331, 0.5, 3.36055e-07, -1.77852e-06, -0.0337296, 0, 0.135043)
+mesh = ExtResource("1_asfrt")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 2.0
+path_height_offset = 0.1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0507764, 0.564202, 0.129369)
+shape = SubResource("BoxShape3D_p7iaw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hyaiq")
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 32768
+collision_mask = 32768
+script = ExtResource("3_aos0q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0197371, 0.675624, 0.112442)
+shape = SubResource("BoxShape3D_v4543")
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]

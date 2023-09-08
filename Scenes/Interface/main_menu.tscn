@@ -41,7 +41,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Fader/Control/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.886275, 0.886275, 0.886275, 0.886275)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_qq2h5")
 theme_override_font_sizes/font_size = 32
 text = "Home Alone"
@@ -57,21 +57,21 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.886275, 0.886275, 0.886275, 0.886275)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_qq2h5")
 theme_override_font_sizes/font_size = 16
 text = "Start Game"
 
 [node name="Credits" type="Button" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.886275, 0.886275, 0.886275, 0.886275)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_qq2h5")
 theme_override_font_sizes/font_size = 16
 text = "Credits"
 
 [node name="Quit" type="Button" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.886275, 0.886275, 0.886275, 0.886275)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_qq2h5")
 theme_override_font_sizes/font_size = 16
 text = "Exit"
@@ -85,7 +85,7 @@ layout_mode = 2
 
 [node name="Options" type="Button" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer2/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.886275, 0.886275, 0.886275, 0.886275)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_qq2h5")
 theme_override_font_sizes/font_size = 16
 text = "EN"

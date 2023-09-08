@@ -4,6 +4,7 @@ extends Node3D
 @onready var fader = $CanvasLayer/Fader
 @onready var player = $Player
 
+@onready var keyRing = $Objects/keyRing
 @onready var frontDoor = $Objects/FrontDoor
 
 @export_dir var menu: String
@@ -34,6 +35,12 @@ func _physics_process(delta):
 		
 		fader.fade_out()
 		transitionStarted = true
+
+
+func monsterSpawned():
+	$Objects/keyRing.eraseKeys()
+	$Objects/Keys.showKeys()
+	$RealCat.death()
 
 
 func _on_update_target_timeout():

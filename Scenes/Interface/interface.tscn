@@ -67,6 +67,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j2dei")
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = -8.0
+grow_vertical = 0
+
+[node name="Volume" type="TextureRect" parent="VBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+texture = ExtResource("3_n8gta")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer2"]
+libraries = {
+"": SubResource("AnimationLibrary_1ppsh")
+}
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -74,6 +97,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -82,24 +109,3 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_nbgxc")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
-grow_vertical = 0
-
-[node name="Volume" type="TextureRect" parent="VBoxContainer2"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-texture = ExtResource("3_n8gta")
-expand_mode = 4
-stretch_mode = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer2"]
-libraries = {
-"": SubResource("AnimationLibrary_1ppsh")
-}

@@ -38,6 +38,7 @@ func _ready():
 	camera = $CameraPivot/Camera3D
 	rotation_helper = $CameraPivot
 	
+	$CameraAnimation.play("idle")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
@@ -108,7 +109,7 @@ func process_data():
 			var collider = $CameraPivot/RayCast3D2.get_collider()
 			
 			if collider != null:
-				if collider.is_in_group("Enemy"):
+				if collider.is_in_group("Monster"):
 					soundPosition = self.global_transform.origin
 					flashlight()
 	
