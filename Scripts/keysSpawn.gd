@@ -11,7 +11,7 @@ var key2
 func _ready():
 	setFirstKey()
 	setSecondKey()
-	#hideKeys()
+	hideKeys()
 	
 	eraseOthersKeys()
 

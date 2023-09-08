@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1m6kivyb546"]
+
+[ext_resource type="Script" path="res://Scripts/WeirdSound.gd" id="1_uw1kq"]
+[ext_resource type="AudioStream" uid="uid://djak2ohlex087" path="res://Audio/sound1.wav" id="2_nbncx"]
+[ext_resource type="AudioStream" uid="uid://dtfs21wlk45ac" path="res://Audio/sound2.wav" id="3_cd3l1"]
+[ext_resource type="AudioStream" uid="uid://b3ymaqh5lbkhm" path="res://Audio/sound3.wav" id="4_fadfw"]
+[ext_resource type="AudioStream" uid="uid://by3ywiy6542q8" path="res://Audio/meow2.wav" id="5_01m8e"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cttu2"]
+height = 0.506419
+radius = 6.68741
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jeuhe"]
+height = 0.506419
+radius = 1.69225
+
+[node name="WeirdSound" type="Node3D"]
+script = ExtResource("1_uw1kq")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16384
+collision_mask = 16384
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_cttu2")
+
+[node name="s1" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_nbncx")
+volume_db = -6.0
+
+[node name="s2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_cd3l1")
+volume_db = -26.0
+
+[node name="s3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_fadfw")
+volume_db = -26.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="Timer3" type="Timer" parent="."]
+
+[node name="Meow2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_01m8e")
+volume_db = -16.0
+pitch_scale = 0.65
+
+[node name="Area3D2" type="Area3D" parent="."]
+collision_layer = 16384
+collision_mask = 16384
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("CylinderShape3D_jeuhe")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="finished" from="Meow2" to="." method="_on_meow_2_finished"]
+[connection signal="body_entered" from="Area3D2" to="." method="_on_area_3d_2_body_entered"]

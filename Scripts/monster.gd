@@ -7,13 +7,13 @@ var rng = RandomNumberGenerator.new()
 @onready var navAgent = $NavigationAgent3D
 
 var stayQuiet = false
-var SPEED = 4.6
+var SPEED = 3.6
 
 
 func _ready():
 	$Timer.start()
 	
-	var time = 4#rng.randi_range(180, 360)
+	var time = rng.randi_range(16, 36)
 	$WeirdNoises/NoisesTimer.wait_time = time
 	$WeirdNoises/NoisesTimer.start()
 
@@ -84,20 +84,29 @@ func _on_area_3d_body_entered(body):
 		body.soundPosition = body.global_transform.origin
 
 
-func _on_noises_timer_timeout():
-	return 
-	
-	var noise = rng.randi_range(1, 3)
+func _on_noises_timer_timeout():	
+	var noise = rng.randi_range(1, 4)
 	
 	if noise == 1:
+		$WeirdNoises/s1.pitch_scale = rng.randf_range(-0.6, 0.6)
 		$WeirdNoises/s1.play()
 	
 	if noise == 2:
+		$WeirdNoises/s2.pitch_scale = rng.randf_range(-0.6, 0.6)
 		$WeirdNoises/s2.play()
 	
 	if noise == 3:
+		$WeirdNoises/s3.pitch_scale = rng.randf_range(-0.6, 0.6)
 		$WeirdNoises/s3.play()
 	
-	var time = 3#rng.randi_range(180, 360)
+	if noise == 3:
+		$WeirdNoises/s4.pitch_scale = rng.randf_range(-0.6, 0.6)
+		$WeirdNoises/s4.play()
+	
+	if noise == 4:
+		$WeirdNoises/s5.pitch_scale = rng.randf_range(-0.6, 0.6)
+		$WeirdNoises/s5.play()
+	
+	var time = rng.randi_range(16, 36)
 	$WeirdNoises/NoisesTimer.wait_time = time
 	$WeirdNoises/NoisesTimer.start()

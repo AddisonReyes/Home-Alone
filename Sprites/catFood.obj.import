@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d4kek07w2q1f2"
+path="res://.godot/imported/catFood.obj-10690a30eeb1a7a96705d713c13fc8c9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/catFood.obj-10690a30eeb1a7a96705d713c13fc8c9.mesh"]
+
+source_file="res://Sprites/catFood.obj"
+dest_files=["res://.godot/imported/catFood.obj-10690a30eeb1a7a96705d713c13fc8c9.mesh", "res://.godot/imported/catFood.obj-10690a30eeb1a7a96705d713c13fc8c9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

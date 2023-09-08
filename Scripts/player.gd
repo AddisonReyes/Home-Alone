@@ -26,7 +26,10 @@ var soundPosition
 var flashlightOn
 var walking
 
+var myCatIsDeath = false
 var flashlightPicked = true
+var catFoodPicked = false
+
 var doingNoise = false
 var printDot = false
 var keys = 0
@@ -181,6 +184,11 @@ func process_movement(delta):
 	velocity.z = hvel.z
 	
 	move_and_slide()
+
+
+func purinePicked():
+	catFoodPicked = true
+	$Audio/GrabFood.play()
 
 
 func addKey():

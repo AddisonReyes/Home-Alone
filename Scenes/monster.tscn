@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp1ghrpem673k"]
+[gd_scene load_steps=11 format=3 uid="uid://cp1ghrpem673k"]
 
 [ext_resource type="Script" path="res://Scripts/monster.gd" id="1_q837o"]
 [ext_resource type="AudioStream" uid="uid://dw1h16lx42r26" path="res://Audio/playerFootSteps.wav" id="2_yntfi"]
-[ext_resource type="AudioStream" uid="uid://b071jubi81w2c" path="res://Audio/Monster/1.wav" id="3_sa8g8"]
-[ext_resource type="AudioStream" uid="uid://bm6qw5oyoyymv" path="res://Audio/Monster/2.wav" id="4_b7hgj"]
-[ext_resource type="AudioStream" uid="uid://dgcmcgauwcgbb" path="res://Audio/Monster/3.wav" id="5_wvs23"]
+[ext_resource type="AudioStream" uid="uid://bq7sk46w4khf2" path="res://Audio/meow.wav" id="3_ul81p"]
+[ext_resource type="AudioStream" uid="uid://by3ywiy6542q8" path="res://Audio/meow2.wav" id="4_fvipb"]
+[ext_resource type="AudioStream" uid="uid://cgy7081y3c4xu" path="res://Audio/purr.wav" id="5_gxmtb"]
+[ext_resource type="AudioStream" uid="uid://hjssq1mjwdlw" path="res://Audio/meow3.wav" id="6_kpmb3"]
+[ext_resource type="AudioStream" uid="uid://ceqelc6i85npr" path="res://Audio/catEcho.wav" id="7_pubdr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g8qp3"]
 radius = 0.569642
@@ -66,16 +68,26 @@ one_shot = true
 [node name="WeirdNoises" type="Node3D" parent="."]
 
 [node name="s1" type="AudioStreamPlayer3D" parent="WeirdNoises"]
-stream = ExtResource("3_sa8g8")
+stream = ExtResource("3_ul81p")
 volume_db = -16.0
 
 [node name="s2" type="AudioStreamPlayer3D" parent="WeirdNoises"]
-stream = ExtResource("4_b7hgj")
+stream = ExtResource("4_fvipb")
 volume_db = -16.0
+pitch_scale = 0.63
 
 [node name="s3" type="AudioStreamPlayer3D" parent="WeirdNoises"]
-stream = ExtResource("5_wvs23")
+stream = ExtResource("5_gxmtb")
 volume_db = -16.0
+
+[node name="s4" type="AudioStreamPlayer3D" parent="WeirdNoises"]
+stream = ExtResource("6_kpmb3")
+volume_db = -36.0
+
+[node name="s5" type="AudioStreamPlayer3D" parent="WeirdNoises"]
+stream = ExtResource("7_pubdr")
+volume_db = -2.131
+pitch_scale = 0.66
 
 [node name="NoisesTimer" type="Timer" parent="WeirdNoises"]
 

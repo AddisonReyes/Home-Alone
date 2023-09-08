@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cih8wgehdsot8"]
+[gd_scene load_steps=15 format=3 uid="uid://cih8wgehdsot8"]
 
 [ext_resource type="Script" path="res://Scripts/door.gd" id="1_3inyb"]
+[ext_resource type="Script" path="res://Scripts/buttomReversed.gd" id="1_pxueq"]
 [ext_resource type="AudioStream" uid="uid://dg34fd4titkwh" path="res://Audio/openDoor.wav" id="2_xxyk7"]
 [ext_resource type="AudioStream" uid="uid://caup2j28qkuum" path="res://Audio/closeDoor.wav" id="3_vp7oe"]
 
@@ -44,6 +45,7 @@ size = Vector3(0.2, 3.45, 0.2)
 points = PackedVector3Array(-0.1, -1.725, -0.1, -0.1, -1.725, 0.1, -0.1, 1.725, -0.1, 0.1, -1.725, -0.1, 0.1, -1.725, 0.1, -0.1, 1.725, 0.1, 0.1, 1.725, -0.1, 0.1, 1.725, 0.1)
 
 [node name="Door" type="Node3D"]
+script = ExtResource("1_pxueq")
 
 [node name="Pivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0948489)
