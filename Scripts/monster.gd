@@ -80,7 +80,8 @@ func _on_timer_timeout():
 
 
 func _on_area_3d_body_entered(body):
-	body.soundPosition = body.global_transform.origin
+	if body is Player:
+		body.soundPosition = body.global_transform.origin
 
 
 func _on_noises_timer_timeout():

@@ -33,6 +33,9 @@ func _physics_process(delta):
 		creditsButton.text = "Los creditos"
 		optionsButton.text = "EN"
 		quitButton.text = "Salir"
+	
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func save_data():

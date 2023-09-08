@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ddrcysnb0piw4"
+path="res://.godot/imported/key.obj-6348ce78a5f8cfd720c821794ae47c74.mesh"
+
+[deps]
+
+files=["res://.godot/imported/key.obj-6348ce78a5f8cfd720c821794ae47c74.mesh"]
+
+source_file="res://Sprites/key.obj"
+dest_files=["res://.godot/imported/key.obj-6348ce78a5f8cfd720c821794ae47c74.mesh", "res://.godot/imported/key.obj-6348ce78a5f8cfd720c821794ae47c74.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

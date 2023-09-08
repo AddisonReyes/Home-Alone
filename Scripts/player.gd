@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 
 var rng = RandomNumberGenerator.new()
@@ -25,9 +26,10 @@ var soundPosition
 var flashlightOn
 var walking
 
-var flashlightPicked = false
+var flashlightPicked = true
 var doingNoise = false
 var printDot = false
+var keys = 0
 
 
 func _ready():
@@ -56,7 +58,6 @@ func _physics_process(delta):
 				collider.interact()
 				
 				if collider.is_in_group("door"):
-					soundPosition = self.global_transform.origin
 					doingNoise = true
 
 
@@ -70,7 +71,6 @@ func process_audio():
 			
 			$Audio/StepsTimer.start()
 			
-		soundPosition = self.global_transform.origin
 		doingNoise = true
 
 
@@ -91,6 +91,10 @@ func flashlight():
 
 
 func process_data():
+	if doingNoise:
+		soundPosition = self.global_transform.origin
+	
+	
 	if flashlightPicked:
 		$CameraPivot/FlashLight.visible = true
 	
@@ -108,6 +112,7 @@ func process_data():
 					soundPosition = self.global_transform.origin
 					flashlight()
 	
+	
 	printDot = false
 	if $CameraPivot/RayCast3D.is_colliding():
 		var collider = $CameraPivot/RayCast3D.get_collider()
@@ -115,6 +120,9 @@ func process_data():
 		if collider != null:
 			if collider.is_in_group("interactable"):
 				printDot = true
+				
+				if collider.visible == false:
+					printDot = false
 
 
 func process_input(delta):
@@ -172,6 +180,11 @@ func process_movement(delta):
 	velocity.z = hvel.z
 	
 	move_and_slide()
+
+
+func addKey():
+	$Audio/GrapKey.play()
+	keys += 1
 
 
 func _input(event):

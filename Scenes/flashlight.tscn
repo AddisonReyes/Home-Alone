@@ -36,6 +36,8 @@ height = 0.006
 script = ExtResource("1_hpk4i")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
+collision_layer = 32769
+collision_mask = 32769
 script = ExtResource("2_x0soy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]

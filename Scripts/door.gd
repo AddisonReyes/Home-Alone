@@ -1,6 +1,7 @@
 extends Node3D
 class_name Door
 
+
 @onready var pivot = get_parent().get_parent().get_node("Pivot")
 
 var rng = RandomNumberGenerator.new()

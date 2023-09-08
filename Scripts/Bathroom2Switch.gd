@@ -4,7 +4,7 @@ extends Node3D
 
 
 func _ready():
-	switch1.interaction = true
+	switch1.interact()
 	
 
 func _physics_process(delta):

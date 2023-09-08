@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://smge4cx5koxr"
+path="res://.godot/imported/phone.obj-c0264d7f9a6dbf3ebb5a240ee6b82b45.mesh"
+
+[deps]
+
+files=["res://.godot/imported/phone.obj-c0264d7f9a6dbf3ebb5a240ee6b82b45.mesh"]
+
+source_file="res://Sprites/phone.obj"
+dest_files=["res://.godot/imported/phone.obj-c0264d7f9a6dbf3ebb5a240ee6b82b45.mesh", "res://.godot/imported/phone.obj-c0264d7f9a6dbf3ebb5a240ee6b82b45.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
