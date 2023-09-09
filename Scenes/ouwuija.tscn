@@ -16,8 +16,6 @@ mesh = ExtResource("1_q7qh1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0580335, 0)
-collision_layer = 32769
-collision_mask = 32769
 script = ExtResource("3_jl0st")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]

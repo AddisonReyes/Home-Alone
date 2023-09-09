@@ -1,10 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://dx4av4r25u7m4"]
+[gd_scene load_steps=22 format=3 uid="uid://dx4av4r25u7m4"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_15rcm"]
 [ext_resource type="AudioStream" uid="uid://drqsdcw4sfhaf" path="res://Audio/Flashlight on.wav" id="2_ly7nu"]
 [ext_resource type="AudioStream" uid="uid://dw1h16lx42r26" path="res://Audio/playerFootSteps.wav" id="2_ns4je"]
 [ext_resource type="AudioStream" uid="uid://bn2dmla3i1oux" path="res://Audio/grabKey.mp3" id="4_5cc4y"]
 [ext_resource type="AudioStream" uid="uid://ddcj4m20rfme7" path="res://Audio/pickPurine.wav" id="5_hee68"]
+[ext_resource type="AudioStream" uid="uid://b7fndgnxci850" path="res://Audio/PickPhone.wav" id="6_2hrs1"]
+[ext_resource type="ArrayMesh" uid="uid://kalxlhk3pfbb" path="res://Sprites/catGhost.obj" id="7_r28ac"]
+[ext_resource type="AudioStream" uid="uid://bqc1onv0eip2s" path="res://Audio/Monster/jump1.mp3" id="8_vbubc"]
+[ext_resource type="AudioStream" uid="uid://3h85mjxghsuq" path="res://Audio/Monster/jump2.wav" id="9_hq13s"]
+[ext_resource type="AudioStream" uid="uid://dv47wp5sw2exs" path="res://Audio/Monster/jump3.wav" id="10_xxke5"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gxdpm"]
 radius = 0.36
@@ -28,6 +33,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 2.29618, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CatGhost:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CatGhost:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.0222e-08, 1.5708, -0.763424)]
+}
 
 [sub_resource type="Animation" id="Animation_dgirn"]
 resource_name = "idle"
@@ -43,13 +72,42 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.9, 6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 2.29618, 0), Vector3(0, 2.126, 0), Vector3(0, 2.29618, 0)]
+"values": [Vector3(0, 2.29618, 0), Vector3(0, 2.226, 0), Vector3(0, 2.29618, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cdgxs"]
+resource_name = "jumpscare"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CatGhost:visible")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CatGhost:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.0222e-08, 1.5708, -0.763424), Vector3(-8.09882e-09, 1.5708, -0.00549775)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w2bje"]
 _data = {
 "RESET": SubResource("Animation_oxoav"),
-"idle": SubResource("Animation_dgirn")
+"idle": SubResource("Animation_dgirn"),
+"jumpscare": SubResource("Animation_cdgxs")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2y45p"]
@@ -79,30 +137,43 @@ radius = 0.4
 height = 0.006
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
+process_mode = 1
 collision_layer = 49161
 collision_mask = 49167
 script = ExtResource("1_15rcm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32711, 0)
 mesh = SubResource("CapsuleMesh_gxdpm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31198, 0)
 shape = SubResource("CapsuleShape3D_d1ab0")
 
+[node name="CatGhost" type="MeshInstance3D" parent="."]
+process_mode = 1
+transform = Transform3D(-2.63624e-06, -2.48103e-06, 1, -0.6914, 0.722473, -3.0222e-08, -0.722473, -0.6914, -3.61999e-06, 0.193072, -0.942142, -2.10207)
+visible = false
+mesh = ExtResource("7_r28ac")
+
 [node name="CameraAnimation" type="AnimationPlayer" parent="."]
+process_mode = 1
 libraries = {
 "": SubResource("AnimationLibrary_w2bje")
 }
 
 [node name="CameraPivot" type="Node3D" parent="."]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29618, 0)
 
 [node name="FlashLight" type="Node3D" parent="CameraPivot"]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107763, 0.0750554, 0.0616877)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CameraPivot/FlashLight"]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0.3542, -0.314008, -0.519628)
 light_color = Color(1, 0.996078, 0.596078, 1)
 light_energy = 6.0
@@ -113,63 +184,98 @@ spot_range = 33.1893
 spot_angle = 35.437
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CameraPivot/FlashLight"]
+process_mode = 1
 transform = Transform3D(0.11, 0, 0, 0, -4.80825e-09, -0.11, 0, 0.11, -4.80825e-09, 0.3542, -0.314008, -0.418791)
 mesh = SubResource("CylinderMesh_yoypm")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="CameraPivot/FlashLight/MeshInstance3D"]
+process_mode = 1
 transform = Transform3D(9.09091, 0, 0, 0, -9.08942, -0.164687, 0, 0.164687, -9.08942, 0, -1.09194, 0)
 mesh = SubResource("CylinderMesh_18e0p")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="CameraPivot/FlashLight"]
+process_mode = 1
 transform = Transform3D(0.11, 0, 0, 0, -4.80825e-09, -0.11, 0, 0.11, -4.80825e-09, 0.3542, -0.314008, -0.590091)
 mesh = SubResource("SphereMesh_8ccl3")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="CooldownTimer" type="Timer" parent="CameraPivot/FlashLight"]
+process_mode = 1
 wait_time = 0.6
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+process_mode = 1
 current = true
-fov = 61.1503
+fov = 50.0
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraPivot"]
+process_mode = 1
 target_position = Vector3(0, 0, -3)
 collision_mask = 32768
 debug_shape_custom_color = Color(0.580392, 0.0588235, 0.588235, 1)
 
 [node name="RayCast3D2" type="RayCast3D" parent="CameraPivot"]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.249436, -0.234419, -0.520699)
 target_position = Vector3(0, 0, -6.66)
 collision_mask = 9
 debug_shape_custom_color = Color(0.478431, 0.32549, 0.113725, 1)
 
 [node name="Audio" type="Node3D" parent="."]
+process_mode = 1
 
 [node name="FlashLight" type="AudioStreamPlayer3D" parent="Audio"]
+process_mode = 1
 stream = ExtResource("2_ly7nu")
 volume_db = -16.0
 
 [node name="Steps" type="AudioStreamPlayer3D" parent="Audio"]
+process_mode = 1
 stream = ExtResource("2_ns4je")
 volume_db = -10.0
 
 [node name="StepsTimer" type="Timer" parent="Audio"]
+process_mode = 1
 wait_time = 0.6
 one_shot = true
 
 [node name="TurnOffTimer" type="Timer" parent="Audio"]
+process_mode = 1
 wait_time = 3.0
 one_shot = true
 
 [node name="GrapKey" type="AudioStreamPlayer3D" parent="Audio"]
+process_mode = 1
 stream = ExtResource("4_5cc4y")
 volume_db = -20.0
 pitch_scale = 0.66
 
 [node name="GrabFood" type="AudioStreamPlayer3D" parent="Audio"]
+process_mode = 1
 stream = ExtResource("5_hee68")
 volume_db = -20.0
 
+[node name="phone" type="AudioStreamPlayer3D" parent="Audio"]
+process_mode = 1
+stream = ExtResource("6_2hrs1")
+volume_db = -16.0
+
+[node name="Jumpscare1" type="AudioStreamPlayer3D" parent="Audio"]
+process_mode = 1
+stream = ExtResource("8_vbubc")
+
+[node name="Jumpscare2" type="AudioStreamPlayer3D" parent="Audio"]
+process_mode = 1
+stream = ExtResource("9_hq13s")
+
+[node name="Jumpscare3" type="AudioStreamPlayer3D" parent="Audio"]
+process_mode = 1
+stream = ExtResource("10_xxke5")
+
 [connection signal="timeout" from="CameraPivot/FlashLight/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
 [connection signal="timeout" from="Audio/TurnOffTimer" to="." method="_on_turn_off_timer_timeout"]
+[connection signal="finished" from="Audio/phone" to="." method="_on_phone_finished"]
+[connection signal="finished" from="Audio/Jumpscare1" to="." method="_on_jumpscare_finished"]
+[connection signal="finished" from="Audio/Jumpscare2" to="." method="_on_jumpscare_finished"]
+[connection signal="finished" from="Audio/Jumpscare3" to="." method="_on_jumpscare_finished"]

@@ -11,6 +11,7 @@ const thirdPosition = Vector3(17.9, -0.572, 14.083)
 
 const catGhostSpawn = preload("res://Scenes/monster.tscn")
 
+@onready var interface = $CanvasLayer/Interface
 @onready var fader = $CanvasLayer/Fader
 @onready var player = $Player
 
@@ -18,11 +19,16 @@ const catGhostSpawn = preload("res://Scenes/monster.tscn")
 @onready var frontDoor = $Objects/FrontDoor
 
 @export_dir var menu: String
+@export_dir var hints: String
 
 var lastPlayerSound
 
 var gameFinished = false
 var transitionStarted = false
+var lastObjetivePrinted = false
+var secondObjetivePrinted = false
+var resetLevelBool = false
+var backToMenu = false
 
 var weirdNoises
 
@@ -58,6 +64,8 @@ func monsterSpawn():
 	
 	$Objects/keyRing.eraseKeys()
 	$Objects/Keys.showKeys()
+	
+	$Timers/Timer.start()
 
 
 func killRealCat():
@@ -67,9 +75,10 @@ func killRealCat():
 
 
 func SoundReached():
-	$RealCat.queue_free()
-	
 	$JumpscaresAndSounds/YourCatIsDeath/CatGhostPaws.visible = true
+	$RealCat.queue_free()
+	$Phone.canInteract()
+	$Phone.ring()
 
 
 func createWeirdSound():
@@ -88,6 +97,20 @@ func createWeirdSound():
 	add_child(sound)
 
 
+func resetLevel():
+	fader.beforeJumpscare()
+	resetLevelBool = true
+
+
+func levelFadeIn():
+	fader.fade_in()
+
+
+func levelFadeOut():
+	interface.visible = false
+	fader.fade_out()
+
+
 func _on_update_target_timeout():
 	$Timers/UpdateTarget.start()
 
@@ -95,7 +118,25 @@ func _on_update_target_timeout():
 func _on_fader_fade_finished():
 	if gameFinished:
 		get_tree().change_scene_to_file(menu)
+	
+	if resetLevelBool:
+		get_tree().change_scene_to_file(hints)
+	
+	if backToMenu:
+		get_tree().change_scene_to_file(menu)
 
 
 func _on_shuiiin_finished():
 	createWeirdSound()
+
+
+func _on_timer_timeout():
+	if lastObjetivePrinted == false:
+		interface.printObjetive()
+		lastObjetivePrinted = true
+
+
+func _on_second_objetive_timer_timeout():
+	if secondObjetivePrinted == false:
+		secondObjetivePrinted = true
+		interface.printObjetive()

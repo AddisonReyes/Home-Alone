@@ -4,11 +4,12 @@ class_name Enemy
 
 var rng = RandomNumberGenerator.new()
 
+@onready var player = get_parent().get_node("Player")
 @onready var navAgent = $NavigationAgent3D
 @onready var anim = $AnimationPlayer
 
 var stayQuiet = false
-var SPEED = 3.6
+var SPEED = 5.06
 
 
 func _ready():
@@ -57,13 +58,14 @@ func interact_with_the_world():
 
 
 func jumpscare():
-	pass#self.queue_free()
+	player.jumpscare()
+	self.visible = false
 
 
 func process_audio():
-	if velocity.length() != 0 and stayQuiet == false: 
+	if velocity.length() != 0: 
 		if $Steps/StepsTimer.time_left <= 0:
-			$Steps/Steps.pitch_scale = rng.randf_range(0.1, 0.6)
+			$Steps/Steps.pitch_scale = rng.randf_range(0.666, 0.999)
 			$Steps/Steps.play()
 			
 			$Steps/StepsTimer.start()
@@ -91,23 +93,23 @@ func _on_noises_timer_timeout():
 	var noise = rng.randi_range(1, 4)
 	
 	if noise == 1:
-		$WeirdNoises/s1.pitch_scale = rng.randf_range(-0.1, 0.5)
+		$WeirdNoises/s1.pitch_scale = rng.randf_range(-0.6, 0.6)
 		$WeirdNoises/s1.play()
 	
 	if noise == 2:
-		$WeirdNoises/s2.pitch_scale = rng.randf_range(-0.1, 0.5)
+		$WeirdNoises/s2.pitch_scale = rng.randf_range(-0.6, 0.6)
 		$WeirdNoises/s2.play()
 	
 	if noise == 3:
-		$WeirdNoises/s3.pitch_scale = rng.randf_range(-0.1, 0.5)
+		$WeirdNoises/s3.pitch_scale = rng.randf_range(-0.6, 0.6)
 		$WeirdNoises/s3.play()
 	
 	if noise == 3:
-		$WeirdNoises/s4.pitch_scale = rng.randf_range(-0.1, 0.5)
+		$WeirdNoises/s4.pitch_scale = rng.randf_range(-0.6, 0.6)
 		$WeirdNoises/s4.play()
 	
 	if noise == 4:
-		$WeirdNoises/s5.pitch_scale = rng.randf_range(-0.1, 0.5)
+		$WeirdNoises/s5.pitch_scale = rng.randf_range(-0.6, 0.6)
 		$WeirdNoises/s5.play()
 	
 	var time = rng.randi_range(16, 36)

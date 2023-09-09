@@ -18,6 +18,7 @@ var language = "EN"
 
 
 func _ready():
+	load_data()
 	fader.fade_in()
 
 
@@ -58,6 +59,11 @@ func load_data():
 func _on_play_pressed():
 	$AudioStreamPlayer.play()
 	startGame = true
+	
+	var data = language
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	file.store_var(data)
+	
 	fader.fade_out()
 
 

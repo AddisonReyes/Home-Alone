@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/monster.gd" id="1_q837o"]
 [ext_resource type="ArrayMesh" uid="uid://kalxlhk3pfbb" path="res://Sprites/catGhost.obj" id="2_wxpx5"]
-[ext_resource type="AudioStream" uid="uid://dw1h16lx42r26" path="res://Audio/playerFootSteps.wav" id="2_yntfi"]
+[ext_resource type="AudioStream" uid="uid://t8p7vlgox1mv" path="res://Audio/catBell.wav" id="3_oay6e"]
 [ext_resource type="AudioStream" uid="uid://bq7sk46w4khf2" path="res://Audio/meow.wav" id="3_ul81p"]
 [ext_resource type="AudioStream" uid="uid://by3ywiy6542q8" path="res://Audio/meow2.wav" id="4_fvipb"]
 [ext_resource type="AudioStream" uid="uid://cgy7081y3c4xu" path="res://Audio/purr.wav" id="5_gxmtb"]
@@ -54,13 +54,14 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d6krm"]
-size = Vector3(0.590656, 1.88554, 0.769679)
+size = Vector3(0.457408, 1.74914, 0.840619)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wgrlw"]
 height = 1.0
 radius = 6.0
 
 [node name="Monster" type="CharacterBody3D" groups=["Enemy", "Monster"]]
+process_mode = 1
 collision_layer = 15
 collision_mask = 15
 axis_lock_angular_x = true
@@ -69,76 +70,92 @@ axis_lock_angular_z = true
 script = ExtResource("1_q837o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 1
 libraries = {
 "": SubResource("AnimationLibrary_isg1r")
 }
 
 [node name="CatGhost" type="MeshInstance3D" parent="."]
+process_mode = 1
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.684345, 0)
 mesh = ExtResource("2_wxpx5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118427, 0.996519, -0.280709)
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118427, 0.996519, -0.395557)
 shape = SubResource("BoxShape3D_d6krm")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+process_mode = 1
 target_desired_distance = 2.0
 path_height_offset = 0.1
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
+process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70358, 0)
 target_position = Vector3(0, 0, -3)
 collision_mask = 9
 debug_shape_custom_color = Color(0.580392, 0.0588235, 0.588235, 1)
 
 [node name="Timer" type="Timer" parent="."]
+process_mode = 1
 wait_time = 0.6
 
 [node name="Area3D" type="Area3D" parent="."]
+process_mode = 1
 collision_layer = 32768
 collision_mask = 32768
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+process_mode = 1
 transform = Transform3D(0.914607, 0, 0.404344, 0, 1, 0, -0.404344, 0, 0.914607, 0, 1.44776, 0)
 shape = SubResource("CylinderShape3D_wgrlw")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-
 [node name="Steps" type="Node3D" parent="."]
+process_mode = 1
 
 [node name="Steps" type="AudioStreamPlayer3D" parent="Steps"]
-stream = ExtResource("2_yntfi")
-volume_db = -8.0
+process_mode = 1
+stream = ExtResource("3_oay6e")
+pitch_scale = 0.62
 
 [node name="StepsTimer" type="Timer" parent="Steps"]
-wait_time = 0.6
+process_mode = 1
+wait_time = 6.0
 one_shot = true
 
 [node name="WeirdNoises" type="Node3D" parent="."]
+process_mode = 1
 
 [node name="s1" type="AudioStreamPlayer3D" parent="WeirdNoises"]
+process_mode = 1
 stream = ExtResource("3_ul81p")
 volume_db = -16.0
 
 [node name="s2" type="AudioStreamPlayer3D" parent="WeirdNoises"]
+process_mode = 1
 stream = ExtResource("4_fvipb")
 volume_db = -16.0
 pitch_scale = 0.63
 
 [node name="s3" type="AudioStreamPlayer3D" parent="WeirdNoises"]
+process_mode = 1
 stream = ExtResource("5_gxmtb")
 volume_db = -16.0
 
 [node name="s4" type="AudioStreamPlayer3D" parent="WeirdNoises"]
+process_mode = 1
 stream = ExtResource("6_kpmb3")
 volume_db = -36.0
 
 [node name="s5" type="AudioStreamPlayer3D" parent="WeirdNoises"]
+process_mode = 1
 stream = ExtResource("7_pubdr")
 volume_db = -20.0
 pitch_scale = 0.66
 
 [node name="NoisesTimer" type="Timer" parent="WeirdNoises"]
+process_mode = 1
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

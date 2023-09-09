@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbfgj5tuc1vjk"]
+
+[ext_resource type="Script" path="res://Scripts/phone.gd" id="1_cofkj"]
+[ext_resource type="Script" path="res://Scripts/buttom.gd" id="2_dyitb"]
+[ext_resource type="ArrayMesh" uid="uid://smge4cx5koxr" path="res://Sprites/phone.obj" id="3_wkjrw"]
+[ext_resource type="AudioStream" uid="uid://236qajahkf35" path="res://Audio/ring.mp3" id="4_8vfk6"]
+[ext_resource type="AudioStream" uid="uid://b57c33wm4nr82" path="res://Audio/Audio.wav" id="5_2hucp"]
+[ext_resource type="AudioStream" uid="uid://i4gomwykl037" path="res://Audio/static.wav" id="6_bbq4v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_82wym"]
+size = Vector3(1, 0.277927, 1)
+
+[node name="Phone" type="Node3D"]
+script = ExtResource("1_cofkj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["interactable", "phone"]]
+collision_layer = 32768
+collision_mask = 32768
+script = ExtResource("2_dyitb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.725599, 0)
+shape = SubResource("BoxShape3D_82wym")
+
+[node name="Phone" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("3_wkjrw")
+
+[node name="Ring" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_8vfk6")
+volume_db = -20.0
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_2hucp")
+volume_db = -16.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Static" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_bbq4v")
+volume_db = -20.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 16.0
+
+[connection signal="finished" from="Ring" to="." method="_on_ring_finished"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
