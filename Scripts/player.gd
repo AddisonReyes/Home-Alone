@@ -27,9 +27,10 @@ var flashlightOn
 var walking
 
 var myCatIsDeath = false
-var flashlightPicked = true
+var flashlightPicked = false
 var catFoodPicked = false
 
+var SoundReached = false
 var doingNoise = false
 var printDot = false
 var keys = 0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfwaog7ky0nhk"
+path="res://.godot/imported/catGhostPaws.obj-1a2d3d36e04f43e392c7c39f3d02676d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/catGhostPaws.obj-1a2d3d36e04f43e392c7c39f3d02676d.mesh"]
+
+source_file="res://Sprites/catGhostPaws.obj"
+dest_files=["res://.godot/imported/catGhostPaws.obj-1a2d3d36e04f43e392c7c39f3d02676d.mesh", "res://.godot/imported/catGhostPaws.obj-1a2d3d36e04f43e392c7c39f3d02676d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

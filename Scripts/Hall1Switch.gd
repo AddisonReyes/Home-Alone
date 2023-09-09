@@ -4,6 +4,11 @@ extends Node3D
 @onready var switch2 = $Switch5
 @onready var switch3 = $Switch7
 
+
+func _ready():
+	switch1.interact()
+
+
 func _physics_process(delta):
 	if switch1.interaction or switch2.interaction or switch3.interaction:
 		$Lamp20.interact()

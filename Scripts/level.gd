@@ -3,6 +3,14 @@ extends Node3D
 
 var rng  = RandomNumberGenerator.new()
 
+const weirdSoundsPath = preload("res://Scenes/weird_sound.tscn")
+
+const firstPosition = Vector3(40.683, -0.572, 32.351)
+const secondPosition = Vector3(-7.281, -0.572, 16.873)
+const thirdPosition = Vector3(17.9, -0.572, 14.083)
+
+const catGhostSpawn = preload("res://Scenes/monster.tscn")
+
 @onready var fader = $CanvasLayer/Fader
 @onready var player = $Player
 
@@ -24,22 +32,6 @@ func _ready():
 	
 	var num = rng.randi_range(0, 1)
 	
-	if num == 0:
-		$Objects/Doors/Door15.interact()
-		$Objects/CatFood/CatFood2.queue_free()
-		$FakeCat/WeirdSound.queue_free()
-		$FakeCat.queue_free()
-		
-		weirdNoises = $FakeCat2/WeirdSound
-	
-	elif num == 1:
-		$Objects/Doors/Door.interact()
-		$Objects/CatFood/CatFood.queue_free()
-		$FakeCat2/WeirdSound.queue_free()
-		$FakeCat2.queue_free()
-		
-		weirdNoises = $FakeCat/WeirdSound
-	
 	lastPlayerSound = player.soundPosition
 	$Timers/UpdateTarget.start()
 
@@ -59,7 +51,11 @@ func _physics_process(delta):
 		transitionStarted = true
 
 
-func monsterSpawned():
+func monsterSpawn():
+	var monster = catGhostSpawn.instantiate()
+	monster.position = Vector3(28.984, -1.5, 1.275)
+	add_child(monster)
+	
 	$Objects/keyRing.eraseKeys()
 	$Objects/Keys.showKeys()
 
@@ -67,8 +63,29 @@ func monsterSpawned():
 func killRealCat():
 	if $RealCat.alive:
 		$Player.myCatIsDeath = true
-		weirdNoises.queue_free()
 		$RealCat.death()
+
+
+func SoundReached():
+	$RealCat.queue_free()
+	
+	$JumpscaresAndSounds/YourCatIsDeath/CatGhostPaws.visible = true
+
+
+func createWeirdSound():
+	var sound = weirdSoundsPath.instantiate()
+	var num = rng.randi_range(0, 2)
+	
+	if num == 0:
+		sound.position = firstPosition
+	
+	if num == 1:
+		sound.position = secondPosition
+	
+	if num == 2:
+		sound.position = thirdPosition
+	
+	add_child(sound)
 
 
 func _on_update_target_timeout():
@@ -78,3 +95,7 @@ func _on_update_target_timeout():
 func _on_fader_fade_finished():
 	if gameFinished:
 		get_tree().change_scene_to_file(menu)
+
+
+func _on_shuiiin_finished():
+	createWeirdSound()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cp1ghrpem673k"]
+[gd_scene load_steps=15 format=3 uid="uid://cp1ghrpem673k"]
 
 [ext_resource type="Script" path="res://Scripts/monster.gd" id="1_q837o"]
+[ext_resource type="ArrayMesh" uid="uid://kalxlhk3pfbb" path="res://Sprites/catGhost.obj" id="2_wxpx5"]
 [ext_resource type="AudioStream" uid="uid://dw1h16lx42r26" path="res://Audio/playerFootSteps.wav" id="2_yntfi"]
 [ext_resource type="AudioStream" uid="uid://bq7sk46w4khf2" path="res://Audio/meow.wav" id="3_ul81p"]
 [ext_resource type="AudioStream" uid="uid://by3ywiy6542q8" path="res://Audio/meow2.wav" id="4_fvipb"]
@@ -8,12 +9,52 @@
 [ext_resource type="AudioStream" uid="uid://hjssq1mjwdlw" path="res://Audio/meow3.wav" id="6_kpmb3"]
 [ext_resource type="AudioStream" uid="uid://ceqelc6i85npr" path="res://Audio/catEcho.wav" id="7_pubdr"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g8qp3"]
-radius = 0.569642
-height = 2.6
+[sub_resource type="Animation" id="Animation_gwflk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CatGhost:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.684345, 0)]
+}
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_cqbhg"]
-height = 2.8
+[sub_resource type="Animation" id="Animation_pya5d"]
+resource_name = "chase"
+length = 2.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_im4yr"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CatGhost:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.684345, 0), Vector3(0, 0.896863, 0), Vector3(0, 0.684345, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_isg1r"]
+_data = {
+"RESET": SubResource("Animation_gwflk"),
+"chase": SubResource("Animation_pya5d"),
+"idle": SubResource("Animation_im4yr")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d6krm"]
+size = Vector3(0.590656, 1.88554, 0.769679)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wgrlw"]
 height = 1.0
@@ -22,22 +63,30 @@ radius = 6.0
 [node name="Monster" type="CharacterBody3D" groups=["Enemy", "Monster"]]
 collision_layer = 15
 collision_mask = 15
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 script = ExtResource("1_q837o")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41734, 0)
-shape = SubResource("CapsuleShape3D_g8qp3")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_isg1r")
+}
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41734, 0)
-mesh = SubResource("CapsuleMesh_cqbhg")
+[node name="CatGhost" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.684345, 0)
+mesh = ExtResource("2_wxpx5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118427, 0.996519, -0.280709)
+shape = SubResource("BoxShape3D_d6krm")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 target_desired_distance = 2.0
 path_height_offset = 0.1
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20366, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70358, 0)
 target_position = Vector3(0, 0, -3)
 collision_mask = 9
 debug_shape_custom_color = Color(0.580392, 0.0588235, 0.588235, 1)
@@ -86,7 +135,7 @@ volume_db = -36.0
 
 [node name="s5" type="AudioStreamPlayer3D" parent="WeirdNoises"]
 stream = ExtResource("7_pubdr")
-volume_db = -2.131
+volume_db = -20.0
 pitch_scale = 0.66
 
 [node name="NoisesTimer" type="Timer" parent="WeirdNoises"]

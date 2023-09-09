@@ -1,9 +1,9 @@
+AudioStreamPlayer3D
 Timer
 CollisionShape3D
 Area3D
-AudioStreamPlayer3D
-AnimationPlayer
 Node3D
+AnimationPlayer
 StaticBody3D
 Skeleton3D
 CharacterBody3D

@@ -4,10 +4,9 @@ extends Node3D
 
 
 func interact():
-	if player.myCatIsDeath:
-		player.doingNoise = true
-		player.purinePicked()
-		self.queue_free()
+	get_parent().get_parent().get_parent().killRealCat()
+	player.purinePicked()
+	self.queue_free()
 
 
 func _physics_process(delta):

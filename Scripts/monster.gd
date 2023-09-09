@@ -5,6 +5,7 @@ class_name Enemy
 var rng = RandomNumberGenerator.new()
 
 @onready var navAgent = $NavigationAgent3D
+@onready var anim = $AnimationPlayer
 
 var stayQuiet = false
 var SPEED = 3.6
@@ -13,9 +14,11 @@ var SPEED = 3.6
 func _ready():
 	$Timer.start()
 	
-	var time = rng.randi_range(16, 36)
+	var time = 2
 	$WeirdNoises/NoisesTimer.wait_time = time
 	$WeirdNoises/NoisesTimer.start()
+	
+	anim.play("idle")
 
 
 func _physics_process(delta):
@@ -88,23 +91,23 @@ func _on_noises_timer_timeout():
 	var noise = rng.randi_range(1, 4)
 	
 	if noise == 1:
-		$WeirdNoises/s1.pitch_scale = rng.randf_range(-0.6, 0.6)
+		$WeirdNoises/s1.pitch_scale = rng.randf_range(-0.1, 0.5)
 		$WeirdNoises/s1.play()
 	
 	if noise == 2:
-		$WeirdNoises/s2.pitch_scale = rng.randf_range(-0.6, 0.6)
+		$WeirdNoises/s2.pitch_scale = rng.randf_range(-0.1, 0.5)
 		$WeirdNoises/s2.play()
 	
 	if noise == 3:
-		$WeirdNoises/s3.pitch_scale = rng.randf_range(-0.6, 0.6)
+		$WeirdNoises/s3.pitch_scale = rng.randf_range(-0.1, 0.5)
 		$WeirdNoises/s3.play()
 	
 	if noise == 3:
-		$WeirdNoises/s4.pitch_scale = rng.randf_range(-0.6, 0.6)
+		$WeirdNoises/s4.pitch_scale = rng.randf_range(-0.1, 0.5)
 		$WeirdNoises/s4.play()
 	
 	if noise == 4:
-		$WeirdNoises/s5.pitch_scale = rng.randf_range(-0.6, 0.6)
+		$WeirdNoises/s5.pitch_scale = rng.randf_range(-0.1, 0.5)
 		$WeirdNoises/s5.play()
 	
 	var time = rng.randi_range(16, 36)

@@ -27,7 +27,7 @@ func _ready():
 
 
 func selfDestruction():
-	$Meow2.play()
+	self.queue_free()
 
 
 func _on_area_3d_body_entered(body):
@@ -81,10 +81,7 @@ func _on_timer_3_timeout():
 	timer3.start()
 
 
-func _on_meow_2_finished():
-	self.queue_free()
-
-
 func _on_area_3d_2_body_entered(body):
-	get_parent().get_parent().killRealCat()
-	$Meow2.play()
+	if body is Player:
+		get_parent().SoundReached()
+		self.queue_free()
