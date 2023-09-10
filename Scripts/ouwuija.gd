@@ -9,7 +9,7 @@ var canInteract = true
 
 
 func _ready():
-	var time = rng.randi_range(120, 300)
+	var time = rng.randi_range(60, 300)
 	$TurnOffTimer.wait_time = time
 	$TurnOffTimer.start()
 
@@ -29,6 +29,6 @@ func _on_timer_timeout():
 func _on_turn_off_timer_timeout():
 	interact()
 	
-	var time = rng.randi_range(120, 300)
+	var time = rng.randi_range(60, 300)
 	$TurnOffTimer.wait_time = time
 	$TurnOffTimer.start()

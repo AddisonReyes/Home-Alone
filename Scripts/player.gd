@@ -74,16 +74,36 @@ func _physics_process(delta):
 								$Audio/phone.play()
 								phoneSound = false
 		
+		if $CameraPivot/RayCast3D2.is_colliding():
+			var collider = $CameraPivot/RayCast3D2.get_collider()
+			if collider != null:
+				if collider.is_in_group("ghost"):
+					collider.miniJumpscare()
+					
+					soundPosition = self.global_transform.origin
+					var sound = rng.randi_range(0, 2)
+					if sound == 0:
+						$Audio/miniJumpscare1.play()
+					
+					elif sound == 1:
+						$Audio/miniJumpscare2.play()
+					
+					else:
+						$Audio/miniJumpscare3.play()
+					
+					if flashlightOn:
+						flashlight()
+		
 		process_data()
 
 
 func jumpscare():
 	if alive:
-		return
-		
 		rotation_helper.rotation.x = 0
 		rotation_helper.rotation.y = 0
 		rotation_helper.rotation.y = 0
+		walking = false
+		
 		var jumpscareNum = rng.randi_range(0, 2)
 		$CameraAnimation.play("jumpscare")
 		alive = false
@@ -119,7 +139,9 @@ func flashlight():
 	$Audio/FlashLight.play()
 	
 	flashlightOn = $CameraPivot/FlashLight/SpotLight3D.visible
-	soundPosition = self.global_transform.origin
+	var soundRate = rng.randf_range(0.1, 0.9)
+	if soundRate <= 0.0666:
+		soundPosition = self.global_transform.origin
 	
 	if flashlightOn:
 		var time = rng.randi_range(180, 360)

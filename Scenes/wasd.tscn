@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmtkenleehnm7"]
+
+[ext_resource type="Texture2D" uid="uid://knytjq2xong2" path="res://Sprites/wasd.png" id="1_f64l1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bnxkh"]
+albedo_texture = ExtResource("1_f64l1")
+albedo_texture_force_srgb = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wlsp3"]
+material = SubResource("StandardMaterial3D_bnxkh")
+
+[node name="wasd" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_wlsp3")

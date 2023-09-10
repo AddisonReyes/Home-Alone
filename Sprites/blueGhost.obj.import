@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ccylhtbc84d3v"
+path="res://.godot/imported/blueGhost.obj-ca6d23833d5e3b890ff0e2d82a912d0f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/blueGhost.obj-ca6d23833d5e3b890ff0e2d82a912d0f.mesh"]
+
+source_file="res://Sprites/blueGhost.obj"
+dest_files=["res://.godot/imported/blueGhost.obj-ca6d23833d5e3b890ff0e2d82a912d0f.mesh", "res://.godot/imported/blueGhost.obj-ca6d23833d5e3b890ff0e2d82a912d0f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

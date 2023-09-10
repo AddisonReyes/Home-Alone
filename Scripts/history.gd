@@ -22,7 +22,6 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	load_data()
 	
-	
 	fader.fade_in()
 	exit = false
 	skipText()
@@ -36,16 +35,13 @@ func load_data():
 
 func skipText():
 	if language == "EN":
-		skip.text = "-Press ESC to skip-"
+		skip.text = "-Press SPACE to skip-"
 	
 	else:
-		skip.text = "-Presiona ESC para saltar-"
+		skip.text = "-Presiona ESPACIO para saltar-"
 
 
 func printText():
-	if exit:
-		get_tree().change_scene_to_file(gameScene)
-		
 	if language == "EN":
 		if progress == 0:
 			label.text = "You find yourself alone with your cat Lily living in an isolated house in the middle of the dark forest."
@@ -82,25 +78,17 @@ func printText():
 	progress += 1
 
 
-func _process(delta):
-	if Input.is_action_pressed("pause") and exit == false:
-		exit = true
-		
+func _input(event):
+	if Input.is_action_pressed("skip"):
 		get_tree().change_scene_to_file(gameScene)
 
 
 func _on_timer_timeout():
-	if exit:
-		get_tree().change_scene_to_file(gameScene)
-		
 	fader.fade_out()
 	nextScene = true
 
 
 func _on_fader_fade_finished():
-	if exit:
-		get_tree().change_scene_to_file(gameScene)
-		
 	if nextScene:
 		nextScene = false
 		if progress < 5:

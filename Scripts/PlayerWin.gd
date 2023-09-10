@@ -25,6 +25,9 @@ func _ready():
 	
 	fader.fade_in()
 	printText()
+	
+	$Celebration.play()
+	$Coffetti.play()
 
 
 func load_data():

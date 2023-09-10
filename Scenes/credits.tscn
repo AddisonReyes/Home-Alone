@@ -1,0 +1,205 @@
+[gd_scene load_steps=8 format=3 uid="uid://d13n3bj0i8ol6"]
+
+[ext_resource type="Script" path="res://Scripts/Credits.gd" id="1_nwbbl"]
+[ext_resource type="PackedScene" uid="uid://c1yfougaum7yi" path="res://Scenes/fader.tscn" id="2_svmb4"]
+[ext_resource type="FontFile" uid="uid://ch2sruuxx7k1v" path="res://Fonts/alagard.ttf" id="3_te4cv"]
+[ext_resource type="AudioStream" uid="uid://ceuhb3eirlvfc" path="res://Audio/button.wav" id="4_5vq0w"]
+
+[sub_resource type="Animation" id="Animation_5mnix"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Fader/Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 664)]
+}
+
+[sub_resource type="Animation" id="Animation_shihc"]
+resource_name = "credits"
+length = 26.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Fader/Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 664), Vector2(0, -696)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o2u4m"]
+_data = {
+"RESET": SubResource("Animation_5mnix"),
+"credits": SubResource("Animation_shihc")
+}
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nwbbl")
+menu = "res://Scenes/main_menu.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 3
+wait_time = 7.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Fader" parent="CanvasLayer" instance=ExtResource("2_svmb4")]
+process_mode = 3
+
+[node name="Control" type="Control" parent="CanvasLayer/Fader"]
+process_mode = 3
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 664.0
+offset_right = 426.0
+offset_bottom = 903.933
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Fader/Control"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Fader/Control/VBoxContainer"]
+process_mode = 3
+show_behind_parent = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_te4cv")
+theme_override_font_sizes/font_size = 16
+text = "Desarrollador
+Addison Reyes
+(Lord Dakotah)
+
+
+Software
+Godot 4
+MagicaVoxel
+Audiomass
+Aseprite
+LabChirp
+
+Efectos de sonido
+Footsteps_Stiletto_Stone_Walk05 - marb7e (Freesound)
+Light Switch - SoundReality (pixabay)
+Porte open close - Slanesh (Freesound)
+Locked Door - tvilgiat (Freesound)
+AMBIENCE 1 CRICKETS AT NIGHT - MessyAcousticApocalypse666 (Freesound)
+Key get - Mendenhall02 (Freesound)
+cat meow 02 - Kyster (Freesound)
+cat purring and meow - skymary (Freesound)
+Pouring cat food into a plastic bowl - Ryntjie (Freesound)
+office Chair manipulating adjustment leaver - MattRuthSound (Freesound)
+Meow 6.wav - TRNGLE (Freesound)
+Nagging Cat echo - dsp9000 (Freesound)
+Telephone Pick Up - kwahmah_02 (Freesound)
+ring-ring.mp3 - keybit2 (Freesound)
+Cell phone interference 3 - MrAuralization (Freesound)
+jumpscare.wav - crunchymaniac (Freesound)
+CAT - bell sound tingeling(SFX).wav - HermanDV (Freesound)
+Ghost 01.wav - MATRIXXX_ (Freesound)
+Calling the bank.mp3 - jobro (Freesound)
+Jumpscare.mp3 - SCP096Pro (Freesound)
+Jumpscare_sound - JeremiahMendoweganalt (Freesound)
+Jumpscare SFX (3).ogg - dragonboi50120 (Freesound)
+Electronic Growl.ogg - dragonboi50120 (Freesound)
+Jumpscare Scream - Breviceps (Freesound)
+Heartbeats 61.wav - patobottos (Freesound)
+Bass_sound_extract.wav - patobottos (Freesound)
+Dark Ambience - PatrickLieberkind (Freesound)
+
+Assets
+Modular House Collection - Keith at Fertile Soil Productions (Itch.io)
+horror sound effects - YourPalRob (Itch.io)
+Voxel Nature - Asset Bakery (Itch.io)
+tiny texture pack - Screaming Brain Studios (Itch.io)
+
+
+
+
+
+
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Control2" type="Control" parent="CanvasLayer/Fader"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Fader/Control2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -40.0
+offset_right = 59.0
+grow_vertical = 0
+
+[node name="Back" type="Button" parent="CanvasLayer/Fader/Control2/VBoxContainer2"]
+process_mode = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_te4cv")
+theme_override_font_sizes/font_size = 16
+text = "Back"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_o2u4m")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("4_5vq0w")
+volume_db = -16.0
+pitch_scale = 0.57
+
+[connection signal="fadeFinished" from="CanvasLayer/Fader" to="." method="_on_fader_fade_finished"]
+[connection signal="pressed" from="CanvasLayer/Fader/Control2/VBoxContainer2/Back" to="." method="_on_back_pressed"]

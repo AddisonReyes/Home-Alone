@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://tqywj8b16win"]
+
+[ext_resource type="Texture2D" uid="uid://cr8ew4y42smly" path="res://Sprites/f.png" id="1_eyack"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rafhl"]
+albedo_texture = ExtResource("1_eyack")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ogkk6"]
+material = SubResource("StandardMaterial3D_rafhl")
+
+[node name="f" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ogkk6")

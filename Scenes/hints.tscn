@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://do5xi1dmkhwjc"]
 
 [ext_resource type="Script" path="res://Scripts/hints.gd" id="1_8l4yx"]
-[ext_resource type="PackedScene" uid="uid://c1yfougaum7yi" path="res://Scenes/Interface/fader.tscn" id="2_v53ui"]
+[ext_resource type="PackedScene" uid="uid://c1yfougaum7yi" path="res://Scenes/fader.tscn" id="2_v53ui"]
 [ext_resource type="FontFile" uid="uid://ch2sruuxx7k1v" path="res://Fonts/alagard.ttf" id="3_lq2nf"]
 [ext_resource type="AudioStream" uid="uid://bay4e0y1elqwf" path="res://Audio/Switch.mp3" id="4_54s1r"]
 

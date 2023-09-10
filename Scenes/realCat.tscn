@@ -1,13 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfcpjybppnwjs"]
+[gd_scene load_steps=8 format=3 uid="uid://cfcpjybppnwjs"]
 
 [ext_resource type="Script" path="res://Scripts/realCat.gd" id="1_8c4ic"]
 [ext_resource type="Script" path="res://Scripts/buttom.gd" id="2_d2m6m"]
 [ext_resource type="ArrayMesh" uid="uid://dug122nsf55xs" path="res://Sprites/cat.obj" id="3_dx5mo"]
 [ext_resource type="AudioStream" uid="uid://bq7sk46w4khf2" path="res://Audio/meow.wav" id="4_7mox2"]
 [ext_resource type="AudioStream" uid="uid://cgy7081y3c4xu" path="res://Audio/purr.wav" id="5_273e4"]
-[ext_resource type="AudioStream" uid="uid://by3ywiy6542q8" path="res://Audio/meow2.wav" id="6_1snhp"]
 [ext_resource type="ArrayMesh" uid="uid://byr02v3syjucr" path="res://Sprites/catDeath.obj" id="6_7s52f"]
-[ext_resource type="AudioStream" uid="uid://hjssq1mjwdlw" path="res://Audio/meow3.wav" id="7_rqmqv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dalkc"]
 size = Vector3(0.753805, 0.821767, 1.2611)
@@ -37,17 +35,10 @@ mesh = ExtResource("3_dx5mo")
 stream = ExtResource("4_7mox2")
 volume_db = -6.0
 
-[node name="Meow2" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("6_1snhp")
-volume_db = -6.0
-
-[node name="Meow3" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("7_rqmqv")
-volume_db = -26.0
-
 [node name="Purr" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_273e4")
 volume_db = -26.0
+pitch_scale = 1.55
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.2

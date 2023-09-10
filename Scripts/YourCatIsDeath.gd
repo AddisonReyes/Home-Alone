@@ -33,7 +33,7 @@ func _on_area_3d_body_entered(body):
 	if $CatGhostPaws.visible and body is Player and thePlayerSeesThePaws == false:
 		phone.canStop = true
 		thePlayerSeesThePaws = true
-		level.monsterSpawn()
+		$MonsterSpawnTimer.start()
 
 
 func _on_meow_timer_timeout():

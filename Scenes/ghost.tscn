@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsltm5elw583"]
+
+[ext_resource type="Script" path="res://Scripts/Ghost.gd" id="1_a0p5s"]
+[ext_resource type="ArrayMesh" uid="uid://ccylhtbc84d3v" path="res://Sprites/blueGhost.obj" id="2_2tx2w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eqf0r"]
+size = Vector3(1.45723, 3.05573, 0.86573)
+
+[node name="Ghost" type="StaticBody3D" groups=["ghost"]]
+collision_layer = 129
+collision_mask = 129
+script = ExtResource("1_a0p5s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41982, 0)
+shape = SubResource("BoxShape3D_eqf0r")
+
+[node name="BlueGhost" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("2_2tx2w")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

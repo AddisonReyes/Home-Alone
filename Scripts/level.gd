@@ -11,6 +11,11 @@ const thirdPosition = Vector3(17.9, -0.572, 14.083)
 
 const catGhostSpawn = preload("res://Scenes/monster.tscn")
 
+const ghostPath = preload("res://Scenes/ghost.tscn")
+var ghost = ghostPath.instantiate()
+
+@onready var ghostSpawner = $JumpscaresAndSounds/GhostPosition
+
 @onready var interface = $CanvasLayer/Interface
 @onready var fader = $CanvasLayer/Fader
 @onready var player = $Player
@@ -31,6 +36,8 @@ var secondObjetivePrinted = false
 var resetLevelBool = false
 var backToMenu = false
 
+var monsterSpawned = false
+
 var weirdNoises
 
 
@@ -40,6 +47,7 @@ func _ready():
 	var num = rng.randi_range(0, 1)
 	
 	lastPlayerSound = player.soundPosition
+	$Timers/SpawnNewGhost.start()
 	$Timers/UpdateTarget.start()
 
 
@@ -58,15 +66,28 @@ func _physics_process(delta):
 		transitionStarted = true
 
 
+func spawnGhost():
+	var newGhost = ghost.duplicate()
+	newGhost.position = ghostSpawner.givePosition()
+	
+	add_child(newGhost)
+	var time = rng.randi_range(20, 36)
+	$Timers/SpawnNewGhost.wait_time = time
+	$Timers/SpawnNewGhost.start()
+
+
 func monsterSpawn():
-	var monster = catGhostSpawn.instantiate()
-	monster.position = Vector3(28.984, -1.5, 1.275)
-	add_child(monster)
-	
-	$Objects/keyRing.eraseKeys()
-	$Objects/Keys.showKeys()
-	
-	$Timers/Timer.start()
+	if monsterSpawned == false:
+		monsterSpawned = true
+		
+		var monster = catGhostSpawn.instantiate()
+		monster.position = Vector3(20.026, -1.5, 78.242)
+		add_child(monster)
+		
+		$Objects/keyRing.eraseKeys()
+		$Objects/Keys.showKeys()
+		
+		$Timers/Timer.start()
 
 
 func killRealCat():
@@ -118,7 +139,7 @@ func _on_update_target_timeout():
 
 func _on_fader_fade_finished():
 	if gameFinished:
-		get_tree().change_scene_to_file(menu)
+		get_tree().change_scene_to_file(final)
 	
 	if resetLevelBool:
 		var hintProb = rng.randf_range(0.1, 0.9)
@@ -147,3 +168,11 @@ func _on_second_objetive_timer_timeout():
 	if secondObjetivePrinted == false:
 		secondObjetivePrinted = true
 		interface.printObjetive()
+
+
+func _on_spawn_new_ghost_timeout():
+	spawnGhost()
+
+
+func _on_monster_spawn_timer_timeout():
+	monsterSpawn()

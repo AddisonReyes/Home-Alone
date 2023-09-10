@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bevv2ogol1vq2"]
+
+[ext_resource type="Texture2D" uid="uid://c7oe3ccuplyls" path="res://Sprites/esc.png" id="1_kp4ex"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dm53"]
+albedo_texture = ExtResource("1_kp4ex")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_abkm3"]
+material = SubResource("StandardMaterial3D_7dm53")
+
+[node name="esc" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_abkm3")

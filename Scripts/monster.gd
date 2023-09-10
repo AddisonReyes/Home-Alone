@@ -23,16 +23,24 @@ func _ready():
 
 
 func _physics_process(delta):
+	$RayCast3D2.look_at(player.global_position)
 	process_audio()
+	
+	if $RayCast3D2.is_colliding():
+		var collider = $RayCast3D2.get_collider()
+		
+		if collider != null:
+			if collider.is_in_group("player"):
+				jumpscare()
 	
 	if stayQuiet:
 		return
-		
+	
 	var currentLocation = global_transform.origin
 	var nextLocation = navAgent.get_next_path_position()
 	var newVelocity = (nextLocation - currentLocation).normalized() * SPEED
 		
-	velocity = velocity.move_toward(newVelocity, .26)
+	velocity = newVelocity
 	look_at(nextLocation)
 	move_and_slide()
 
@@ -113,8 +121,3 @@ func _on_noises_timer_timeout():
 	var time = rng.randi_range(16, 36)
 	$WeirdNoises/NoisesTimer.wait_time = time
 	$WeirdNoises/NoisesTimer.start()
-
-
-func _on_area_3d_2_body_entered(body):
-	if body is Player:
-		jumpscare()

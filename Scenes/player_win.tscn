@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq4sxvptdb7k0"]
+[gd_scene load_steps=6 format=3 uid="uid://cq4sxvptdb7k0"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerWin.gd" id="1_0o0uv"]
-[ext_resource type="PackedScene" uid="uid://c1yfougaum7yi" path="res://Scenes/Interface/fader.tscn" id="2_khn3g"]
+[ext_resource type="PackedScene" uid="uid://c1yfougaum7yi" path="res://Scenes/fader.tscn" id="2_khn3g"]
 [ext_resource type="FontFile" uid="uid://ch2sruuxx7k1v" path="res://Fonts/alagard.ttf" id="3_nfxps"]
+[ext_resource type="AudioStream" uid="uid://cvs1q7rworpv1" path="res://Audio/coffeti.mp3" id="4_nbn3t"]
+[ext_resource type="AudioStream" uid="uid://7b7acwy3mptl" path="res://Audio/kids.mp3" id="5_m5pxa"]
 
 [node name="PlayerWin" type="Control"]
 layout_mode = 3
@@ -12,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0o0uv")
-menuScene = "res://Scenes/Interface/main_menu.tscn"
+menuScene = "res://Scenes/main_menu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 process_mode = 3
@@ -26,7 +28,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Timer" type="Timer" parent="."]
 process_mode = 3
-wait_time = 6.66
+wait_time = 4.66
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -70,8 +72,12 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Coffetti" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nbn3t")
+volume_db = -6.0
 
 [node name="Celebration" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_m5pxa")
+volume_db = -6.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="fadeFinished" from="CanvasLayer/Fader" to="." method="_on_fader_fade_finished"]
