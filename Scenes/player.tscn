@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dx4av4r25u7m4"]
+[gd_scene load_steps=21 format=3 uid="uid://dx4av4r25u7m4"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_15rcm"]
 [ext_resource type="AudioStream" uid="uid://drqsdcw4sfhaf" path="res://Audio/Flashlight on.wav" id="2_ly7nu"]
@@ -10,10 +10,6 @@
 [ext_resource type="AudioStream" uid="uid://bqc1onv0eip2s" path="res://Audio/Monster/jump1.mp3" id="8_vbubc"]
 [ext_resource type="AudioStream" uid="uid://3h85mjxghsuq" path="res://Audio/Monster/jump2.wav" id="9_hq13s"]
 [ext_resource type="AudioStream" uid="uid://dv47wp5sw2exs" path="res://Audio/Monster/jump3.wav" id="10_xxke5"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_gxdpm"]
-radius = 0.36
-height = 2.3
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d1ab0"]
 radius = 0.382711
@@ -138,14 +134,9 @@ height = 0.006
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 process_mode = 1
-collision_layer = 49161
-collision_mask = 49167
+collision_layer = 49193
+collision_mask = 49199
 script = ExtResource("1_15rcm")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32711, 0)
-mesh = SubResource("CapsuleMesh_gxdpm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 process_mode = 1

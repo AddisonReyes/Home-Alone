@@ -31,41 +31,41 @@ func printHint():
 	
 	if language == "EN":
 		if num == 0:
-			label.text = "When you don't make noise, your cat's ghost doesn't follow you."
+			label.text = "When you don't make noise, Lily's ghost doesn't follow you."
 		
 		if num == 1:
-			label.text = "Don't point the flashlight at your cat's ghost."
+			label.text = "When you make noise, Lily's ghost follows you."
 		
 		if num == 2:
 			label.text = "Take advantage of the yard of the house to lose track of your cat."
 		
 		if num == 3:
-			label.text = "When you see cat paws on the ground it means that a ghost has already taken over your cat's body."
+			label.text = "When you see cat paws on the ground it means that a ghost has already taken over Lily's body."
 		
 		if num == 4:
-			label.text = "Pay attention to your cat's bell, it always rings wherever it goes."
+			label.text = "Pay attention to Lily's bell, it always rings wherever it goes."
 		
 		if num == 5:
-			label.text = "Your cat's ghost can only hear and see the light of your flashlight, be careful getting too close to it."
+			label.text = "Lily's ghost can only hear and see the light of your flashlight"
 	
 	else:
 		if num == 0:
-			label.text = "Cuando no haces ruido el fantasma de tu gato no te sigue."
+			label.text = "Cuando haces ruido el fantasma de Lily te sigue."
 		
 		if num == 1:
-			label.text = "No apuntes con la linterna al fantasma de tu gato."
+			label.text = "No apuntes con la linterna al fantasma de Lily."
 		
 		if num == 2:
-			label.text = "Aprovecha el patio de la casa para perder el rastro a tu gato."
+			label.text = "Aprovecha el patio de la casa para perder el rastro de Lily."
 		
 		if num == 3:
-			label.text = "Cuando veas unas patas de gato en el suelo significa que un fantasma ya se apodero del cuerpo de tu gato."
+			label.text = "Cuando veas unas patas de gato en el suelo significa que un fantasma ya se apodero del cuerpo de Lily."
 		
 		if num == 4:
-			label.text = "Estate atento a la campanita de tu gato, siempre suena a donde vaya."
+			label.text = "Estate atento a la campanita de Lily, siempre suena a donde vaya."
 		
 		if num == 5:
-			label.text = "El fantasma de tu gato solo puede escuchar y ver la luz de tu linterna, ten cuidado acercandotele mucho."
+			label.text = "El fantasma de Lily solo puede escuchar y ver la luz de tu linterna."
 	
 	$Timer.start()
 

@@ -91,10 +91,10 @@ func printObjetive():
 func changeObjetive():
 	if progress == 1:
 		if language == "EN":
-			objetive.text = "Look for purine to feed your cat."
+			objetive.text = "Find food for Lily."
 		
 		else:
-			objetive.text = "Busca purina para alimentar a tu gato."
+			objetive.text = "Busca comida para Lily."
 	
 	elif progress == 2:
 		if language == "EN":

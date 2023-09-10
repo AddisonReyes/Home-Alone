@@ -62,7 +62,7 @@ mesh = SubResource("BoxMesh_ljwg3")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/PhysicDoor"]
-transform = Transform3D(1, 0, 0, 0, 0.92771, 0, 0, 0, 0.917835, 0.00137329, 0.0019049, -0.978199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00137329, 0.0019049, -0.978199)
 shape = SubResource("ConvexPolygonShape3D_7fffu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/PhysicDoor"]

@@ -9,7 +9,7 @@
 [node name="MainMenu" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_v114r")
-gameScene = "res://Scenes/level.tscn"
+gameScene = "res://Scenes/history.tscn"
 
 [node name="3DMenuScene" parent="." instance=ExtResource("1_66aow")]
 process_mode = 3

@@ -9,8 +9,6 @@ extends Node3D
 
 @export_dir var gameScene: String
 
-
-
 var startGame = false
 
 var path = "res://Data/language.dat"

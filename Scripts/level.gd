@@ -20,6 +20,7 @@ const catGhostSpawn = preload("res://Scenes/monster.tscn")
 
 @export_dir var menu: String
 @export_dir var hints: String
+@export_dir var final: String
 
 var lastPlayerSound
 
@@ -120,7 +121,13 @@ func _on_fader_fade_finished():
 		get_tree().change_scene_to_file(menu)
 	
 	if resetLevelBool:
-		get_tree().change_scene_to_file(hints)
+		var hintProb = rng.randf_range(0.1, 0.9)
+		
+		if hintProb <= 0.4:
+			get_tree().change_scene_to_file(hints)
+		
+		else:
+			get_tree().reload_current_scene()
 	
 	if backToMenu:
 		get_tree().change_scene_to_file(menu)

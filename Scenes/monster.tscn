@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cp1ghrpem673k"]
+[gd_scene load_steps=16 format=3 uid="uid://cp1ghrpem673k"]
 
 [ext_resource type="Script" path="res://Scripts/monster.gd" id="1_q837o"]
 [ext_resource type="ArrayMesh" uid="uid://kalxlhk3pfbb" path="res://Sprites/catGhost.obj" id="2_wxpx5"]
@@ -54,11 +54,14 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d6krm"]
-size = Vector3(0.457408, 1.74914, 0.840619)
+size = Vector3(0.457408, 2.18209, 0.413308)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wgrlw"]
 height = 1.0
 radius = 6.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qfo50"]
+size = Vector3(0.663691, 1.87986, 1.03348)
 
 [node name="Monster" type="CharacterBody3D" groups=["Enemy", "Monster"]]
 process_mode = 1
@@ -82,7 +85,7 @@ mesh = ExtResource("2_wxpx5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118427, 0.996519, -0.395557)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118427, 1.56487, -0.453216)
 shape = SubResource("BoxShape3D_d6krm")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -94,7 +97,7 @@ path_height_offset = 0.1
 process_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70358, 0)
 target_position = Vector3(0, 0, -3)
-collision_mask = 9
+collision_mask = 32777
 debug_shape_custom_color = Color(0.580392, 0.0588235, 0.588235, 1)
 
 [node name="Timer" type="Timer" parent="."]
@@ -103,8 +106,8 @@ wait_time = 0.6
 
 [node name="Area3D" type="Area3D" parent="."]
 process_mode = 1
-collision_layer = 32768
-collision_mask = 32768
+collision_layer = 32
+collision_mask = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 process_mode = 1
@@ -130,7 +133,8 @@ process_mode = 1
 [node name="s1" type="AudioStreamPlayer3D" parent="WeirdNoises"]
 process_mode = 1
 stream = ExtResource("3_ul81p")
-volume_db = -16.0
+volume_db = -6.0
+pitch_scale = 0.5
 
 [node name="s2" type="AudioStreamPlayer3D" parent="WeirdNoises"]
 process_mode = 1
@@ -157,7 +161,15 @@ pitch_scale = 0.66
 [node name="NoisesTimer" type="Timer" parent="WeirdNoises"]
 process_mode = 1
 
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101911, 0.979944, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0265017, 0.0489261, -0.394427)
+shape = SubResource("BoxShape3D_qfo50")
+
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="WeirdNoises/NoisesTimer" to="." method="_on_noises_timer_timeout"]
+[connection signal="body_entered" from="Area3D2" to="." method="_on_area_3d_2_body_entered"]

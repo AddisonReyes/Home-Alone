@@ -10,7 +10,7 @@ var flashingLight = false
 
 func _ready():
 	var flashingRate = rng.randf_range(0.1, 0.9)
-	if flashingRate <= 0.16:
+	if flashingRate <= 0.0666:
 		randomize()
 		timer.wait_time = rng.randf_range(0.05, 0.1)
 		timer.start()

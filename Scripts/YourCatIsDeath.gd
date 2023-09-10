@@ -1,6 +1,8 @@
 extends Node3D
 
 
+var rng = RandomNumberGenerator.new()
+
 @onready var interface = get_parent().get_parent().get_node("CanvasLayer").get_node("Interface")
 @onready var player = get_parent().get_parent().get_node("Player")
 @onready var realCat = get_parent().get_parent().get_node("RealCat")
@@ -11,6 +13,10 @@ extends Node3D
 var sound1Bool = false
 var thePlayerSeesThePaws = false
 var firstObjetivePrinted = false
+
+
+func _ready():
+	$MeowTimer.start()
 
 
 func _on_area_3d_body_entered(body):
@@ -28,3 +34,12 @@ func _on_area_3d_body_entered(body):
 		phone.canStop = true
 		thePlayerSeesThePaws = true
 		level.monsterSpawn()
+
+
+func _on_meow_timer_timeout():
+	if firstObjetivePrinted == false:
+		realCat.interact()
+		
+		var time = rng.randi_range(6, 16)
+		$MeowTimer.wait_time = time
+		$MeowTimer.start()

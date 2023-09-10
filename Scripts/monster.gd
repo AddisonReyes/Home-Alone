@@ -52,9 +52,6 @@ func interact_with_the_world():
 		if collider != null:
 			if collider.is_in_group("interactable"):
 				collider.interact()
-				
-			if collider.is_in_group("player"):
-				jumpscare()
 
 
 func jumpscare():
@@ -86,6 +83,7 @@ func _on_timer_timeout():
 
 func _on_area_3d_body_entered(body):
 	if body is Player:
+		update_target_location(body.global_transform.origin)
 		body.soundPosition = body.global_transform.origin
 
 
@@ -93,25 +91,30 @@ func _on_noises_timer_timeout():
 	var noise = rng.randi_range(1, 4)
 	
 	if noise == 1:
-		$WeirdNoises/s1.pitch_scale = rng.randf_range(-0.6, 0.6)
+		$WeirdNoises/s1.pitch_scale = rng.randf_range(0.5, 0.7)
 		$WeirdNoises/s1.play()
 	
 	if noise == 2:
-		$WeirdNoises/s2.pitch_scale = rng.randf_range(-0.6, 0.6)
+		$WeirdNoises/s2.pitch_scale = rng.randf_range(0.5, 0.7)
 		$WeirdNoises/s2.play()
 	
 	if noise == 3:
-		$WeirdNoises/s3.pitch_scale = rng.randf_range(-0.6, 0.6)
+		$WeirdNoises/s3.pitch_scale = rng.randf_range(0.5, 0.7)
 		$WeirdNoises/s3.play()
 	
 	if noise == 3:
-		$WeirdNoises/s4.pitch_scale = rng.randf_range(-0.6, 0.6)
+		$WeirdNoises/s4.pitch_scale = rng.randf_range(0.5, 0.7)
 		$WeirdNoises/s4.play()
 	
 	if noise == 4:
-		$WeirdNoises/s5.pitch_scale = rng.randf_range(-0.6, 0.6)
+		$WeirdNoises/s5.pitch_scale = rng.randf_range(0.5, 0.7)
 		$WeirdNoises/s5.play()
 	
 	var time = rng.randi_range(16, 36)
 	$WeirdNoises/NoisesTimer.wait_time = time
 	$WeirdNoises/NoisesTimer.start()
+
+
+func _on_area_3d_2_body_entered(body):
+	if body is Player:
+		jumpscare()

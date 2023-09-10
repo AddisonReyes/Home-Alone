@@ -79,6 +79,8 @@ func _physics_process(delta):
 
 func jumpscare():
 	if alive:
+		return
+		
 		rotation_helper.rotation.x = 0
 		rotation_helper.rotation.y = 0
 		rotation_helper.rotation.y = 0

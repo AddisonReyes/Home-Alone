@@ -15,3 +15,12 @@ res://Scripts/YourCatIsDeath.gd
 res://Scripts/hints.gd
 res://Scripts/OfficeSwitch.gd
 res://Scenes/ouwuija.tscn
+res://Scenes/lamp.tscn
+res://Scripts/Lamp.gd
+res://Scripts/history.gd
+res://Scenes/history.tscn
+res://Scenes/realCat.tscn
+res://Scripts/PlayerWin.gd
+res://Scenes/player_win.tscn
+res://Scripts/monster.gd
+res://Scenes/door.tscn
