@@ -1,10 +1,8 @@
-res://Scripts/main_menu.gd
-res://Scenes/main_menu.tscn
-res://Source/natureTilesSet.meshlib
-res://Scenes/credits.tscn
-res://Scenes/hints.tscn
-res://Scenes/history.tscn
-res://Scenes/interface.tscn
-res://Scenes/player_win.tscn
 res://Scenes/level.tscn
+res://Source/natureTilesSet.meshlib
+res://Scripts/level.gd
+res://Scripts/GhostPosition.gd
+res://Scripts/player.gd
 res://Scenes/door.tscn
+res://Scenes/ghost.tscn
+res://Scripts/Ghost.gd

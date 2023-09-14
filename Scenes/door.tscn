@@ -99,7 +99,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00415838, 0.0137367)
 mesh = SubResource("BoxMesh_6gme0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorFrame"]
-transform = Transform3D(0.868009, 0, 0, 0, 1, 0, 0, 0, 0.778609, 0, 0.00415838, 0.0137367)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00415838, 0.0137367)
 shape = SubResource("ConvexPolygonShape3D_k2jq3")
 
 [connection signal="timeout" from="Pivot/PhysicDoor/Timer" to="Pivot/PhysicDoor" method="_on_timer_timeout"]

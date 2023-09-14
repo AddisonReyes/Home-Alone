@@ -13,6 +13,9 @@ func _ready():
 		
 		$CatFood2.queue_free()
 		$CatFood3.queue_free()
+		
+		$f2.queue_free()
+		$f3.queue_free()
 	
 	elif num == 2:
 		$flashlight1.queue_free()
@@ -20,6 +23,9 @@ func _ready():
 		
 		$CatFood1.queue_free()
 		$CatFood2.queue_free()
+		
+		$f2.queue_free()
+		$f1.queue_free()
 	
 	else:
 		$flashlight1.queue_free()
@@ -27,3 +33,6 @@ func _ready():
 		
 		$CatFood1.queue_free()
 		$CatFood3.queue_free()
+		
+		$f1.queue_free()
+		$f3.queue_free()

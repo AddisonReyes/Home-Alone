@@ -114,6 +114,9 @@ func hideKeys():
 	key2.hide()
 
 
-func showKeys():
+func showKey1():
 	key1.show()
+
+
+func showKey2():
 	key2.show()

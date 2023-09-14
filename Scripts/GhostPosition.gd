@@ -21,10 +21,12 @@ var rng = RandomNumberGenerator.new()
 @onready var markerPosition16 = $Marker3D16
 @onready var markerPosition17 = $Marker3D17
 @onready var markerPosition18 = $Marker3D18
+@onready var markerPosition19 = $Marker3D19
+@onready var markerPosition20 = $Marker3D20
 
 
 func givePosition():
-	var num = rng.randi_range(1, 18)
+	var num = rng.randi_range(1, 20)
 	
 	if num == 1:
 		return markerPosition1.position
@@ -77,5 +79,11 @@ func givePosition():
 	elif num == 17:
 		return markerPosition17.position
 	
-	else:
+	elif num == 18:
 		return markerPosition18.position
+	
+	elif num == 19:
+		return markerPosition19.position
+	
+	else:
+		return markerPosition20.position

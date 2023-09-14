@@ -16,7 +16,7 @@ const MAX_SLOPE_ANGLE = 40
 var camera
 var rotation_helper
 
-var MOUSE_SENSITIVITY = 0.10
+var MOUSE_SENSITIVITY = 0.16
 
 var flashLightCooldown = true
 

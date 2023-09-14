@@ -1,3 +1,4 @@
+Timer
 Control
 Button
 VBoxContainer
@@ -5,7 +6,6 @@ AnimationPlayer
 AudioStreamPlayer
 Node3D
 MeshInstance3D
-Timer
 Marker3D
 AudioStreamPlayer3D
 CollisionShape3D

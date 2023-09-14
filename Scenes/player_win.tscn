@@ -73,11 +73,11 @@ autowrap_mode = 3
 
 [node name="Coffetti" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_nbn3t")
-volume_db = -6.0
+volume_db = -20.0
 
 [node name="Celebration" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_m5pxa")
-volume_db = -6.0
+volume_db = -20.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="fadeFinished" from="CanvasLayer/Fader" to="." method="_on_fader_fade_finished"]

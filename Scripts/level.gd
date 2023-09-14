@@ -40,6 +40,8 @@ var monsterSpawned = false
 
 var weirdNoises
 
+var key2Showed = false
+
 
 func _ready():
 	fader.fade_in()
@@ -71,7 +73,7 @@ func spawnGhost():
 	newGhost.position = ghostSpawner.givePosition()
 	
 	add_child(newGhost)
-	var time = rng.randi_range(20, 36)
+	var time = rng.randi_range(16, 36)
 	$Timers/SpawnNewGhost.wait_time = time
 	$Timers/SpawnNewGhost.start()
 
@@ -80,12 +82,16 @@ func monsterSpawn():
 	if monsterSpawned == false:
 		monsterSpawned = true
 		
+		lastPlayerSound = player.soundPosition
+		
 		var monster = catGhostSpawn.instantiate()
 		monster.position = Vector3(20.026, -1.5, 78.242)
 		add_child(monster)
 		
 		$Objects/keyRing.eraseKeys()
-		$Objects/Keys.showKeys()
+		
+		$Timers/nextKey.start()
+		$Objects/Keys.showKey1()
 		
 		$Timers/Timer.start()
 
@@ -176,3 +182,9 @@ func _on_spawn_new_ghost_timeout():
 
 func _on_monster_spawn_timer_timeout():
 	monsterSpawn()
+
+
+func _on_next_key_timeout():
+	if key2Showed == false:
+		$Objects/Keys.showKey2()
+		key2Showed = true
