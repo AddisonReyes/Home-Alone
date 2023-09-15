@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvrvok10tcrw6"]
+[gd_scene load_steps=15 format=3 uid="uid://cvrvok10tcrw6"]
 
 [ext_resource type="Script" path="res://Scripts/interface.gd" id="1_mx8my"]
 [ext_resource type="Texture2D" uid="uid://d0143lvnwvrav" path="res://Sprites/sound.png" id="2_rw84d"]
 [ext_resource type="Texture2D" uid="uid://brl7wvlm5ucsc" path="res://Sprites/dot.png" id="3_qt6m7"]
 [ext_resource type="FontFile" uid="uid://ch2sruuxx7k1v" path="res://Fonts/alagard.ttf" id="4_52a44"]
 [ext_resource type="AudioStream" uid="uid://ceuhb3eirlvfc" path="res://Audio/button.wav" id="5_crseb"]
+[ext_resource type="Texture2D" uid="uid://blga5e4etb6md" path="res://Sprites/fs.png" id="5_qje84"]
 
 [sub_resource type="Animation" id="Animation_pkv06"]
 length = 0.001
@@ -249,12 +250,52 @@ theme_override_fonts/font = ExtResource("4_52a44")
 theme_override_font_sizes/font_size = 16
 text = "Main menu"
 
+[node name="CenterContainer2" type="CenterContainer" parent="Panel"]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = 48.0
+offset_right = 28.5
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/CenterContainer2"]
+process_mode = 2
+layout_mode = 2
+
+[node name="Fullscreen" type="Button" parent="Panel/CenterContainer2/HBoxContainer"]
+process_mode = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_52a44")
+theme_override_font_sizes/font_size = 16
+icon = ExtResource("5_qje84")
+
+[node name="Options" type="Button" parent="Panel/CenterContainer2/HBoxContainer"]
+process_mode = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_52a44")
+theme_override_font_sizes/font_size = 16
+text = "EN"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("5_crseb")
 volume_db = -20.0
 pitch_scale = 0.57
 
+[connection signal="animation_finished" from="objetive/AnimationObjetive" to="." method="_on_animation_objetive_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Panel/VBoxContainer3/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer3/Menu" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/CenterContainer2/HBoxContainer/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="Panel/CenterContainer2/HBoxContainer/Options" to="." method="_on_options_pressed"]

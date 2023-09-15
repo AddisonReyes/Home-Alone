@@ -10,6 +10,12 @@ extends Control
 @onready var objetiveAnim = $objetive/AnimationObjetive
 @onready var objetive = $objetive/Label
 
+@onready var fullscreenButton = $Panel/CenterContainer2/HBoxContainer/Fullscreen
+@onready var languageButtom = $Panel/CenterContainer2/HBoxContainer/Options
+
+const fullscreenIcon = preload("res://Sprites/fs.png")
+const windowedIcon = preload("res://Sprites/df.png")
+
 @onready var panel = $Panel
 @onready var pauseLabel = $Panel/VBoxContainer3/Label
 @onready var playButtom = $Panel/VBoxContainer3/Play
@@ -34,16 +40,6 @@ func _ready():
 	
 	changeObjetive()
 	load_data()
-	
-	if language == "EN":
-		pauseLabel.text = "Pause"
-		playButtom.text = "Continue"
-		menuButtom.text = "Main menu"
-	
-	else:
-		pauseLabel.text = "Pausa"
-		playButtom.text = "Volver a jugar"
-		menuButtom.text = "Menu principal"
 	
 	panel.visible = get_tree().paused
 
@@ -77,6 +73,18 @@ func _process(delta):
 	
 	else:
 		$VBoxContainer2/AnimationPlayer.play("fade")
+	
+	if language == "EN":
+		pauseLabel.text = "Pause"
+		playButtom.text = "Continue"
+		menuButtom.text = "Main menu"
+		languageButtom.text = "ES"
+	
+	else:
+		pauseLabel.text = "Pausa"
+		playButtom.text = "Volver a jugar"
+		menuButtom.text = "Menu principal"
+		languageButtom.text = "EN"
 	
 	if playerSurvived:
 		volume.visible = false
@@ -121,7 +129,18 @@ func objetiveFadeIn():
 
 func objetiveFadeOut():
 	objetiveAnim.play("fade_out")
-	progress += 1
+
+
+func save_data():
+	var data
+	
+	if language == "EN":
+		data = "ES"
+	else:
+		data = "EN" 
+	
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	file.store_var(data)
 
 
 func load_data():
@@ -143,4 +162,31 @@ func _on_quit_pressed():
 	$AudioStreamPlayer.play()
 	level.backToMenu = true
 	level.levelFadeOut()
+
+
+func _on_fullscreen_pressed():
+	$AudioStreamPlayer.play()
+	if DisplayServer.window_get_mode() == 0:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		fullscreenButton.set_button_icon(windowedIcon)
+		
+		return
 	
+	if DisplayServer.window_get_mode() == 3:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		fullscreenButton.set_button_icon(fullscreenIcon)
+		
+		return
+
+
+func _on_options_pressed():
+	$AudioStreamPlayer.play()
+	
+	changeObjetive()
+	save_data()
+	load_data()
+
+
+func _on_animation_objetive_animation_finished(anim_name):
+	if anim_name == "fade_out":
+		progress += 1

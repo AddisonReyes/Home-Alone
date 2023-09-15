@@ -1,6 +1,6 @@
-res://Scenes/level.tscn
+res://Scripts/main_menu.gd
+res://Scenes/main_menu.tscn
 res://Source/natureTilesSet.meshlib
-res://Scenes/door.tscn
-res://Scenes/ghost.tscn
-res://Scripts/Ghost.gd
-res://Scenes/monster.tscn
+res://Scenes/level.tscn
+res://Scripts/interface.gd
+res://Scenes/interface.tscn

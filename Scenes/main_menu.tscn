@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b31yfdjp8wory"]
+[gd_scene load_steps=7 format=3 uid="uid://b31yfdjp8wory"]
 
 [ext_resource type="PackedScene" uid="uid://b6u1qbm47st80" path="res://Scenes/3d_menu_scene.tscn" id="1_66aow"]
 [ext_resource type="PackedScene" uid="uid://c1yfougaum7yi" path="res://Scenes/fader.tscn" id="1_jtj5b"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_v114r"]
 [ext_resource type="FontFile" uid="uid://ch2sruuxx7k1v" path="res://Fonts/alagard.ttf" id="4_qq2h5"]
 [ext_resource type="AudioStream" uid="uid://ceuhb3eirlvfc" path="res://Audio/button.wav" id="5_4xnnp"]
+[ext_resource type="Texture2D" uid="uid://blga5e4etb6md" path="res://Sprites/fs.png" id="5_xcwc8"]
 
 [node name="MainMenu" type="Node3D"]
 process_mode = 3
@@ -92,13 +93,21 @@ text = "Exit"
 [node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer/Fader/Control/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer2"]
-process_mode = 3
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer2"]
 layout_mode = 2
 
-[node name="Options" type="Button" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer2/VBoxContainer"]
+[node name="Fullscreen" type="Button" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer2/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_qq2h5")
+theme_override_font_sizes/font_size = 16
+icon = ExtResource("5_xcwc8")
+
+[node name="Options" type="Button" parent="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer2/HBoxContainer"]
 process_mode = 3
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -116,4 +125,5 @@ pitch_scale = 0.57
 [connection signal="pressed" from="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer2/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer2/HBoxContainer/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="CanvasLayer/Fader/Control/VBoxContainer/CenterContainer2/HBoxContainer/Options" to="." method="_on_options_pressed"]

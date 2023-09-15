@@ -1,9 +1,13 @@
 extends Node3D
 
 @onready var playButton = $CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer/Play
-@onready var optionsButton = $CanvasLayer/Fader/Control/VBoxContainer/CenterContainer2/VBoxContainer/Options
+@onready var optionsButton = $CanvasLayer/Fader/Control/VBoxContainer/CenterContainer2/HBoxContainer/Options
+@onready var fullscreenButton = $CanvasLayer/Fader/Control/VBoxContainer/CenterContainer2/HBoxContainer/Fullscreen
 @onready var creditsButton = $CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer/Credits
 @onready var quitButton = $CanvasLayer/Fader/Control/VBoxContainer/CenterContainer/VBoxContainer/Quit
+
+const fullscreenIcon = preload("res://Sprites/fs.png")
+const windowedIcon = preload("res://Sprites/df.png")
 
 @onready var fader = $CanvasLayer/Fader
 
@@ -89,3 +93,18 @@ func _on_fader_fade_finished():
 	
 	if credits:
 		get_tree().change_scene_to_file(creditsScene)
+
+
+func _on_fullscreen_pressed():
+	$AudioStreamPlayer.play()
+	if DisplayServer.window_get_mode() == 0:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		fullscreenButton.set_button_icon(windowedIcon)
+		
+		return
+	
+	if DisplayServer.window_get_mode() == 3:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		fullscreenButton.set_button_icon(fullscreenIcon)
+		
+		return
