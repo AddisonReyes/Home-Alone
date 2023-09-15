@@ -12,8 +12,8 @@ albedo_color = Color(0.258824, 0.172549, 0.141176, 1)
 material = SubResource("StandardMaterial3D_qfet8")
 size = Vector3(0.1, 3.3, 1.6)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7fffu"]
-points = PackedVector3Array(0.05, 1.65, 0.8, -0.05, 1.65, 0.8, 0.05, -1.65, 0.8, 0.05, 1.65, -0.8, -0.05, 1.65, -0.8, -0.05, -1.65, 0.8, 0.05, -1.65, -0.8, -0.05, -1.65, -0.8)
+[sub_resource type="BoxShape3D" id="BoxShape3D_3x6jj"]
+size = Vector3(0.141887, 3.32727, 1.64122)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1uenw"]
 albedo_color = Color(0.189878, 0.122224, 0.0945418, 1)
@@ -63,7 +63,7 @@ skeleton = NodePath("../MeshInstance3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/PhysicDoor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00137329, 0.0019049, -0.978199)
-shape = SubResource("ConvexPolygonShape3D_7fffu")
+shape = SubResource("BoxShape3D_3x6jj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/PhysicDoor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00137329, 0.0019049, -0.978199)

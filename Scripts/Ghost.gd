@@ -8,7 +8,7 @@ var delivered = false
 
 
 func _ready():
-	var time = rng.randi_range(16, 26)
+	var time = rng.randi_range(26, 36)
 	$Timer.wait_time = time
 	$Timer.start()
 

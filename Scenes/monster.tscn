@@ -21,7 +21,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0.684345, 0)]
+"values": [Vector3(0, 0.684345, 0.379534)]
 }
 
 [sub_resource type="Animation" id="Animation_pya5d"]
@@ -31,7 +31,7 @@ loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_im4yr"]
 resource_name = "idle"
-length = 3.0
+length = 4.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -40,10 +40,10 @@ tracks/0/path = NodePath("CatGhost:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
+"times": PackedFloat32Array(0, 2, 4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0.684345, 0), Vector3(0, 0.896863, 0), Vector3(0, 0.684345, 0)]
+"values": [Vector3(0, 0.684345, 0.379534), Vector3(0, 0.362906, 0.379534), Vector3(0, 0.684345, 0.379534)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_isg1r"]
@@ -54,7 +54,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d6krm"]
-size = Vector3(0.457408, 2.18209, 0.413308)
+size = Vector3(0.318452, 0.910654, 0.499271)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wgrlw"]
 height = 1.0
@@ -77,12 +77,12 @@ libraries = {
 
 [node name="CatGhost" type="MeshInstance3D" parent="."]
 process_mode = 1
-transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.684345, 0)
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.684345, 0.379534)
 mesh = ExtResource("2_wxpx5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118427, 1.56487, -0.453216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118427, 1.36656, -0.22071)
 shape = SubResource("BoxShape3D_d6krm")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -92,14 +92,14 @@ path_height_offset = 0.1
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70358, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71994, 0)
 target_position = Vector3(0, 0, -3)
 collision_mask = 32777
 debug_shape_custom_color = Color(0.580392, 0.0588235, 0.588235, 1)
 
 [node name="RayCast3D2" type="RayCast3D" parent="."]
 process_mode = 1
-transform = Transform3D(0.982545, 0, 0.186027, 0, 1, 0, -0.186027, 0, 0.982545, 0.121478, 1.32947, -0.658218)
+transform = Transform3D(0.982545, 0, 0.186027, 0, 1, 0, -0.186027, 0, 0.982545, 0.121478, 1.32947, -0.258453)
 target_position = Vector3(0, 0, -1.6)
 collision_mask = 32
 debug_shape_custom_color = Color(0.580392, 0.0588235, 0.588235, 1)
@@ -110,6 +110,7 @@ wait_time = 0.6
 
 [node name="Area3D" type="Area3D" parent="."]
 process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.379534)
 collision_layer = 32
 collision_mask = 32
 

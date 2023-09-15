@@ -1,8 +1,6 @@
 res://Scenes/level.tscn
 res://Source/natureTilesSet.meshlib
-res://Scripts/level.gd
-res://Scripts/GhostPosition.gd
-res://Scripts/player.gd
 res://Scenes/door.tscn
 res://Scenes/ghost.tscn
 res://Scripts/Ghost.gd
+res://Scenes/monster.tscn
