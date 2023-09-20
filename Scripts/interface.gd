@@ -10,8 +10,12 @@ extends Control
 @onready var objetiveAnim = $objetive/AnimationObjetive
 @onready var objetive = $objetive/Label
 
-@onready var fullscreenButton = $Panel/CenterContainer2/HBoxContainer/Fullscreen
-@onready var languageButtom = $Panel/CenterContainer2/HBoxContainer/Options
+@onready var fullscreenButton = $Panel/VBoxContainer3/CenterContainer2/HBoxContainer/Fullscreen
+@onready var languageButtom = $Panel/VBoxContainer3/CenterContainer2/HBoxContainer/Options
+
+@onready var sensitivityLabel = $Panel/VBoxContainer/Label2
+@onready var sensitivityValue = $Panel/VBoxContainer/Sensitivity
+@onready var sensitivityNum = $Panel/VBoxContainer/Label3
 
 const fullscreenIcon = preload("res://Sprites/fs.png")
 const windowedIcon = preload("res://Sprites/df.png")
@@ -42,9 +46,21 @@ func _ready():
 	load_data()
 	
 	panel.visible = get_tree().paused
+	
+	if DisplayServer.window_get_mode() == 0:
+		fullscreenButton.set_button_icon(fullscreenIcon)
+	
+	if DisplayServer.window_get_mode() == 3:
+		fullscreenButton.set_button_icon(windowedIcon)
+	
+	var file = FileAccess.open("res://Data/mouse_sensitivity.dat", FileAccess.READ)
+	sensitivityValue.value = file.get_var()
 
 
 func _process(delta):
+	if player == null:
+		return
+		
 	if Input.is_action_just_pressed("pause"):
 		if get_tree().paused: 
 			get_tree().paused = false
@@ -58,9 +74,6 @@ func _process(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 	panel.visible = get_tree().paused
-
-	if player == null:
-		return
 	
 	if player.printDot:
 		dot.visible = true
@@ -79,12 +92,16 @@ func _process(delta):
 		playButtom.text = "Continue"
 		menuButtom.text = "Main menu"
 		languageButtom.text = "ES"
+		sensitivityLabel.text = "Mouse sensitivity"
 	
 	else:
 		pauseLabel.text = "Pausa"
 		playButtom.text = "Volver a jugar"
 		menuButtom.text = "Menu principal"
 		languageButtom.text = "EN"
+		sensitivityLabel.text = "Sensibilidad del mouse"
+	
+	sensitivityNum.text = str(snappedf(sensitivityValue.value, 0.01))
 	
 	if playerSurvived:
 		volume.visible = false
@@ -190,3 +207,8 @@ func _on_options_pressed():
 func _on_animation_objetive_animation_finished(anim_name):
 	if anim_name == "fade_out":
 		progress += 1
+
+
+func _on_sensitivity_scrolling():
+	player.MOUSE_SENSITIVITY = sensitivityValue.value
+	player.save_data()

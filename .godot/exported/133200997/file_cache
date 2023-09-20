@@ -1,6 +1,6 @@
 res://Scenes/cat.tscn::7a306e0cb3f6931dbc73d7525ef4bcaa::1694351092::res://.godot/exported/133200997/export-8eb52855e5259f40ab36b689272aa013-cat.scn
 res://Scenes/cat_food.tscn::d305e12a9d0aaf82644f34d404d45ffa::1694238397::res://.godot/exported/133200997/export-24682890ea8e9af086c69763563653e6-cat_food.scn
-res://Scenes/door.tscn::7a49cbbeaccb6cb9b49cb3a27ce5839c::1694391467::res://.godot/exported/133200997/export-fe730ee429ab9ada90dbb83893c015e2-door.scn
+res://Scenes/door.tscn::7fdbec68ed8e55576c602c05a4e2cde7::1694742041::res://.godot/exported/133200997/export-fe730ee429ab9ada90dbb83893c015e2-door.scn
 res://Scenes/eyes.tscn::d9c60808a45c707507b696f4b69e8826::1694010642::res://.godot/exported/133200997/export-aac4c9482ea9d667d0bc7e5e34c08806-eyes.scn
 res://Scenes/flashlight.tscn::846f1a088c36b45c8ee4f8eb1edcd3da::1694195527::res://.godot/exported/133200997/export-f405e6953cb113f24a3029cf6039d049-flashlight.scn
 res://Scenes/floorLamp.tscn::09c27028c1b5032ff81c7aa49566a056::1694124586::res://.godot/exported/133200997/export-02d6bcff65781c6e165b687c1aaae4f7-floorLamp.scn
@@ -10,9 +10,9 @@ res://Scenes/history.tscn::c372f2db84aeefa70d42982bb3838716::1694391466::res://.
 res://Scenes/key.tscn::a33d9952b01caf4f3c1750bf1ae20fa2::1694198765::res://.godot/exported/133200997/export-cb731f942f14eebb0aef515c9531ceee-key.scn
 res://Scenes/key_ring.tscn::3471e166eb4dca5c09b6e21ae011ba54::1694172050::res://.godot/exported/133200997/export-fe31660b4288425fac2a2d834cae141d-key_ring.scn
 res://Scenes/lamp.tscn::a46899bf6a90740caa87dd6af518f77d::1694303302::res://.godot/exported/133200997/export-7c4bdd6c94b6768f7e5f5be80713daa9-lamp.scn
-res://Scenes/level.tscn::e75f6b38ce4c4dc262b78145c93dedd1::1694396125::res://.godot/exported/133200997/export-509c53c765b75d897e8314a88ec6c376-level.scn
+res://Scenes/level.tscn::fea81c4dfcb8e754d27b298e47a6d306::1694746409::res://.godot/exported/133200997/export-509c53c765b75d897e8314a88ec6c376-level.scn
 res://Scenes/littleLamp.tscn::d971eb14348c852ff5abb773a71c6b60::1694188318::res://.godot/exported/133200997/export-24788da3ebb0895456772e9c739d9a86-littleLamp.scn
-res://Scenes/monster.tscn::132771034109209e9c57de642faef16a::1694351092::res://.godot/exported/133200997/export-d345f590e7dfa23b902cebfd3b46dc7c-monster.scn
+res://Scenes/monster.tscn::e7498a2c85f0221359f5ded003802ba5::1694742041::res://.godot/exported/133200997/export-d345f590e7dfa23b902cebfd3b46dc7c-monster.scn
 res://Scenes/nature.tscn::fde21d2a17f34863b3fb82422f10576c::1693927446::res://.godot/exported/133200997/export-3f0ec3ae94c40775f96fd4ba0621f391-nature.scn
 res://Scenes/objects.tscn::8e03f132dedfe9bb9858c21a071e36ac::1693950933::res://.godot/exported/133200997/export-fab01a66bc03a1e5c4d6237a82349ba0-objects.scn
 res://Scenes/ouwuija.tscn::2a478ba64b19df99c0989f83993f4f44::1694373659::res://.godot/exported/133200997/export-c5216bb57d8ec403b38abaf9f4dc7e99-ouwuija.scn
@@ -27,11 +27,11 @@ res://Scenes/worldEnviroment.tscn::dbbe0a8476d968debbf658003e6807bf::1694354363:
 res://Scenes/cli.tscn::82f2da44d8ed8279ba32013317d13e51::1694367297::res://.godot/exported/133200997/export-7d5c2531bb35908cedd4a9834ccef898-cli.scn
 res://Scenes/esc.tscn::10eccaabe6b0e55d9112b4b4d37bf5bc::1694367262::res://.godot/exported/133200997/export-0378a05f2abc6466a492d8448a7448dd-esc.scn
 res://Scenes/f.tscn::4929c86095aa211c3afefd575cee936e::1694367207::res://.godot/exported/133200997/export-b9317931bf23a7edc8b87ed5819ac21c-f.scn
-res://Scenes/ghost.tscn::c867c8ca43a6af29a445ef79311f7a34::1694351121::res://.godot/exported/133200997/export-6a99f35563fecd8e1c7bb67110cbf436-ghost.scn
+res://Scenes/ghost.tscn::c867c8ca43a6af29a445ef79311f7a34::1694741552::res://.godot/exported/133200997/export-6a99f35563fecd8e1c7bb67110cbf436-ghost.scn
 res://Scenes/shift.tscn::413fd94ad04eb39315fa27f967c1615c::1694367162::res://.godot/exported/133200997/export-759fd0d8a9a2e99e43bc803e3b0feb4a-shift.scn
 res://Scenes/wasd.tscn::5d7c33063f8e0ced8e34a6fea4005871::1694367109::res://.godot/exported/133200997/export-27fb352713a45ebfca79225e62252547-wasd.scn
 res://Scenes/3d_menu_scene.tscn::d85180a088f5720ebc0391aec0e99047::1694381995::res://.godot/exported/133200997/export-5c8326aa391f46d4736be0de5198904e-3d_menu_scene.scn
 res://Scenes/credits.tscn::5de8952647c4cbc9a8403ef8a3f12835::1694391466::res://.godot/exported/133200997/export-0176a4eac7dcdd588b63ce6086dedc2e-credits.scn
 res://Scenes/fader.tscn::0161acf076690160724f5d869bf9c396::1694381995::res://.godot/exported/133200997/export-3087c25c39baa92e6f88cc851c0735a6-fader.scn
-res://Scenes/interface.tscn::9d539adfe6f6193bb67edaeaca8e7de2::1694391466::res://.godot/exported/133200997/export-d35c374e34c7becfbded7ca557de80a9-interface.scn
-res://Scenes/main_menu.tscn::2b9e58d49b3c347863bfa67a38b1e315::1694391467::res://.godot/exported/133200997/export-502e6a9b269597544b234abf28958cd8-main_menu.scn
+res://Scenes/interface.tscn::6556d6db12fb9c346e3a112b681e6fb3::1694745726::res://.godot/exported/133200997/export-d35c374e34c7becfbded7ca557de80a9-interface.scn
+res://Scenes/main_menu.tscn::fa81a918f26739e509861bd6142839a3::1694746409::res://.godot/exported/133200997/export-502e6a9b269597544b234abf28958cd8-main_menu.scn

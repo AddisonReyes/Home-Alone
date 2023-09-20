@@ -24,6 +24,12 @@ var language = "EN"
 func _ready():
 	load_data()
 	fader.fade_in()
+	
+	if DisplayServer.window_get_mode() == 0:
+		fullscreenButton.set_button_icon(fullscreenIcon)
+	
+	if DisplayServer.window_get_mode() == 3:
+		fullscreenButton.set_button_icon(windowedIcon)
 
 
 func _physics_process(delta):

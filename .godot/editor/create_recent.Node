@@ -1,8 +1,10 @@
+Label
+VBoxContainer
 HBoxContainer
+HScrollBar
 Timer
 Control
 Button
-VBoxContainer
 AnimationPlayer
 AudioStreamPlayer
 Node3D
@@ -12,7 +14,6 @@ AudioStreamPlayer3D
 CollisionShape3D
 StaticBody3D
 Area3D
-Label
 Panel
 ColorRect
 CanvasLayer
@@ -29,5 +30,3 @@ SpotLight3D
 RayCast3D
 HingeJoint3D
 RigidBody3D
-GraphNode
-PinJoint3D

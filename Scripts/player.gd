@@ -2,6 +2,7 @@ extends CharacterBody3D
 class_name Player
 
 
+var path = "res://Data/mouse_sensitivity.dat"
 var rng = RandomNumberGenerator.new()
 
 const GRAVITY = -24.8
@@ -40,6 +41,8 @@ var alive = true
 
 
 func _ready():
+	load_data()
+	
 	soundPosition = self.global_transform.origin
 	
 	camera = $CameraPivot/Camera3D
@@ -47,6 +50,16 @@ func _ready():
 	
 	$CameraAnimation.play("idle")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func save_data():
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	file.store_var(MOUSE_SENSITIVITY)
+
+
+func load_data():
+	var file = FileAccess.open(path, FileAccess.READ)
+	MOUSE_SENSITIVITY = file.get_var()
 
 
 func _physics_process(delta):

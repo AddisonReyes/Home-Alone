@@ -86,7 +86,6 @@ process_mode = 1
 
 [node name="Ceiling" type="GridMap" parent="."]
 process_mode = 1
-visible = false
 mesh_library = ExtResource("1_0o1s5")
 cell_size = Vector3(1, 1, 1)
 data = {
