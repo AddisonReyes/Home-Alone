@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvrvok10tcrw6"]
+[gd_scene load_steps=16 format=3 uid="uid://cvrvok10tcrw6"]
 
 [ext_resource type="Script" path="res://Scripts/interface.gd" id="1_mx8my"]
 [ext_resource type="Texture2D" uid="uid://d0143lvnwvrav" path="res://Sprites/sound.png" id="2_rw84d"]
@@ -108,11 +108,15 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_mxvq6"]
+resource_name = "visible"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qv1gp"]
 _data = {
 "RESET": SubResource("Animation_6psmk"),
 "fade_in": SubResource("Animation_mc4el"),
-"fade_out": SubResource("Animation_kkifo")
+"fade_out": SubResource("Animation_kkifo"),
+"visible": SubResource("Animation_mxvq6")
 }
 
 [node name="Interface" type="Control"]
@@ -314,6 +318,18 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_52a44")
 theme_override_font_sizes/font_size = 16
 text = "EN"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 2
+offset_right = 426.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_52a44")
+theme_override_font_sizes/font_size = 16
+text = "Find out where the noise is coming from."
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3

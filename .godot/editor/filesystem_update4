@@ -1,5 +1,5 @@
 res://Scenes/level.tscn
 res://Source/natureTilesSet.meshlib
-res://Scripts/player.gd
-res://Scripts/interface.gd
 res://Scenes/interface.tscn
+res://Scripts/interface.gd
+res://Scripts/level.gd

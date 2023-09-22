@@ -10,6 +10,8 @@ extends Control
 @onready var objetiveAnim = $objetive/AnimationObjetive
 @onready var objetive = $objetive/Label
 
+@onready var fakeObjetive = $Panel/Label2
+
 @onready var fullscreenButton = $Panel/VBoxContainer3/CenterContainer2/HBoxContainer/Fullscreen
 @onready var languageButtom = $Panel/VBoxContainer3/CenterContainer2/HBoxContainer/Options
 
@@ -35,6 +37,7 @@ var language = "EN"
 var animationStarted = false
 var default = Color(1, 1, 1, 1)
 
+var changeLabelObjetive = false
 var progress = 1
 
 
@@ -72,7 +75,8 @@ func _process(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		
+	
+	fakeObjetive.visible = get_tree().paused
 	panel.visible = get_tree().paused
 	
 	if player.printDot:
@@ -117,26 +121,29 @@ func changeObjetive():
 	if progress == 1:
 		if language == "EN":
 			objetive.text = "Find food for Lily."
+			fakeObjetive.text = objetive.text
 		
 		else:
 			objetive.text = "Busca comida para Lily."
+			fakeObjetive.text = objetive.text
 	
 	elif progress == 2:
 		if language == "EN":
 			objetive.text = "Find out where the noise is coming from."
+			fakeObjetive.text = objetive.text
 		
 		else:
 			objetive.text = "Investiga de donde proviene el ruido."
+			fakeObjetive.text = objetive.text
 	
 	elif progress == 3:
 		if language == "EN":
 			objetive.text = "Look for the keys to leave the house."
+			fakeObjetive.text = objetive.text
 		
 		else:
 			objetive.text = "Busca las llaves para salir de la casa."
-	
-	else:
-		objetive.text = ""
+			fakeObjetive.text = objetive.text
 
 
 func objetiveFadeIn():
@@ -199,9 +206,10 @@ func _on_fullscreen_pressed():
 func _on_options_pressed():
 	$AudioStreamPlayer.play()
 	
-	changeObjetive()
 	save_data()
 	load_data()
+	
+	changeObjetive()
 
 
 func _on_animation_objetive_animation_finished(anim_name):

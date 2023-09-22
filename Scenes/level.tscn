@@ -86,6 +86,7 @@ process_mode = 1
 
 [node name="Ceiling" type="GridMap" parent="."]
 process_mode = 1
+visible = false
 mesh_library = ExtResource("1_0o1s5")
 cell_size = Vector3(1, 1, 1)
 data = {
@@ -778,6 +779,10 @@ wait_time = 16.0
 [node name="MonsterSpawnTimer" type="Timer" parent="JumpscaresAndSounds/YourCatIsDeath"]
 wait_time = 10.0
 one_shot = true
+
+[node name="Shift2" parent="JumpscaresAndSounds/YourCatIsDeath" instance=ExtResource("50_csuee")]
+transform = Transform3D(0.282349, 0, -0.150596, 0, 0.32, 0, 0.150596, 0, 0.282349, -0.884284, -1.00281, -0.0294991)
+visible = false
 
 [node name="GhostPosition" type="Node3D" parent="JumpscaresAndSounds"]
 script = ExtResource("46_bde4g")

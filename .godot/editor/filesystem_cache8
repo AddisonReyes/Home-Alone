@@ -1,5 +1,5 @@
 cffcf7cc5eb03ca20a5c49cce30ef619
-::res://::1695164925
+::res://::1695328936
 Credits.txt::TextFile::-1::1694377654::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1694746432::0::1::::<><>::
 icon.svg::CompressedTexture2D::6555333939665792369::1693603235::1693603242::1::::<><>::
@@ -263,10 +263,10 @@ theDorIsClosed.wav::AudioStreamWAV::667513555497256273::1693946390::1693946410::
 jump1.wav::AudioStreamWAV::6929313295676696311::1694359107::1694359212::1::::<><>::
 jump2.wav::AudioStreamWAV::1141872396457179003::1694360670::1694360690::1::::<><>::
 jump3.wav::AudioStreamWAV::8695077788622839592::1694277044::1694277134::1::::<><>::
-::res://Data/::1694045102
+::res://Data/::1695166219
 ::res://Fonts/::1694032523
 alagard.ttf::FontFile::5321025819018334209::1686678638::1694032523::1::::<><>::
-::res://Scenes/::1694983894
+::res://Scenes/::1695176247
 3d_menu_scene.tscn::PackedScene::4605169678489830647::1694381995::0::1::::<><>::uid://d4cglusg6xedr
 cat.tscn::PackedScene::2214482377904603557::1694351092::0::1::::<><>::uid://dug122nsf55xs
 cat_food.tscn::PackedScene::4935141669105543936::1694238397::0::1::::<><>::res://Scripts/CatFood.gd<>uid://d4kek07w2q1f2
@@ -283,11 +283,11 @@ frontDoor.tscn::PackedScene::3478211620364416019::1694133101::0::1::::<><>::res:
 ghost.tscn::PackedScene::108050137037408598::1694741552::0::1::::<><>::res://Scripts/Ghost.gd<>uid://ccylhtbc84d3v
 hints.tscn::PackedScene::8205249342618823972::1694391466::0::1::::<><>::res://Scripts/hints.gd<>uid://c1yfougaum7yi
 history.tscn::PackedScene::2633357262955842296::1694391466::0::1::::<><>::res://Scripts/history.gd<>uid://c1yfougaum7yi
-interface.tscn::PackedScene::6283202130126453935::1694749883::0::1::::<><>::res://Scripts/interface.gd<>uid://d0143lvnwvrav
+interface.tscn::PackedScene::6283202130126453935::1695176247::0::1::::<><>::res://Scripts/interface.gd<>uid://d0143lvnwvrav::::res://Sprites/sound.png<>uid://brl7wvlm5ucsc::::res://Sprites/dot.png<>uid://ch2sruuxx7k1v::::res://Fonts/alagard.ttf<>uid://ceuhb3eirlvfc::::res://Audio/button.wav<>uid://blga5e4etb6md::::res://Sprites/fs.png
 key.tscn::PackedScene::1574415554939666501::1694198765::0::1::::<><>::res://Scripts/key.gd<>uid://ddrcysnb0piw4
 key_ring.tscn::PackedScene::7753926474872526739::1694172050::0::1::::<><>::res://Scripts/keyRing.gd<>uid://ddrcysnb0piw4
 lamp.tscn::PackedScene::4956762628665128820::1694303302::0::1::::<><>::res://Scripts/Lamp.gd
-level.tscn::PackedScene::518343458275882622::1694983894::0::1::::<><>::uid://botp7xmexpxib::::res://Source/tilesSet.meshlib<>res://Scripts/level.gd<>uid://c1yfougaum7yi::::res://Scenes/fader.tscn<>uid://d4cglusg6xedr::::res://Scenes/worldEnviroment.tscn<>uid://dx4av4r25u7m4::::res://Scenes/player.tscn<>uid://cih8wgehdsot8::::res://Scenes/door.tscn<>uid://upfgfp4jxcvh::::res://Source/objectsTileSet.meshlib<>uid://bps4vwvcpajwt::::res://Scenes/frontDoor.tscn<>uid://ccvdfkxkbcjfg::::res://Scenes/lamp.tscn<>uid://cvrvok10tcrw6::::res://Scenes/interface.tscn<>res://Scripts/hallSwitch1.gd<>uid://cfcpjybppnwjs::::res://Scenes/realCat.tscn<>uid://bsxbajnb7gxmq::::res://Scenes/switch.tscn<>res://Scripts/aisleSwitch1.gd<>res://Scripts/kitchenSwitch.gd<>res://Scripts/Room1Switch.gd<>res://Scripts/OfficeSwitch.gd<>res://Scripts/Bathroom1Switch.gd<>res://Scripts/Hall1Switch.gd<>res://Scripts/Bathroom2Switch.gd<>res://Scripts/Room2Switch.gd<>res://Scripts/Room3Switch.gd<>res://Scripts/DinningRoomSwitch.gd<>res://Scripts/MiniHallSwitch.gd<>res://Scripts/MiniAisleSwitch.gd<>res://Scripts/Room4Switch.gd<>res://Scripts/ServiceRoomSwitch.gd<>uid://dhdm6m1ymi7fa::::res://Scenes/floorLamp.tscn<>uid://cr3neg2bxfcl7::::res://Source/natureTilesSet.meshlib<>res://Scripts/Crickets.gd<>uid://68id6x5tmdv7::::res://Audio/crickets.wav<>uid://btkw3v5agbf8i::::res://Scenes/littleLamp.tscn<>uid://d14kt64t03jv4::::res://Scenes/ouwuija.tscn<>uid://bfyb7684s1q7u::::res://Scenes/eyes.tscn<>res://Scripts/Random Sounds.gd<>uid://hpjjhcfn5t23::::res://Scenes/flashlight.tscn<>res://Scripts/FlashlightSpawn.gd<>uid://ka0qrrso8g3r::::res://Audio/s1.wav<>uid://cnnxx5us37mgi::::res://Audio/s2.wav<>uid://8lty1wcgqvxe::::res://Audio/s3.wav<>uid://wownnwix1bd2::::res://Scenes/key.tscn<>res://Scripts/keysSpawn.gd<>uid://diqcbh27ncnnf::::res://Scenes/key_ring.tscn<>uid://cckvcd77g1hm3::::res://Scenes/cat_food.tscn<>res://Scripts/YourCatIsDeath.gd<>uid://bfwaog7ky0nhk::::res://Sprites/catGhostPaws.obj<>uid://cb58v75i1phkp::::res://Audio/shuiin.wav<>uid://cbfgj5tuc1vjk::::res://Scenes/phone.tscn<>res://Scripts/GhostPosition.gd<>uid://bmtkenleehnm7::::res://Scenes/wasd.tscn<>uid://dynltv7kg3sa3::::res://Scenes/cli.tscn<>uid://dkhip016vcxs::::res://Scenes/shift.tscn<>uid://bevv2ogol1vq2::::res://Scenes/esc.tscn<>uid://tqywj8b16win::::res://Scenes/f.tscn
+level.tscn::PackedScene::518343458275882622::1695176247::0::1::::<><>::uid://botp7xmexpxib::::res://Source/tilesSet.meshlib<>res://Scripts/level.gd<>uid://c1yfougaum7yi::::res://Scenes/fader.tscn<>uid://d4cglusg6xedr::::res://Scenes/worldEnviroment.tscn<>uid://dx4av4r25u7m4::::res://Scenes/player.tscn<>uid://cih8wgehdsot8::::res://Scenes/door.tscn<>uid://upfgfp4jxcvh::::res://Source/objectsTileSet.meshlib<>uid://bps4vwvcpajwt::::res://Scenes/frontDoor.tscn<>uid://ccvdfkxkbcjfg::::res://Scenes/lamp.tscn<>uid://cvrvok10tcrw6::::res://Scenes/interface.tscn<>res://Scripts/hallSwitch1.gd<>uid://cfcpjybppnwjs::::res://Scenes/realCat.tscn<>uid://bsxbajnb7gxmq::::res://Scenes/switch.tscn<>res://Scripts/aisleSwitch1.gd<>res://Scripts/kitchenSwitch.gd<>res://Scripts/Room1Switch.gd<>res://Scripts/OfficeSwitch.gd<>res://Scripts/Bathroom1Switch.gd<>res://Scripts/Hall1Switch.gd<>res://Scripts/Bathroom2Switch.gd<>res://Scripts/Room2Switch.gd<>res://Scripts/Room3Switch.gd<>res://Scripts/DinningRoomSwitch.gd<>res://Scripts/MiniHallSwitch.gd<>res://Scripts/MiniAisleSwitch.gd<>res://Scripts/Room4Switch.gd<>res://Scripts/ServiceRoomSwitch.gd<>uid://dhdm6m1ymi7fa::::res://Scenes/floorLamp.tscn<>uid://cr3neg2bxfcl7::::res://Source/natureTilesSet.meshlib<>res://Scripts/Crickets.gd<>uid://68id6x5tmdv7::::res://Audio/crickets.wav<>uid://btkw3v5agbf8i::::res://Scenes/littleLamp.tscn<>uid://d14kt64t03jv4::::res://Scenes/ouwuija.tscn<>uid://bfyb7684s1q7u::::res://Scenes/eyes.tscn<>res://Scripts/Random Sounds.gd<>uid://hpjjhcfn5t23::::res://Scenes/flashlight.tscn<>res://Scripts/FlashlightSpawn.gd<>uid://ka0qrrso8g3r::::res://Audio/s1.wav<>uid://cnnxx5us37mgi::::res://Audio/s2.wav<>uid://8lty1wcgqvxe::::res://Audio/s3.wav<>uid://wownnwix1bd2::::res://Scenes/key.tscn<>res://Scripts/keysSpawn.gd<>uid://diqcbh27ncnnf::::res://Scenes/key_ring.tscn<>uid://cckvcd77g1hm3::::res://Scenes/cat_food.tscn<>res://Scripts/YourCatIsDeath.gd<>uid://bfwaog7ky0nhk::::res://Sprites/catGhostPaws.obj<>uid://cb58v75i1phkp::::res://Audio/shuiin.wav<>uid://cbfgj5tuc1vjk::::res://Scenes/phone.tscn<>res://Scripts/GhostPosition.gd<>uid://bmtkenleehnm7::::res://Scenes/wasd.tscn<>uid://dynltv7kg3sa3::::res://Scenes/cli.tscn<>uid://dkhip016vcxs::::res://Scenes/shift.tscn<>uid://bevv2ogol1vq2::::res://Scenes/esc.tscn<>uid://tqywj8b16win::::res://Scenes/f.tscn
 littleLamp.tscn::PackedScene::3742039415769063142::1694188318::0::1::::<><>::uid://brpvnn2msks0b
 main_menu.tscn::PackedScene::4406848436159283698::1694749883::0::1::::<><>::uid://b6u1qbm47st80
 monster.tscn::PackedScene::5879725562344227898::1694742041::0::1::::<><>::res://Scripts/monster.gd<>uid://kalxlhk3pfbb
@@ -304,7 +304,7 @@ tiles.tscn::PackedScene::1934283371310020575::1693956447::0::1::::<><>::uid://cs
 wasd.tscn::PackedScene::3268524997763687716::1694367109::0::1::::<><>::uid://knytjq2xong2
 weird_sound.tscn::PackedScene::194836010984096025::1694282877::0::1::::<><>::res://Scripts/WeirdSound.gd<>uid://djak2ohlex087
 worldEnviroment.tscn::PackedScene::9199252296368344559::1694354363::0::1::::<><>::
-::res://Scripts/::1694749857
+::res://Scripts/::1695176005
 aisleSwitch1.gd::GDScript::-1::1694117398::0::1::::<>Node3D<>::
 Bathroom1Switch.gd::GDScript::-1::1693783714::0::1::::<>Node3D<>::
 Bathroom2Switch.gd::GDScript::-1::1694193076::0::1::::<>Node3D<>::
@@ -330,7 +330,7 @@ Hall1Switch.gd::GDScript::-1::1694232908::0::1::::<>Node3D<>::
 hallSwitch1.gd::GDScript::-1::1694117398::0::1::::<>Node3D<>::
 hints.gd::GDScript::-1::1694313691::0::1::::<>Control<>::
 history.gd::GDScript::-1::1694372272::0::1::::<>Control<>::
-interface.gd::GDScript::-1::1694749818::0::1::::<>Control<>::
+interface.gd::GDScript::-1::1695176005::0::1::::<>Control<>::
 key.gd::GDScript::-1::1694131222::0::1::::<>Node3D<>::
 keyRing.gd::GDScript::-1::1694134716::0::1::::<>Node3D<>::
 keysSpawn.gd::GDScript::-1::1694392019::0::1::::<>Node3D<>::
@@ -344,7 +344,7 @@ monster.gd::GDScript::-1::1694344744::0::1::::Enemy<>CharacterBody3D<>::
 OfficeSwitch.gd::GDScript::-1::1694349271::0::1::::<>Node3D<>::
 ouwuija.gd::GDScript::-1::1694373656::0::1::::<>Node3D<>::
 phone.gd::GDScript::-1::1694356097::0::1::::<>Node3D<>::
-player.gd::GDScript::-1::1694734325::0::1::::Player<>CharacterBody3D<>::
+player.gd::GDScript::-1::1695175561::0::1::::Player<>CharacterBody3D<>::
 PlayerWin.gd::GDScript::-1::1694379749::0::1::::<>Control<>::
 PropMiscLamp.gd::GDScript::-1::1694027061::0::1::::<>StaticBody3D<>::
 Random Sounds.gd::GDScript::-1::1694373614::0::1::::<>Node3D<>::
@@ -357,8 +357,8 @@ ServiceRoomSwitch.gd::GDScript::-1::1693790169::0::1::::<>Node3D<>::
 switch.gd::GDScript::-1::1694191495::0::1::::<>Node3D<>::
 WeirdSound.gd::GDScript::-1::1694235774::0::1::::<>Node3D<>::
 YourCatIsDeath.gd::GDScript::-1::1694357487::0::1::::<>Node3D<>::
-::res://Source/::1694983325
-natureTilesSet.meshlib::MeshLibrary::6024651107354200470::1694983325::0::1::::<><>::
+::res://Source/::1695165831
+natureTilesSet.meshlib::MeshLibrary::6024651107354200470::1695165831::0::1::::<><>::
 objectsTileSet.meshlib::MeshLibrary::1435057125918184321::1694020388::0::1::::<><>::
 tilesSet.meshlib::MeshLibrary::3409256799036943957::1693953775::0::1::::<><>::uid://csl1l0tx45ggn
 ::res://Sprites/::1694743456

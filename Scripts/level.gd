@@ -103,6 +103,9 @@ func killRealCat():
 
 
 func SoundReached():
+	$Tuto/Shift.visible = false
+	$JumpscaresAndSounds/YourCatIsDeath/Shift2.visible = true
+	
 	$JumpscaresAndSounds/YourCatIsDeath/CatGhostPaws.visible = true
 	$RealCat.queue_free()
 	$Phone.canInteract()
